@@ -1,3 +1,12 @@
+// Tạo hiệu ứng fade-in cho trang đăng ký
+const sr = ScrollReveal({
+    distance: '50px',      // Khoảng cách di chuyển
+    duration: 3000,        // Thời gian chuyển động (3 giây)
+    reset: false           // Không reset lại khi cuộn lại lên
+});
+
+// Áp dụng hiệu ứng cho form đăng ký
+sr.reveal('.signup', { delay: 300, origin: 'bottom' });
 
 
 document.addEventListener("DOMContentLoaded", function () {
