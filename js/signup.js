@@ -95,6 +95,8 @@ function signup(e) {
         password: password
     };
 
+
+
     var json = JSON.stringify(user);
     localStorage.setItem(username, json);
 
