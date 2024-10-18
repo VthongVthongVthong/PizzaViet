@@ -4,7 +4,6 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #00628F;
     font-family: 'Arial', sans-serif;
 }
     
@@ -83,7 +82,7 @@ a:hover {
     position: absolute;
     transform: translateX(-100%);
     cursor: pointer;
-    max-width: 20px;
+    max-width: 40px;
 }
 
 
