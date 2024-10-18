@@ -499,3 +499,29 @@ header.sticky{
 	width: 224px;
 	height: 47px;
 }
+
+.dathang{
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    position: absolute !important;
+    text-decoration: none !important;
+    border-radius: 64px;
+    z-index: 100;
+    line-height: 28px;
+    color: #0078AE;
+    border: 1px solid #0078AE;
+    background-color: #fff;
+    font-size: 20px;
+    margin-top: 0.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+	top: 100%;
+	right: 45%;
+}
