@@ -13,5 +13,7 @@ Thiết kế web
 # Đăng nhập
 ![screenshot-2024-10-18-22-07-39](https://github.com/user-attachments/assets/be1665c6-70ee-4f9d-a39d-2fb1b4a7d253)
 
+# Giỏ hàng
+![screenshot-2024-10-19-00-46-14](https://github.com/user-attachments/assets/21b951aa-7814-4ea3-bb8e-b54dbf8d9a23)
 
 
