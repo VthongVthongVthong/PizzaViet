@@ -107,8 +107,36 @@ function signup(e) {
         confirmButtonText: 'Chuyển tới đăng nhập'
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = 'login.html';
+            // Save username in localStorage for future reference
+            localStorage.setItem("username", username);
+            window.location.href = 'login.html';
         }
-      });
+    });
       
 }
+
+window.setInterval(() => {
+    try {
+      let button = document.querySelector("body > div.swal2-container.swal2-center.swal2-backdrop-show > div > div.swal2-actions > button.swal2-confirm.swal2-styled");
+      if (button) {
+        // Đặt màu mặc định thành #00628F nếu chưa hover
+        if (!button.classList.contains("hovering")) {
+          button.style.backgroundColor = "#00628F";
+        }
+  
+        // Thêm sự kiện hover
+        button.addEventListener("mouseenter", function() {
+          button.classList.add("hovering");
+          button.style.backgroundColor = "#009CE3"; // Đổi màu khi hover
+        });
+  
+        button.addEventListener("mouseleave", function() {
+          button.classList.remove("hovering");
+          button.style.backgroundColor = "#00628F"; // Đổi lại màu khi không hover
+        });
+      }
+    }
+    catch (error) {
+      console.error("Lỗi:", error); // Xử lý lỗi nếu có
+    }
+  }, 100);

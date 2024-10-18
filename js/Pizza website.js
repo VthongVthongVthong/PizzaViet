@@ -135,9 +135,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    window.addEventListener('scroll', function(){
-        console.log("X-Position: ", window.scrollX)
-        console.log("Y-Position: ", window.scrollY) 
-    })
-})
+document.addEventListener("DOMContentLoaded", function () {
+    const itemsToSignup = document.querySelectorAll(".itemtoSignup"); // Chọn tất cả các phần tử có class itemtoSignup
+
+    // Lặp qua từng item để gán sự kiện
+    itemsToSignup.forEach(function(item) {
+        item.addEventListener("click", function() {
+            Swal.fire({
+                title: "Cần phải đăng nhập để thêm sản phẩm vào giỏ hàng.",
+                confirmButtonText: "OK",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Chuyển hướng tới trang login.html sau khi nhấn OK
+                    window.location.href = "login.html";
+                }
+            });
+        });
+    });
+});
+
+window.setInterval(() => {
+    try {
+      let button = document.querySelector("body > div.swal2-container.swal2-center.swal2-backdrop-show > div > div.swal2-actions > button.swal2-confirm.swal2-styled");
+      if (button) {
+        // Đặt màu mặc định thành #00628F nếu chưa hover
+        if (!button.classList.contains("hovering")) {
+          button.style.backgroundColor = "#00628F";
+        }
+  
+        // Thêm sự kiện hover
+        button.addEventListener("mouseenter", function() {
+          button.classList.add("hovering");
+          button.style.backgroundColor = "#009CE3"; // Đổi màu khi hover
+        });
+  
+        button.addEventListener("mouseleave", function() {
+          button.classList.remove("hovering");
+          button.style.backgroundColor = "#00628F"; // Đổi lại màu khi không hover
+        });
+      }
+    }
+    catch (error) {
+      console.error("Lỗi:", error); // Xử lý lỗi nếu có
+    }
+  }, 100);
+
