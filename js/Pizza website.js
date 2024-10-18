@@ -124,10 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
         var orderButton = document.getElementById('orderButton');
         
         // Kiểm tra vị trí cuộn
-        if (window.scrollY > 100) { // 100px là ví dụ, bạn có thể thay đổi
+        
+		if (window.scrollY > 1000 || window.scrollY < 168) { // 100px là ví dụ, bạn có thể thay đổi
             orderButton.classList.add('orderHidden'); // Thêm lớp 'hidden'
         } else {
             orderButton.classList.remove('orderHidden'); // Xóa lớp 'hidden'
+			reset: false
         }
+		
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener('scroll', function(){
+        console.log("X-Position: ", window.scrollX)
+        console.log("Y-Position: ", window.scrollY) 
+    })
+})
