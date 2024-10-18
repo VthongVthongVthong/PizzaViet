@@ -7,7 +7,7 @@ body {
     background-color: #00628F;
     font-family: 'Arial', sans-serif;
 }
-
+    
 .login {
     width: 350px;
     padding: 20px;
@@ -16,6 +16,8 @@ body {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    top: 200px;
+    position: relative;
 }
 
 h1 {
@@ -72,5 +74,25 @@ a {
 
 a:hover {
     color: #009CE3;
+}
+
+.eye{
+    width: 350px;
+    padding: 10px;
+    margin-bottom: 0px;
+    position: absolute;
+    transform: translateX(-100%);
+    cursor: pointer;
+    max-width: 20px;
+}
+
+
+.confirm{
+    position: absolute;
+    top: 60%;
+}
+
+.hidden {
+    display: none;
 }
 
