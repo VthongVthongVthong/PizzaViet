@@ -1,112 +1,105 @@
-// Tạo hiệu ứng fade-in cho trang đăng ký
-const sr = ScrollReveal({
-    distance: '50px',      // Khoảng cách di chuyển
-    duration: 3000,        // Thời gian chuyển động (3 giây)
-    reset: false           // Không reset lại khi cuộn lại lên
-});
-
-// Áp dụng hiệu ứng cho form đăng ký
-sr.reveal('.signup', { delay: 300, origin: 'bottom' });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const eyeOpen = document.querySelector(".eye-open");
-    const eyeClose = document.querySelector(".eye-close");
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #00628F;
+    font-family: 'Arial', sans-serif;
+}
 
-    const eyeOpen1 = document.querySelector(".eye-open1");
-    const eyeClose1= document.querySelector(".eye-close1");
-    const passwordField = document.getElementById("password");
-    const passwordField1 = document.getElementById("confirmPassword");
+.signup {
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
 
-    // Sự kiện khi nhấn vào mắt mở (eyeOpen)
-    eyeOpen.addEventListener("click", function() {
-        eyeOpen.classList.add("hidden");
-        eyeClose.classList.remove("hidden");
-        passwordField.type = "text";  // Hiển thị mật khẩu
-    });
+h1 {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-    // Sự kiện khi nhấn vào mắt đóng (eyeClose)
-    eyeClose.addEventListener("click", function() {
-        eyeClose.classList.add("hidden");
-        eyeOpen.classList.remove("hidden");
-        passwordField.type = "password";  // Ẩn mật khẩu
-    });
+input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
 
-    // Sự kiện khi nhấn vào mắt mở (eyeOpen)
-    eyeOpen1.addEventListener("click", function() {
-        eyeOpen1.classList.add("hidden");
-        eyeClose1.classList.remove("hidden");
-        passwordField1.type = "text";  // Hiển thị mật khẩu
-    });
+input:focus {
+    border-color: #00628F;
+    outline: none;
+}
 
-    // Sự kiện khi nhấn vào mắt đóng (eyeClose)
-    eyeClose1.addEventListener("click", function() {
-        eyeClose1.classList.add("hidden");
-        eyeOpen1.classList.remove("hidden");
-        passwordField1.type = "password";  // Hiển thị mật khẩu
-    });
-});
+button {
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00628F;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform-style: preserve-3d; /* Bảo toàn kiểu 3D */
+    transform: rotateX(-15deg) translateZ(5px);
+    perspective: 1000px;
+}
+
+button:hover {
+    background-color: #009CE3;
+    transform: scale(1.05);
+}
 
 
-function signup(e) {
-    e.preventDefault();
-    var username = document.getElementById("username").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+a {
+    color: #00628F;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
 
-    if (password !== confirmPassword) {
-        Swal.fire({
-            title: 'Lỗi!',
-            text: 'Mật khẩu không khớp',
-            icon: 'error',
-            confirmButtonText: 'Thử lại'
-          })
-        return;
-    }
+a:hover {
+    color: #009CE3;
+}
 
-    if (localStorage.getItem(username) !== null) {
-        Swal.fire({
-            title: 'Lỗi!',
-            text: 'Tên người dùng đã tồn tại',
-            icon: 'error',
-            confirmButtonText: 'Thử lại'
-        });
-        return;
-    }
+.eye{
+    width: 350px;
+    padding: 10px;
+    margin-bottom: 0px;
+    position: absolute;
+    transform: translateX(-100%);
+    cursor: pointer;
+    max-width: 40px;
+}
 
-    for (var i = 0; i < localStorage.length; i++) {
-        var key = localStorage.key(i);
-        var user = JSON.parse(localStorage.getItem(key));
-        if (user.email === email) {
-            Swal.fire({
-                title: 'Lỗi!',
-                text: 'Email đã tồn tại',
-                icon: 'error',
-                confirmButtonText: 'Thử lại'
-            });
-            return;
-        }
-    }
 
-    var user = {
-        username: username,
-        email: email,
-        password: password
-    };
+.confirm{
+    position: absolute;
+    top: 58%;
+}
 
-    var json = JSON.stringify(user);
-    localStorage.setItem(username, json);
+.hidden {
+    display: none;
+}
 
-    Swal.fire({
-        title: 'Thành công!',
-        text: 'Đăng ký thành công',
-        icon: 'success',
-        confirmButtonText: 'Chuyển tới đăng nhập'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = 'login.html';
-        }
-      });
-      
+.test{
+    
 }
