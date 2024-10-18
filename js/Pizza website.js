@@ -118,3 +118,16 @@ dots.forEach((dot, index) => {
         goToSlide(index);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('scroll', function() {
+        var orderButton = document.getElementById('orderButton');
+        
+        // Kiểm tra vị trí cuộn
+        if (window.scrollY > 100) { // 100px là ví dụ, bạn có thể thay đổi
+            orderButton.classList.add('orderHidden'); // Thêm lớp 'hidden'
+        } else {
+            orderButton.classList.remove('orderHidden'); // Xóa lớp 'hidden'
+        }
+    });
+});
