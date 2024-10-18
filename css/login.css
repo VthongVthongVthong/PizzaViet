@@ -5,7 +5,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Arial', sans-serif;
-}
+} 
     
 .login {
     width: 350px;
@@ -95,3 +95,6 @@ a:hover {
     display: none;
 }
 
+.body > div.swal2-container.swal2-center.swal2-backdrop-show > div > div.swal2-actions > button.swal2-confirm.swal2-styled {
+    background-color:#00628F;
+}
