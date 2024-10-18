@@ -5,13 +5,32 @@ function login(e) {
     var user = localStorage.getItem(username);
     var data = JSON.parse(user);
     if(user == null){
-        alert("tên đăng nhập không tồn tại");
+        Swal.fire({
+            title: 'Lỗi!',
+            text: 'Tên đăng nhập không tồn tại',
+            icon: 'error',
+            confirmButtonText: 'Thử lại'
+          })
     }
     else if(username==data.username && password== data.password){
-        alert("Đăng nhập thành công!");
-        window.location.href = "Pizza website.html";
+        Swal.fire({
+            title: 'Thành công!',
+            text: 'Đăng nhập thành công',
+            icon: 'success',
+            confirmButtonText: 'Chuyển tới trang web'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = 'Pizza website.html';
+            }
+          });
+        
     }
     else{
-        alert("đăng nhập thật bại");
+        Swal.fire({
+            title: 'Lỗi!',
+            text: 'Mật khẩu không chính xác',
+            icon: 'error',
+            confirmButtonText: 'Thử lại'
+          })
     }
 }

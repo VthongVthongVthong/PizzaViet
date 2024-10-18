@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const eyeOpen = document.querySelector(".eye-open");
     const eyeClose = document.querySelector(".eye-close");
@@ -46,8 +47,37 @@ function signup(e) {
     var confirmPassword = document.getElementById("confirmPassword").value;
 
     if (password !== confirmPassword) {
-        alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+        Swal.fire({
+            title: 'Lỗi!',
+            text: 'Mật khẩu không khớp',
+            icon: 'error',
+            confirmButtonText: 'Thử lại'
+          })
         return;
+    }
+
+    if (localStorage.getItem(username) !== null) {
+        Swal.fire({
+            title: 'Lỗi!',
+            text: 'Tên người dùng đã tồn tại',
+            icon: 'error',
+            confirmButtonText: 'Thử lại'
+        });
+        return;
+    }
+
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        var user = JSON.parse(localStorage.getItem(key));
+        if (user.email === email) {
+            Swal.fire({
+                title: 'Lỗi!',
+                text: 'Email đã tồn tại',
+                icon: 'error',
+                confirmButtonText: 'Thử lại'
+            });
+            return;
+        }
     }
 
     var user = {
@@ -59,5 +89,15 @@ function signup(e) {
     var json = JSON.stringify(user);
     localStorage.setItem(username, json);
 
-    alert("Đăng ký thành công!");
+    Swal.fire({
+        title: 'Thành công!',
+        text: 'Đăng ký thành công',
+        icon: 'success',
+        confirmButtonText: 'Chuyển tới đăng nhập'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = 'login.html';
+        }
+      });
+      
 }
