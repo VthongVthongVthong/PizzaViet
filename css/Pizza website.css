@@ -506,7 +506,7 @@ header.sticky{
     text-align: center;
     vertical-align: middle;
     user-select: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    transition: opacity 0.5s ease, transform 0.5s ease;
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     position: absolute !important;
     text-decoration: none !important;
@@ -525,4 +525,10 @@ header.sticky{
     cursor: pointer;
 	top: 100%;
 	right: 45%;
+	
+}
+
+.orderHidden {
+    opacity: 0; /* Biến mất */
+    transform: translateY(20px); /* Đẩy xuống một chút khi ẩn */
 }
