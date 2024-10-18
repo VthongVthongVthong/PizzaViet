@@ -420,6 +420,13 @@ section{
 	width: 100%;
 	height: auto;
 }
+
+.fa-box-open:before {
+    content: "\f49e";
+}
+.fas{
+    font-family: "Font Awesome 5 Free";
+}
 .home-text h1{
 	font-size: var(--big-font);
 	line-height: 1.2;
