@@ -1,0 +1,128 @@
+.profileImagePic{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 5px;
+    bottom: 55px;
+}
+
+.profileImagePic1{
+    left: 230%;
+    top: 15%;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    
+}
+
+.profile-container{
+    left: 100px;
+    position: relative;
+    top: 250px;
+}
+
+#h2{
+    bottom: 60px;
+    width: 1116px;
+    height: 48px;
+    font-size: 40px;
+    position: relative;
+    font-weight: 700;
+    color: #333f48;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+#profile-username{
+    font-size: 35px;
+    bottom: 68px;
+    left: 10px;
+    position: relative;
+}
+
+.list_tool{
+    position: relative;
+    right: 147px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabActive{
+    background-color: #00628F;
+    color: aliceblue;
+    width: 157px;
+    height: 44px;
+    
+}
+
+.tabUnactive{
+    
+    width: 157px;
+    height: 44px;
+    
+}
+
+.middle{
+    position: relative;
+    left: 35px;
+    top: 10px;
+}
+
+.row_file_content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right_item{
+    left: 300px;
+    position: relative;
+    width: 75%;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    bottom: 200px;
+    width: 855px;
+    height: 454px;
+}
+
+.buttonApply{
+    left: 780px;
+    top: 400px;
+    position: absolute;
+    width: 54px;
+    height: 31px;
+}
+
+.buttonChange{
+    position: absolute;
+    width: 64px;
+    height: 31px;
+    top: 50%;
+    left: 72%;
+}
+
+.topPadding{
+    position: relative;
+    padding-top: 30%;
+}
+
+.topPadding2{
+    position: relative;
+    padding-top: 22%;
+}
+
+.leftPadding{
+    
+    
+    position: relative;
+    left: 40%;
+    
+}
+
+.contact{
+    position: relative;
+    right: 100px;
+}
