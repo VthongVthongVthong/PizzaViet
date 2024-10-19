@@ -108,7 +108,6 @@ function signup(e) {
       }).then((result) => {
         if (result.isConfirmed) {
             // Save username in localStorage for future reference
-            localStorage.setItem("username", username);
             window.location.href = 'login.html';
         }
     });

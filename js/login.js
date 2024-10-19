@@ -69,7 +69,8 @@ function login(e) {
             confirmButtonText: 'Chuyển tới trang web'
           }).then((result) => {
             if (result.isConfirmed) {
-              window.location.href = 'Pizza website.html';
+              localStorage.setItem("username", username);
+              window.location.href = '../pages_user/Pizza website_user.html';
             }
           });
         
