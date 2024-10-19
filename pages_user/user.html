@@ -2,26 +2,123 @@
 <html lang="en">
 <head>
     <script src="../js/user.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
+    <link rel="stylesheet" href="../css/Pizza website_user.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
+    
 </head>
+<header>
+    <!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
+    <a href="../pages_user/Pizza website_user.html" class="logo"><img src="../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
+    <ul class="navbar">
+        <li><a href="../pages_user/Pizza website_user.html">Trang chủ</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Thực đơn</a></li>
+        <li><a href="#contact">Liên Hệ</a></li>
+    </ul>
+
+    <div class="h-icons">
+        <a href="user.html"><i class='bx bx-user'></i></a>
+        <a href="#"><i class='bx bx-search' ></i></a>
+        <a href="/pages/cart.html"><i class='bx bx-cart' ></i></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
+    </div>
+</header>
 <body>
     <div class="profile-container">
-        <h2>Hồ Sơ</h2>
-        <div>
-            <label for="username">Tên tài khoản:</label>
-            <span id="profile-username"></span>
+        <h2 id="h2">Hồ Sơ</h2>
+        <div class="row_file_content">
+            <div class="profileImage">
+                <img class="profileImagePic" src="../img/avatar.jpg">
+                <span id ="profile-username" class="profile-username"></span>
+            </div>
+            <ul class="list_tool" id="list_tool">
+                <li class="tabActive">
+                    <p class="middle">Hồ sơ</p>
+                </li>
+                <li class="tabUnactive">
+                    <p class="middle">Đơn Hàng</p>
+                </li>
+                <li class="tabUnactive">
+                    <p class="middle">Hỗ trợ</p>
+                </li>
+                
+                
+            </ul>
         </div>
         <div>
-            <label for="email">Email:</label>
-            <span id="profile-email"></span>
+            <div class="right_item">
+                <div>
+                    <p class="topPadding leftPadding">Tên tài khoản</p>
+                    <p class="topPadding leftPadding">Họ và tên</p>
+                    <p class="topPadding leftPadding">Email</p>
+                    <p class="topPadding leftPadding">Mật khẩu</p>
+                    <p class="topPadding leftPadding">Số điện thoại</p>
+                    <p class="topPadding leftPadding">Địa chỉ</p>
+                    <p class="topPadding leftPadding">Giới tính</p>
+                    <p class="topPadding leftPadding">Ngày sinh</p>
+                </div>
+                <div>
+                    <div class="topPadding2 leftPadding">
+                        <label for="username"></label>
+                        <span class="profile-username"></span>
+                    </div>
+                    <div class="topPadding2 leftPadding">.</div>
+                    <div class="topPadding2 leftPadding">
+                        <label for="email"></label>
+                        <span class="profile-email"></span>
+                    </div>
+                    <div class="topPadding2 leftPadding">
+                        <label for="password"></label>
+                        <span class="profile-password"></span>
+                    </div>
+                </div>
+                <div>
+                    <img class="profileImagePic1"src="../img/avatar.jpg">
+                    <button class="buttonChange">Thay đổi</button>
+                </div>
+                <button class="buttonApply">Lưu</button>
+            </div>
         </div>
-        <div>
-            <label for="password">Mật khẩu:</label>
-            <span id="profile-password"></span>
-        </div>
-        <!-- Add more fields here if needed -->
+        <section class="contact" id="contact">
+			<div class="main-contact">
+				<div class="contact-content">
+					<h4>Dịch vụ</h4>
+					<li><a href="../pages_user/Pizza website_user.html">Trang chủ</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#menu">Thực đơn</a></li>
+				</div>
+
+				
+
+				<div class="contact-content">
+					<h4>Contact</h4>
+					<li><a href="#">Liên hệ</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">FAQ</a></li>
+				</div>
+
+				
+			</div>
+		</section>
+
+		<div class="last-text">
+			<p></p>
+		</div>
+
+	<!-- scroll top -->
+	
     </div>
+    
     
   
