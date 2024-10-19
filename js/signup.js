@@ -48,71 +48,92 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function signup(e) {
-    e.preventDefault();
-    var username = document.getElementById("username").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (password !== confirmPassword) {
-        Swal.fire({
-            title: 'Lỗi!',
-            text: 'Mật khẩu không khớp',
-            icon: 'error',
-            confirmButtonText: 'Thử lại'
-          })
-        return;
-    }
-
-    if (localStorage.getItem(username) !== null) {
-        Swal.fire({
-            title: 'Lỗi!',
-            text: 'Tên người dùng đã tồn tại',
-            icon: 'error',
-            confirmButtonText: 'Thử lại'
-        });
-        return;
-    }
-
-    for (var i = 0; i < localStorage.length; i++) {
-        var key = localStorage.key(i);
-        var user = JSON.parse(localStorage.getItem(key));
-        if (user.email === email) {
-            Swal.fire({
-                title: 'Lỗi!',
-                text: 'Email đã tồn tại',
-                icon: 'error',
-                confirmButtonText: 'Thử lại'
-            });
-            return;
-        }
-    }
-
-    var user = {
-        username: username,
-        email: email,
-        password: password
-    };
-
-
-
-    var json = JSON.stringify(user);
-    localStorage.setItem(username, json);
-
-    Swal.fire({
-        title: 'Thành công!',
-        text: 'Đăng ký thành công',
-        icon: 'success',
-        confirmButtonText: 'Chuyển tới đăng nhập'
-      }).then((result) => {
-        if (result.isConfirmed) {
-            // Save username in localStorage for future reference
-            window.location.href = 'login.html';
-        }
-    });
-      
+function isJsonString(str) {
+  try {
+      JSON.parse(str);
+  } catch (e) {
+      return false;
+  }
+  return true;
 }
+
+function signup(e) {
+  e.preventDefault();
+  var username = document.getElementById("username").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+
+  console.log("Username:", username);
+  console.log("Email:", email);
+  console.log("Password:", password);
+  console.log("Confirm Password:", confirmPassword);
+
+  if (password !== confirmPassword) {
+      Swal.fire({
+          title: 'Lỗi!',
+          text: 'Mật khẩu không khớp',
+          icon: 'error',
+          confirmButtonText: 'Thử lại'
+      });
+      return;
+  }
+
+  if (localStorage.getItem(username) !== null) {
+      Swal.fire({
+          title: 'Lỗi!',
+          text: 'Tên người dùng đã tồn tại',
+          icon: 'error',
+          confirmButtonText: 'Thử lại'
+      });
+      return;
+  }
+
+  for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      var userData = localStorage.getItem(key);
+
+      // Kiểm tra xem dữ liệu có phải là JSON hợp lệ không
+      if (isJsonString(userData)) {
+          var user = JSON.parse(userData);
+          if (user.email === email) {
+              Swal.fire({
+                  title: 'Lỗi!',
+                  text: 'Email đã tồn tại',
+                  icon: 'error',
+                  confirmButtonText: 'Thử lại'
+              });
+              return;
+          }
+      } else {
+          console.warn(`Giá trị không hợp lệ tại khóa ${key}: ${userData}`);
+      }
+  }
+
+  var user = {
+      username: username,
+      email: email,
+      password: password
+  };
+
+  var json = JSON.stringify(user);
+  localStorage.setItem(username, json);
+
+  Swal.fire({
+      title: 'Thành công!',
+      text: 'Đăng ký thành công',
+      icon: 'success',
+      confirmButtonText: 'Chuyển tới đăng nhập'
+  }).then((result) => {
+      if (result.isConfirmed) {
+          window.location.href = 'login.html';
+      }
+  });
+}
+
+// Thêm sự kiện lắng nghe vào nút đăng ký
+document.getElementById("signupForm").addEventListener("submit", signup);
+
 
 window.setInterval(() => {
     try {
