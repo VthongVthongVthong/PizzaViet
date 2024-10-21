@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   }).then((result) => {
                     if (result.isConfirmed) {
                         // Chuyển hướng tới trang login.html sau khi nhấn OK
-                        window.location.href = "/index.html";
+                        window.location.href = "./index.html";
                     }
                 });
                 }
