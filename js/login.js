@@ -70,7 +70,7 @@ function login(e) {
           }).then((result) => {
             if (result.isConfirmed) {
               localStorage.setItem("username", username);
-              window.location.href = '../pages_user/Pizza website_user.html';
+              window.location.href = './pages_user/Pizza website_user.html';
             }
           });
         
