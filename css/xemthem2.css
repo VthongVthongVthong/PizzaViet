@@ -87,7 +87,7 @@ header{
     font-weight: bold;
 }
 
-/* .nav-link.active::after {
+.nav-link.drink.active::after {
     content: '';
     display: block;
     width: 60%;
@@ -97,7 +97,37 @@ header{
     position: absolute;
     bottom: -5px;
     left: 20%;
-} */
+}
+
+/* button bar */
+.button-bar {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+.button-bar button {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.button-bar button.selected {
+    background-color: red;
+    color: white;
+}
+
+.button-bar button img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
