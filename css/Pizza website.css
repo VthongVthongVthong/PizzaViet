@@ -553,3 +553,20 @@ header.sticky{
     opacity: 0; /* Biến mất */
     transform: translateY(20px); /* Đẩy xuống một chút khi ẩn */
 }
+
+/* Thiết kế thanh xem thêm */
+.view-more-btn {
+    background-color:	var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+	margin-left: 45%;
+	margin-bottom: 20px;
+}
+
+.view-more-btn:hover {
+    background-color: var(--main-color1);
+}
