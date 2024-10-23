@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100%;
+    background-color: #00628F;
+    border: 1px solid #ccc; 
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.sidebar-brand img {
+    width: 180px;
+    height: auto;
+    margin: 20px auto;
+}
+
+.sidebar-menu ul {
+    margin-top: 10px;
+}
+
+.sidebar-menu li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu li a {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #00557a;
+    transition: 0.3s ease;
+}
+
+.sidebar-menu li span {
+    margin-left: 15px;
+    color: white;
+}
+main {
+    margin-left: 260px; /* Tạo khoảng cách cho phần main để tránh bị đè bởi sidebar */
+    padding: 20px;
+    background-color: #f4f7fc;
+    min-height: 100vh; /* Đảm bảo chiều cao của main phủ hết màn hình */
+    display: flex;
+    flex-direction: column;
+
+}       
+
+.statu {
+    background-color: white; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1; 
+    min-width: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 60%;
+}
+main .analyse h3{
+    margin-left: 0.6rem;
+    font-size: 1rem;
+}
+main .analyse .progresss{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+.percentage {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    z-index: 1; /* Đảm bảo percentage hiển thị trên hình tròn */
+}
+.progress {
+    position: relative; /* Để phần tử con (percentage) có thể được canh tuyệt đối */
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+main .analyse svg{
+    width: 7rem;
+    height: 7rem;
+}
+.statu h3{
+    color: #A7A4A4;
+}
+
+main .new-user img{
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+}
+main .new-user .user-list{
+ width: 60%;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: white; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-width: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+main .container-account img{
+    width: 40px;
+   height: 40px;
+   border-radius: 50%
+}
+main .container-account{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+main .container-account .account{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main .container-account .account .text h5{
+    color: #A7A4A4;
+}
+main .container-account .account .text{
+    margin-right: 7px;
+}
+.logo1{
+    width: 300px;
+    height: 275px;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: white; 
+     border: 1px solid #ccc; 
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    position: absolute;
+    top:11%;
+    right: 70px;
+}
+.img img{
+
+    width: 500%;  /* Phần tử sẽ chiếm toàn bộ chiều rộng của khung */
+    height: 100%; /* Phần tử sẽ chiếm toàn bộ chiều cao của khung */
+    box-sizing: border-box;
+    position: relative;
+    right: 100px;
+}
+
+.notification {
+    width: 280px;
+    padding: 20px;
+    position: absolute;
+    top: 60%;
+    right: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Thêm khoảng cách giữa các thông báo */
+    width: 300px;
+    height: 275px;
+}
+.notification .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.notification-content{
+    border: 1px solid#ccc; 
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    width: 300px;
+    margin-left: -20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.notification-deactive{
+    border: 1px solid#ccc; 
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    width: 300px;
+    margin-left: -20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.add-reminder{
+    border: 1px dashed#ccc; 
+    width: 300px;
+    border-radius: 10px;
+    margin-left: -20px;
+    height: 500px;
+    text-align: center;
+}
