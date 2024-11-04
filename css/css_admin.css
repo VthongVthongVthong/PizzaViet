@@ -61,18 +61,21 @@ body{
     color: white;
 }
 main {
-    margin-top: 1.4rem;
+    position: relative;
     margin-left: 260px; /* Tạo khoảng cách cho phần main để tránh bị đè bởi sidebar */
     margin-right: 10px;
     padding: 20px;
     background-color: #f4f7fc;
     min-height: 100vh; /* Đảm bảo chiều cao của main phủ hết màn hình */
     display: flex;
-    flex-direction: column;
     transition: all 0.38s ease;
+    flex-direction: row; /* Sắp xếp các phần tử theo chiều ngang */
+    justify-content: space-between; /* Đảm bảo các phần tử không bị chồng lên nhau */
+
 }       
 
 .statu {
+    position: relative;
     background-color: white; 
     border: 1px solid #ccc; 
     border-radius: 1.2rem;
@@ -84,7 +87,7 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    width: 60%;
+
 }
 
 main .analyse .statu:hover {
@@ -161,7 +164,7 @@ main .new-user img{
    border-radius: 50%;
 }
 main .new-user .user-list{
- width: 60%;
+
  display: flex;
  flex-direction: row;
  justify-content: space-between;
@@ -169,8 +172,8 @@ main .new-user .user-list{
     border: 1px solid #ccc; 
     border-radius: 1.2rem;
     padding: 20px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
     min-width: 200px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
@@ -204,18 +207,30 @@ main .container-account .account .text{
     margin-right: 7px;
 }
 .sec-center{
-    flex-direction: row; 
+    margin-top: 1.4rem;
+    flex-direction: row;
+    width: 65%;
+    transition: width 0.3s ease, padding 0.3s ease
+}
+main .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
 }
 .infor{
     padding-left: 20px;
     display: flex;
     gap: 10px;
     align-items: center;
-    space-between: auto;
+
 }
 .sec-right{
-     margin-top: 1.4rem;
-    display: flex;
+    top:1.4rem;
+    flex-shrink: 0;
+    width: 35%;
+    transition: width 0.3s ease, padding 0.3s ease
+
 }
 .logo-container{
     width: 300px;
@@ -228,11 +243,11 @@ main .container-account .account .text{
     border-radius: 2rem;
     padding: 20px;
     padding-left: 10%;
-    padding-right: 10%; 
+    padding-right: 10%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     position: absolute;
     top: 80px;
-    right: 70px;
+    right: 50px;
 }
 .logo-container:hover{
     box-shadow: none !important;
@@ -248,11 +263,11 @@ main .container-account .account .text{
 }
 
 .notification {
-    width: 280px;
+
     padding: 20px;
     position: absolute;
-    top: 390px;
-    right: 70px;
+    top: 420px;
+    right: 50px;
     display: flex;
     flex-direction: column;
     gap: 15px; /* Thêm khoảng cách giữa các thông báo */
@@ -306,10 +321,8 @@ main .container-account .account .text{
 .sec-right {
     display: none;
 }
-   .statu{
+   .sec-center{
        width: 100%;
     }
-    main .new-user .user-list{
-       width: 100%;
-   }
+
 }
