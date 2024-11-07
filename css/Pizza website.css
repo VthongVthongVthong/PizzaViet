@@ -145,7 +145,7 @@ header.sticky{
 
 @font-face {
 	font-family: 'boxicons';
-	src: url(/css/boxicons/fonts/boxicons.ttf);
+	src: url(./boxicons/fonts/boxicons.ttf);
 }
 
 @media (min-width:1920px) and (max-width:3840px){
