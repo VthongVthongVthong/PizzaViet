@@ -144,8 +144,8 @@ header.sticky{
 }
 
 @font-face {
-	font-family: 'boxicons';
-	src: url(PizzaViet/css/boxicons/fonts/boxicons.ttf);
+    font-family: 'boxicons';
+    src: url(../fonts/boxicons.ttf);
 }
 
 @media (min-width:1920px) and (max-width:3840px){
