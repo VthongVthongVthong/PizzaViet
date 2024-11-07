@@ -143,6 +143,11 @@ header.sticky{
 	border-radius: 10px;
 }
 
+@font-face {
+	font-family: 'boxicons';
+	src: url(/css/boxicons/fonts/boxicons.ttf);
+}
+
 @media (min-width:1920px) and (max-width:3840px){
     section{
 		padding: 70px 2%;

@@ -18,6 +18,12 @@
 	--h2-font: 2.6rem;
 	--p-font: 1.1rem;
 }
+
+@font-face {
+	font-family: 'boxicons';
+	src: url(../css/boxicons/fonts/boxicons.ttf);
+}
+
 body{
 	background: var(--bg-color);
 	color: var(--text-color);

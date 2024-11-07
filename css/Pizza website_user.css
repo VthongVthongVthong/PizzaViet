@@ -7,6 +7,12 @@
 	list-style: none;
 	scroll-behavior: smooth;
 }
+
+@font-face {
+	font-family: 'boxicons';
+	src: url(../css/boxicons/fonts/boxicons.ttf);
+}
+
 :root{
 	--text-color: #302e29;
 	--main-color1: #ff9100;

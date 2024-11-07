@@ -22,6 +22,12 @@ body{
 	background: var(--bg-color);
 	color: var(--text-color);
 }
+
+@font-face {
+	font-family: 'boxicons';
+	src: url(../css/boxicons/fonts/boxicons.ttf);
+}
+
 header{
 	position: fixed;
 	width: 100%;

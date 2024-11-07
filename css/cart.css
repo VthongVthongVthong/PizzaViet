@@ -19,6 +19,12 @@
     color: #00628F;
 }
 
+
+@font-face {
+	font-family: 'boxicons';
+	src: url(../css/boxicons/fonts/boxicons.ttf);
+}
+
 /* CART  */
 
 . .--orders h2     {
