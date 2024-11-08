@@ -22,12 +22,6 @@ body{
 	background: var(--bg-color);
 	color: var(--text-color);
 }
-
-@font-face {
-	font-family: 'boxicons';
-	src: url(../css/boxicons/fonts/boxicons.ttf);
-}
-
 header{
 	position: fixed;
 	width: 100%;
@@ -67,7 +61,7 @@ header{
 }
 
 .nav-item {
-    margin-left: 10%;
+    margin-left: 19%;
 	
 	align-items: center;
 	width: 500px !important;
@@ -122,6 +116,7 @@ header{
     cursor: pointer;
     display: flex;
     align-items: center;
+	transition: all .38s ease;
 }
 
 .button-bar button.selected {
@@ -136,7 +131,36 @@ header{
 }
 .button-bar  :hover{
 	color: var(--second-color);
+	transform: scale(1.02);
 }
+
+/* button pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pagination button {
+    color: black;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active {
+    background-color: var(--main-color);
+    color: white;
+    border: 1px solid var(--main-color);
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -469,7 +493,7 @@ header.sticky{
 .contact{
 	background-color: #00628F;
 	padding: 50px 15% 40px;
-	margin-top: 60px;
+	margin-top: 50px;
 }
 .main-contact{
 	display: grid;
@@ -674,5 +698,6 @@ header.sticky{
     margin-top: 90px;
     margin-bottom: -20px;
 }
+
 
 
