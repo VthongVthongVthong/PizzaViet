@@ -24,9 +24,9 @@
 		<!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
 		<a href="#" class="logo"><img src="../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
 		<ul class="navbar" >
-			<li><a href="Pizza website.html">Trang chủ</a></li>
+			<li><a href="../index.html">Trang chủ</a></li>
 			<li><a href="#about">About</a></li>
-			<li><a href="#thucdon">Thực đơn</a></li>
+			<li><a href="menu.html">Thực đơn</a></li>
 			<li><a href="#contact">Liên Hệ</a></li>
 		</ul>
 
@@ -43,7 +43,7 @@
 		<div class="col-12 col-md-10 px-0 px-md-3 mx-md-auto pt-0">
 			<div class="org-product-menu nav-wrapper-simple overflow-hidden" data-toggle="nav-simple">
 				<ul class="nav justify-content-start justify-content-md-between mx-n3 category-container">
-					<li class="nav-item"><a class="nav-link active" href="/product-listing/Pizza?store-id=" ><b><u>Pizza</u></b></a></li>
+					<li class="nav-item"><a class="nav-link active"><b><u>Pizza</u></b></a></li>
 					<li class="nav-item"><a class="nav-link" href="menu2.html">Thức Uống</a></li>
 				</ul>
 			</div>
@@ -63,10 +63,7 @@
             <img src="https://em-content.zobj.net/thumbs/240/apple/325/cut-of-meat_1f969.png" alt="Bò">
             Bò
         </button></a>
-        <a href="menu1.3.html"><button>
-            <img src="https://em-content.zobj.net/thumbs/240/apple/325/poultry-leg_1f357.png" alt="Gà">
-            Gà
-        </button></a>
+        
         <a href="menu1.4.html"><button>
             <img src="https://em-content.zobj.net/thumbs/240/apple/325/bacon_1f953.png" alt="Heo">
             Heo
@@ -149,7 +146,7 @@
                 <img src="../img/d4.jpg" alt="main-product4">
                 <div class="menu-text">
                     <div class="menu-left">
-                        <h4 class="contentName">Pizza Siêu Topping Hải Sản Xốt Mayonnaise</h4>
+                        <h4 class="contentName">Pizza Gà Phô Mai Thịt Heo Xông Khối</h4>
                     </div>
                     <div class="menu-right">
                         <h5>205,000₫</h5>
@@ -164,9 +161,49 @@
                     <a href="#"><i class='bx bxs-star' ></i></a>
                 </div>
             </div>
+            
 
             
         </div>
+
+        <!-- button-pagination -->
+<div class="pagination">
+    <button id="prevBtn">&laquo;</button> <!-- Nút trang trước -->
+    <a href="menu1.html"><button class="active">1</button></a>
+    <a href="menu1_1.html"><button>2</button></a>
+    <a href="menu1_2.html"><button>3</button></a>
+    <button id="nextBtn">&raquo;</button> <!-- Nút trang sau -->
+</div>
+
+<script>
+    // Lấy URL hiện tại để xác định trang hiện tại
+    const currentPage = window.location.href;
+
+    // Lấy nút "Trang trước" và "Trang sau"
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Điều hướng cho nút "Trang trước" (&laquo;)
+    prevBtn.addEventListener('click', function() {
+        if (currentPage.includes('menu1_1.html')) {
+            window.location.href = 'menu1.html'; // Quay về trang 1
+        } else if (currentPage.includes('menu1_2.html')) {
+            window.location.href = 'menu1_1.html'; // Quay về trang 2
+        }
+    });
+
+    // Điều hướng cho nút "Trang sau" (&raquo;)
+    nextBtn.addEventListener('click', function() {
+        if (currentPage.includes('menu1.html')) {
+            window.location.href = 'menu1_1.html'; // Tới trang 2
+        } else if (currentPage.includes('menu1_1.html')) {
+            window.location.href = 'menu1_2.html'; // Tới trang 3
+        }
+    });
+</script>
+
+
+
         <!-- contact section -->
 
 		<section class="contact" id="contact">
