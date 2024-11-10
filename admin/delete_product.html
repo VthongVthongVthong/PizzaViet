@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/delete_product.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../img/logo2.png" alt="">
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                     <a href=""><span><i class="fa-solid fa-users-line"></i></span>
+                    <span> Người dùng</span></a>
+                </li>
+                <li>    
+                    <a href=""><span><i class="fa-solid fa-book-medical"></i></span>
+                        <span> Lịch sử</span></a>
+                </li>
+                <li>
+                    <a href="admin.html"><span><i class="fa-solid fa-chart-simple"></i></span>
+                        <span> Phân tích</span></a>
+                </li>
+                <li class="active" onclick="toggleProductOptions()">
+                    <a href="javascript:void(0)"><span><i class="fa-solid fa-list"></i></span>
+                    <span>Sản phẩm</span></a>
+                </li>
+                <ul class="product-options" id="productOptions" style="display: none;">
+                    <li><a href="delete_product.html" >Danh sách sản phẩm</a></li>
+                    <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
+                </ul>
+                <li>
+                    <a href="#"><span><i class="fa-solid fa-gear"></i></span>
+                    <span>Cài đặt</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-plus"></span>
+                    <span>Đăng nhập mới</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-right-from-bracket"></span>
+                    <span>Đăng xuất</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="account">
+            <h1>Sản phẩm</h1>
+            <div class="account_user">
+                <div class="text">
+                    <h2>Viet</h2>
+                    <h5>Admin</h5>
+                </div>
+                <a href="#"><img src="../img/avatar_QViet.png" alt=""></a>
+            </div>
+        </div>
+           
+            <h2>Danh sách sản phẩm</h2>
+            <div class="Food">
+                <h1 class="tit">PIZZA</h1>
+            <table id="productTable_Food">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" onclick="toggleAllFood(this)"></th>
+                        <th>ID</th>
+                        <th>Ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Ngày đăng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>1</td>
+                        <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+                        <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+                        <td>100,000 VND</td>
+                        <td>12/6/2022</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>2</td>
+                        <td class="anh"><img src="../img/d2.jpg" alt=""></td>
+                        <td>Pizza New York Beefsteak Phô Mai</td>
+                        <td>200,000 VND</td>
+                        <td>16/12/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>3</td>
+                        <td class="anh"><img src="../img/d3.jpg" alt=""></td>
+                        <td>Pizza Siêu Topping Xúc Xích Ý Truyền Thống</td>
+                        <td>300,000 VND</td>
+                        <td>16/4/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>4</td>
+                        <td class="anh"><img src="../img/d4.jpg" alt=""></td>
+                        <td>Pizza Siêu Topping Hải Sản Xốt Mayonnaise</td>
+                        <td>120,000 VND</td>
+                        <td>23/1/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>5</td>
+                        <td class="anh"><img src="../img/d5.jpg" alt=""></td>
+                        <td>Pizza Thập Cẩm Thượng Hạng</td>
+                        <td>160,000 VND</td>
+                        <td>6/9/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>6</td>
+                        <td class="anh"><img src="../img/d6.jpg" alt=""></td>
+                        <td>Pizza thập cẩm rau củ vị chay</td>
+                        <td>130,000 VND</td>
+                        <td>12/9/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>7</td>
+                        <td class="anh"><img src="../img/d7.jpg" alt=""></td>
+                        <td>Pizza Gà Phô Mai Thịt Heo Xông Khói</td>
+                        <td>260,000 VND</td>
+                        <td>17/8/2021</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit"onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>8</td>
+                        <td class="anh"><img src="../img/d8.jpg" alt=""></td>
+                        <td>Pizza Dăm Bông Dứa Kiểu Hawaii</td>
+                        <td>160,000 VND</td>
+                        <td>7/10/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>9</td>
+                        <td class="anh"><img src="../img/d9.jpg" alt=""></td>
+                        <td>Pizza Thập Cẩm Thượng Hạng</td>
+                        <td>160,000 VND</td>
+                        <td>6/9/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="product-checkbox"></td>
+                        <td>10</td>
+                        <td class="anh"><img src="../img/d10.jpg" alt=""></td>
+                        <td>Pizza Thập Cẩm Thượng Hạng</td>
+                        <td>160,000 VND</td>
+                        <td>6/9/2023</td>
+                        <td><button class="delete-btn" onclick="deleteFoodProduct(this)">Xóa</button>
+                            <button class="edit" onclick="openPopup()">Sửa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="deleteSelectedFood()" class="detele_all">Xóa các sản phẩm đã chọn (PIZZA)</button>
+            </div>
+            <div class="Drink">
+                <h1 class="tit">NƯỚC GIẢI KHÁT</h1>
+                <table id="productTable_Drink">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" onclick="toggleAllDrink(this)"></th>
+                            <th>ID</th>
+                            <th>Ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Ngày đăng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" class="product-checkbox"></td>
+                            <td>11</td>
+                            <td class="anh1"><img src="../img/n1.jpg" alt=""></td>
+                            <td>Nước ngọt chai CocaCola</td>
+                            <td>10,000 VND</td>
+                            <td>12/6/2022</td>
+                            <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
+                                <button class="edit" onclick="openPopup()">Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="product-checkbox"></td>
+                            <td>12</td>
+                            <td class="anh1"><img src="../img/n2.jpg" alt=""></td>
+                            <td>Nước ngọt chai Fanta</td>
+                            <td>15,000 VND</td>
+                            <td>12/6/2022</td>
+                            <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
+                                <button class="edit" onclick="openPopup()">Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="product-checkbox"></td>
+                            <td>13</td>
+                            <td class="anh1"><img src="../img/n3.jpg" alt=""></td>
+                            <td>Nước ngọt chai Sprite</td>
+                            <td>12,000 VND</td>
+                            <td>12/6/2022</td>
+                            <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
+                                <button class="edit" onclick="openPopup()">Sửa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="product-checkbox"></td>
+                            <td>14</td>
+                            <td class="anh1"><img src="../img/n4.jpg" alt=""></td>
+                            <td>Nước ngọt chai Pepsi</td>
+                            <td>11,000 VND</td>
+                            <td>12/6/2022</td>
+                            <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
+                                <button class="edit" onclick="openPopup()">Sửa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onclick="deleteSelectedDrink()" class="detele_all">Xóa các sản phẩm đã chọn (NƯỚC GIẢI KHÁT)</button>
+            </div>
+    </div>
+</body>
+</html>
