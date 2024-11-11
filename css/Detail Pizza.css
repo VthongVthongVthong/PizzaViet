@@ -77,6 +77,33 @@ span{
 	transform: scale(1.20);
 	color: var(--text-color)
 }
+
+.dathang{
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    position: absolute !important;
+    text-decoration: none !important;
+    border-radius: 64px;
+    z-index: 100;
+    line-height: 28px;
+    color: #0078AE;
+    border: 1px solid #0078AE;
+    background-color: #fff;
+    font-size: 20px;
+    margin-top: 0.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+	top: 100%;
+	right: 45%;
+	
+}
 #menu-icon{
 	font-size: 32px;
 	color: var(--bg-color);
@@ -319,7 +346,10 @@ header.sticky{
 	transition: all .40s ease;
 }
 .menu{
-	padding-top: 110px;
+	padding-top: 60px;
+	/* border-top: 1px solid; */
+	background-color: beige;
+	/* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 }
 .menu-text{
 	display: flex;
@@ -341,6 +371,7 @@ header.sticky{
 	margin-bottom: 15px;
 }
 .star i{
+	visibility: hidden;
 	color: var(--main-color);
 	font-size: 17px;
 	margin-right: 4px;
@@ -501,33 +532,6 @@ header.sticky{
 	height: 47px;
 }
 
-.dathang{
-    box-sizing: border-box;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    position: absolute !important;
-    text-decoration: none !important;
-    border-radius: 64px;
-    z-index: 100;
-    line-height: 28px;
-    color: #0078AE;
-    border: 1px solid #0078AE;
-    background-color: #fff;
-    font-size: 20px;
-    margin-top: 0.5rem;
-    padding: 1rem 1rem 1rem 1.5rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-	top: 100%;
-	right: 45%;
-	
-}
-
 .orderHidden {
     opacity: 0; /* Biến mất */
     transform: translateY(20px); /* Đẩy xuống một chút khi ẩn */
@@ -535,23 +539,50 @@ header.sticky{
 
 
 .detail {
-    margin-top: -30px;
+	/* background-color: rgb(243, 238, 238); */
+	/* margin-left: 8%; */
+    margin-top: -5%;
     display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	height: 850px;
+    grid-template-columns: repeat(2, 1fr); /* Hai cột cho màn hình lớn */
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    height: auto; /* Điều chỉnh chiều cao tự động */
+	max-width: 100%;
 }
 
+.detail img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+	
+}
+
+/* Media query để điều chỉnh khi màn hình nhỏ */
+@media (max-width: 768px) {
+    .detail {
+        grid-template-columns: 1fr; /* Chuyển sang một cột khi màn hình nhỏ */
+    }
+
+    .detail img {
+        max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng */
+        height: auto;
+    }
+}
+
+
 #mota {
-	margin-top: 50px;
+	margin-top: 35px;
 	text-align: center;
 	font-size:x-large;
 	font-style: italic;
 }
 
 #hinhmonan {
-    width: 800px;
-    height: 600px;
+    width: 48rem; 
+    height: 33.6rem;
     border-radius: 10px;
+
+	/* 800 600 */
+	/* 50 37.5 */
 }
 
 #duongdan {
@@ -561,75 +592,100 @@ header.sticky{
 
 
 .thongtin {
-    margin-left: 40px;
-	padding-top: 0px;
+    margin-left: 30px;
+	background-color:antiquewhite;
+	border-radius: 10px;
+	
 }
 
 .thongtin p {
     margin-top: 30px;
     font-size: 20px;
     color: var(--second-color);
+	text-align: center;
+	overflow-wrap: break-word;
+
 }
 .thongtin h2 {
-    font-size: 40px;
-	margin-top: 0px;
+	margin-left: 0px;
+    font-size: 40px; 
+	overflow-wrap: break-word;
+	text-align: center;
+	margin-top: 0.3em;
 }
 
 /* Đặt toàn bộ form vào giữa màn hình và điều chỉnh khoảng cách */
 form { 
-    margin-top: 40px; 
+    margin-top: 55px; 
     font-size: 20px;
+	border-top: solid;
 }
 
 /* Căn chỉnh từng mục form */
 .form-group {
-    margin-bottom: 15px;
-	margin-right: 15px;
+    margin-bottom: 18px;
+	margin-top: 12px;
+	text-align: center;
 }
 
-/* Căn chỉnh tiêu đề mỗi mục */
-label  {
-    display: block;
-    font-weight: bolder;
-    margin-bottom: 5px;
-}
 
-/* Thiết kế các nhóm radio */
-.radio-group {
-    display: flex;
-    gap: 10px;
-}
 
-.radio-group label {
-	font-size: 18px; /* Kích thước font của các label */
-    margin-right: 8px; /* Khoảng cách giữa các label */
-	font-weight: normal;
-}
-
-/* Điều chỉnh radio button */
-input[type="radio"] {
-    margin-right: 8px;
-	width: 20px;
-    height: 20px;
-    border: 2px solid #4CAF50;
-    border-radius: 50%;
+/* Thiết lập cơ bản cho thẻ input */
+.form-group input[type="number"] {
+	width: 100px; /* Độ rộng phù hợp cho input */
+	padding:  12px;
+	font-size: 20px;
+	color: black;
+	border: 1px solid black; /* Màu viền nhạt */
+	border-radius: 5px;
+	outline: none;
+	text-align: center; /* Căn giữa số */
+	-moz-appearance: textfield; /* Loại bỏ mũi tên trên Firefox */
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
 	
+  }
+  
+  /* Loại bỏ các nút tăng giảm mặc định trong Chrome, Safari */
+  .form-group input[type="number"]::-webkit-outer-spin-button,
+  .form-group input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+  }
+
+.quantity-controls {
+	display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    gap: 10px; /* Khoảng cách giữa các nút và ô nhập */
+}
+.quantity-controls button {
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	cursor: pointer;
+	border: none;
+	background-color: var(--second-main-color);
+	border: 1px solid #ccc; /* Viền cho nút */
+	color: white;
 }
 
-/* Thiết kế input số lượng */
-input[type="number"] {
-    width: 70px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
+.quantity-controls span {
+    text-align: center; /* Căn giữa nội dung trong ô nhập */ 
+    padding: 10px 20px;
+}
+
+#quantity {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 16px;
 }
 
 /* Thiết kế nút submit */
 button.submit-btn {
-    width: 200px;
-    padding: 10px;
-    background-color: #28a745;
+    width: 400px;
+    padding: 15px;
+    background-color:rgb(6, 164, 93) ;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -640,40 +696,75 @@ button.submit-btn {
 }
 
 button.submit-btn:hover {
-    background-color: #218838;
+    background-color: var(--main-color1);
 	transform: scale(1.02);
 }
 
-/* Thiết kế nút submit */
-button.reset-btn {
-    width: 200px;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
+/* Căn chỉnh tiêu đề mỗi mục */
+.form-group label  {
+	font-size: 25px;
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 18px;
+}
+
+
+.back-button {
+	/* margin-left: 2rem;
+	margin-top: 6.7rem; */
+	margin-left: 2.2em;
+	margin-top: 9.2em;
+	margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border: 2px solid white;
+	border-radius: 5px;
+    background-color: var(--second-main-color);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease; /* Tạo hiệu ứng chuyển động mượt */
+	
 }
 
-button.reset-btn:hover {
-    background-color: #218838;
-	transform: scale(1.02);
+.back-button:hover {
+    transform: scale(1.01); /* Phóng to nút lên 10% khi hover */
 }
 
-/* Hiệu ứng hover cho radio buttons */
-.radio-group label:hover {
-    cursor: pointer;
-    color: #007bff;
+.back-button .arrow {
+    margin-right: 8px;
+    font-size: 27px;
+	margin-top: -5px;
+	color: var(--bg-color);
 }
 
-/* Hiệu ứng focus cho input số */
-input:focus {
-    border-color: #007bff;
-    outline: none;
+.back-button .text {
+    padding-left: 10px;
+    position: relative;
+	font-size: 15px;
+	font-weight: bolder;
+	color: var(--bg-color);
 }
 
+.back-button .text::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--bg-color);
+}
+
+/* Media Query cho màn hình nhỏ hơn */
+@media (max-width: 600px) {
+    .back-button {
+        padding: 8px 16px; /* Giảm padding để nút nhỏ gọn hơn */
+        font-size: 14px;   /* Giảm kích thước chữ */
+    }
+
+    .back-button .arrow {
+        font-size: 20px;   /* Giảm kích thước dấu "<" */
+    }
+}
 
 
