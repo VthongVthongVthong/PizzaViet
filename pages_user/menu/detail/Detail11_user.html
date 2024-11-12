@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail1</title>
+
+    <link rel="icon" href="/img/pizza (1).png" type="image"/>
+    <link rel="stylesheet" href="/css/Detail Pizza.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/fontawesome-free/css/all.min.css">
+</head>
+<body>
+    <!-- header section -->
+    <header>
+        <a href="/index.html" class="logo"><img src="/img/logo2.png" alt="logo" style="width:320px;height:70px"></a>
+        <ul class="navbar">
+            <li><a href="/index.html">Trang chủ</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/menu/menu.html">Thực đơn</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
+
+        <div class="h-icons">
+            <a href="/login.html"><i class='bx bx-user'></i></a>
+            <a href="#"><i class='bx bx-search'></i></a>
+            <a href="/pages/cart.html"><i class='bx bx-cart'></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
+        </div>
+    </header>
+
+    <a href="menu.html">
+        <button class="back-button">
+            <span class="arrow">&lt;</span>
+            <span class="text">Quay Về Thực Đơn</span>
+        </button>
+    </a>
+        
+    <section class="detail">        
+        <div>
+            <img src="/img/d11.jpg" alt="" id="hinhmonan">
+            
+        </div>
+        <div class="thongtin">
+            <h2>Pizza Hải Sản Nhiệt Đới Xốt Tiêu</h2>
+            <p>Xốt tiêu đen, Phô Mai Mozzarella, Phô Mai Cheddar, Thơm, Hành Tây, Tôm, Mực. Đế dày, </p>
+            <div>
+                <form action="/add-to-cart" method="POST">
+                    <!-- Số lượng -->
+                    <div class="form-group">
+                        <label for="soluong">Số Lượng</label>
+                        <div class="quantity-controls">
+                            <button type="button" id="decrease">-</button>
+                            <!-- Thay thế span bằng input -->
+                            <input type="number" id="soluong" value="1" min="1" step="1">
+                            <button type="button" id="increase">+</button>
+                        </div>
+                        <br>
+                        <!-- giá tiền -->
+                        <h2 id="price">205000 đ</h2><br>
+                        <!-- Nút submit -->
+                        <button type="submit" class="submit-btn">Thêm vào giỏ hàng</button><br>
+                        
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- contact section -->
+    <section class="contact" id="contact">
+        <div class="main-contact">
+            <div class="contact-content">
+                <h4>Dịch vụ</h4>
+                <li><a href="/index.html">Trang chủ</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="#menu">Thực đơn</a></li>
+            </div>
+            <div class="contact-content">
+                <h4>Contact</h4>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">FAQ</a></li>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p></p>
+    </div>
+
+    <!-- scroll top -->
+    <a href="#" class="scroll-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </a>
+
+    <!-- custom scrollreveal link -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- custom js link -->
+    <script type="text/javascript" src="/js/Pizza website.js"></script>
+
+    <script src="/js/Detail.js"></script>
+
+</body>
+</html>
