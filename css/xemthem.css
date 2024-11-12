@@ -420,6 +420,7 @@ header.sticky{
 	margin-bottom: 15px;
 }
 .star i{
+	visibility: hidden;
 	color: var(--main-color);
 	font-size: 17px;
 	margin-right: 4px;
@@ -633,6 +634,12 @@ header.sticky{
     background-color: var(--main-color);
     margin-top: 90px;
     margin-bottom: -20px;
+}
+.fa-right-from-bracket:before {
+    content: "\f08b";
+}
+.fas{
+    font-family: "Font Awesome 6 Free" !important;
 }
 
 
