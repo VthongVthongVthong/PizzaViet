@@ -699,6 +699,12 @@ header.sticky{
     margin-top: 90px;
     margin-bottom: -20px;
 }
+.fa-right-from-bracket:before {
+    content: "\f08b";
+}
+.fas{
+    font-family: "Font Awesome 6 Free" !important;
+}
 
 
 
