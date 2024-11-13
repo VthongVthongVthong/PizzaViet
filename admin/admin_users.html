@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/css_admin.css">
-    <link rel="stylesheet" href="../css/admin_users.css">
-    <link rel="stylesheet" href="../css/delete_product.css">
+    <link rel="stylesheet" href="css/css_admin.css">
+    <link rel="stylesheet" href="css/admin_users.css">
+    <link rel="stylesheet" href="css/delete_product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
-    <script src="../js/products.js" ></script>
-    <script src="../js/admin_users.js"></script>
+    <link rel="stylesheet" href="css/boxicons/boxicons.min.css">
+    <script src="js/products.js" ></script>
+    <script src="js/admin_users.js"></script>
     <title>Admin</title>
     <style>
         @font-face {
             font-family: 'boxicons';
-            src: url('../css/boxicons/fonts/boxicons.ttf');
+            src: url('css/boxicons/fonts/boxicons.ttf');
         }
     </style>
 </head>
@@ -23,7 +23,7 @@
 
 <div class="sidebar">
     <div class="sidebar-brand">
-        <img src="../img/logo2.png" alt="">
+        <img src="img/logo2.png" alt="">
     </div>
     <div class="sidebar-menu">
         <ul>
@@ -44,7 +44,7 @@
                     <span>Sản phẩm</span></a>
             </li>
             <ul class="product-options" id="productOptions" style="display: none;">
-                <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
+                <li><a href="delete_product.html" >Danh sách sản phẩm</a></li>
                 <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
             </ul>
             <li>
@@ -72,7 +72,7 @@
                         <h2>Long</h2>
                         <h5>Admin</h5>
                     </div>
-                    <a href="#"><img src="../img/avatar_LongMongGa.png" alt=""></a>
+                    <a href="#"><img src="img/avatar_LongMongGa.png" alt=""></a>
                 </div>
             </div>
             <table id="Users_Table">
@@ -98,8 +98,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -111,8 +111,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -121,11 +121,11 @@
                     <td>AnhLongMongGa1234</td>
                     <td>Nguyễn Hoàng Long</td>
                     <td>273, An Dương Vương, Quận 5, Tp HCM</td>
-                    <td> @gmail.com</td>
+                    <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -137,8 +137,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -150,8 +150,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -163,8 +163,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -176,8 +176,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -189,8 +189,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -202,8 +202,8 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -215,14 +215,16 @@
                     <td>@gmail.com</td>
                     <td>Khách hàng</td>
                     <td><button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
-                        <button class="edit" onclick="openPopup()">Sửa</button>
-                        <button class="lock" onclick="lockUser(this)"><i class='bx bxs-lock-open-alt' ></i></button>
+                        <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+                        <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt' ></i></button>
+
                     </td>
                 </tr>
                 </tbody>
             </table>
             <div class="centerbtn">
                 <button onclick="deleteSelectedUsers()" class="detele_all">Xóa các người dùng đã chọn</button>
+                <button onclick="addUsers()" class="add_users">Thêm người dùng</button>
             </div>
 
 
