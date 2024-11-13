@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const itemsToSignup = document.querySelectorAll(".itemtoSignup"); // Chọn tất cả các phần tử có class itemtoSignup
+    const itemsToSignup = document.querySelectorAll(".bx-cart"); // Chọn tất cả các phần tử có class itemtoSignup
 
     // Lặp qua từng item để gán sự kiện
     itemsToSignup.forEach(function(item) {
