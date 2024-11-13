@@ -513,6 +513,41 @@ section{
 .btn:hover{
 	letter-spacing: 1px;
 }
+
+.btn1{
+	display: inline-block;
+	padding: 14px 26px;
+	background: var(--main-color);
+	color: var(--bg-color);
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 5rem;
+	transition: all .38s ease;
+}
+.btn1:hover{
+	letter-spacing: 1px;
+	color: var(--main-color);
+}
+
+
+.pay {
+    position: absolute;
+    right: 32%;
+	bottom: 10%;
+    visibility: hidden; /* Ẩn nút thanh toán mặc định */
+}
+
+.pay:hover{
+	letter-spacing: 1px;
+}
+
+.qtyminus:hover{
+	color: white !important;
+}
+
+.qtyplus:hover{
+	color: white !important;
+}
 header.sticky{
 	padding: 10px 15%;
 	background: var(--second-main-color);
