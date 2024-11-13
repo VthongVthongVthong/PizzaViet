@@ -198,6 +198,9 @@
         } else if (currentPage.includes('menu1_2.html')) {
             window.location.href = 'menu1_1.html'; // Quay về trang 2
         }
+		else if (currentPage.includes('menu1.html')) {
+			window.location.href ='menu1_2.html'; //quay về trang 3
+		}
     });
 
     // Điều hướng cho nút "Trang sau" (&raquo;)
@@ -207,6 +210,9 @@
         } else if (currentPage.includes('menu1_1.html')) {
             window.location.href = 'menu1_2.html'; // Tới trang 3
         }
+		else if (currentPage.includes('menu1_2.html')) {
+			window.location.href = 'menu1.html'; // tới trang 1
+		}
     });
 </script>
 

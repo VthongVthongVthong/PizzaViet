@@ -63,10 +63,6 @@
             <img src="https://em-content.zobj.net/thumbs/240/apple/325/cut-of-meat_1f969.png" alt="Bò">
             Bò
         </button></a>
-        <a href="menu1.3.html"><button>
-            <img src="https://em-content.zobj.net/thumbs/240/apple/325/poultry-leg_1f357.png" alt="Gà">
-            Gà
-        </button></a>
         <a href="menu1.4.html"><button>
             <img src="https://em-content.zobj.net/thumbs/240/apple/325/bacon_1f953.png" alt="Heo">
             Heo
@@ -198,6 +194,9 @@
         } else if (currentPage.includes('menu1_2.html')) {
             window.location.href = 'menu1_1.html'; // Quay về trang 2
         }
+		else if (currentPage.includes('menu1.html')) {
+			window.location.href ='menu1_2.html'; //quay về trang 3
+		}
     });
 
     // Điều hướng cho nút "Trang sau" (&raquo;)
@@ -207,9 +206,11 @@
         } else if (currentPage.includes('menu1_1.html')) {
             window.location.href = 'menu1_2.html'; // Tới trang 3
         }
+		else if (currentPage.includes('menu1_2.html')) {
+			window.location.href = 'menu1.html'; // tới trang 1
+		}
     });
 </script>
-
 
 
 

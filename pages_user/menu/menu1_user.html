@@ -186,35 +186,44 @@
 
 <script>
     // Lấy URL hiện tại để xác định trang hiện tại
-    // Determine the current URL to find the current page
-const currentPage = window.location.href;
+    const currentPage = window.location.href;
 
-// Find "Previous" and "Next" buttons
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+    // Lấy các nút "Lùi" và "Tới"
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-// Only add event listeners if the buttons are found
-if (prevBtn && nextBtn) {
-    // Navigate for "Previous" button (backwards)
-    prevBtn.addEventListener('click', function() {
-        if (currentPage.includes('menu1_1_user.html')) {
-            window.location.href = 'menu1_user.html'; // Back to page 1
-        } else if (currentPage.includes('menu1_2_user.html')) {
-            window.location.href = 'menu1_1_user.html'; // Back to page 2
-        }
-    });
+    // Chỉ thêm sự kiện nếu tìm thấy nút
+    if (prevBtn && nextBtn) {
+        // Điều hướng cho nút "Lùi" (quay lại)
+        prevBtn.addEventListener('click', function() {
+            if (currentPage.includes('menu1_user.html')) {
+                // Nếu ở trang 1 và nhấn Lùi, chuyển đến trang 3
+                window.location.href = 'menu1_2_user.html';
+            } else if (currentPage.includes('menu1_1_user.html')) {
+                // Nếu ở trang 2 và nhấn Lùi, chuyển đến trang 1
+                window.location.href = 'menu1_user.html';
+            } else if (currentPage.includes('menu1_2_user.html')) {
+                // Nếu ở trang 3 và nhấn Lùi, chuyển đến trang 2
+                window.location.href = 'menu1_1_user.html';
+            }
+        });
 
-    // Navigate for "Next" button (forwards)
-    nextBtn.addEventListener('click', function() {
-        if (currentPage.includes('menu1_user.html')) {
-            window.location.href = 'menu1_1_user.html'; // Go to page 2
-        } else if (currentPage.includes('menu1_1_user.html')) {
-            window.location.href = 'menu1_2_user.html'; // Go to page 3
-        }
-    });
-}
-
+        // Điều hướng cho nút "Tới" (tiến tới)
+        nextBtn.addEventListener('click', function() {
+            if (currentPage.includes('menu1_user.html')) {
+                // Nếu ở trang 1 và nhấn Tới, chuyển đến trang 2
+                window.location.href = 'menu1_1_user.html';
+            } else if (currentPage.includes('menu1_1_user.html')) {
+                // Nếu ở trang 2 và nhấn Tới, chuyển đến trang 3
+                window.location.href = 'menu1_2_user.html';
+            } else if (currentPage.includes('menu1_2_user.html')) {
+                // Nếu ở trang 3 và nhấn Tới, quay về trang 1
+                window.location.href = 'menu1_user.html';
+            }
+        });
+    }
 </script>
+
 
 
 
