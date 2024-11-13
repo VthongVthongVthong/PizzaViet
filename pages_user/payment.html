@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanh toán</title>
+    <title>Payment</title>
     <!-- FONT AWESOME  -->
     <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
     <!-- FONT GOOGLE  -->
@@ -25,10 +25,10 @@
 <body>
     <!-- HEADER  -->
     <header>
-		<a href="#" class="logo"><img src="..../../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
+		<a href="../pages_user/Pizza website_user.html" class="logo"><img src="..../../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
 		<ul class="navbar">
-			<li><a href="../index.html">Trang chủ</a></li>
-			<li><a href="#about">About</a></li>
+			<li><a href="../pages_user/Pizza website_user.html">Trang chủ</a></li>
+			<li><a href="../pages_user/about_user.html">About</a></li>
 			<li><a href="../menu/menu.html">Thực đơn</a></li>
 			<li><a href="#contact">Liên Hệ</a></li>
 		</ul>
@@ -59,9 +59,9 @@
     <section class="breadcrumb_section container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../pages_user/Pizza website_user.html">Trang chủ</a></li>
                 <li class="breadcrumb-item"><a href="../pages_user/user_cart.html">Giỏ hàng</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+                <li class="breadcrumb-item active payment" aria-current="page">Thanh toán</li>
 
             </ol>
         </nav>
@@ -175,6 +175,9 @@
 
 
                 </div>
+                <!-- Các ô nhập liệu -->
+
+                <!-- Nút thanh toán -->
             </div>
         </div>
     </section>
@@ -218,27 +221,9 @@
     <!-- BACKTOTOP JS  -->
     <script src="../js/main-backToTop.js"></script>
     <!-- PAYMENT JS  -->
-    <Script>
-        // kiếm thẻ có id là mainNav 
-        //kiếm thẻ ul
-        var paymentMethod = document.getElementById("payment__method");
-        // kiếm thẻ con li 
-        var listMethod = paymentMethod.getElementsByTagName("label");
-        for (var i = 0; i < listMethod.length; i++) {
-            // khi thẻ li đc click thì gọi hàm nó ra
-            listMethod[i].addEventListener("click", function () {
-                //tìm thẻ nào đang đc gắn acitve
-                var current = document.querySelector("#payment__method .active");
-                // xóa class active của thẻ đang được gắn
-                current.className = current.className.replace("active", "");
-                // thêm class active vào thẻ li được click 
-                this.className += "active";
-
-            });
-
-
-        }
-    </Script>
+    <script src="../js/payment.js"></script>
+    <script src="../js/outsidesrc/jquery-3.7.1.js"></script>
+    <script src="../js/outsidesrc/sweetalert2.min.js"></script>
     <!-- CHECK DATA  -->
     <script>
         function thanks() {
