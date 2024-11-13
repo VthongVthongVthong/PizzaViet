@@ -68,3 +68,93 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const btnradio1 = document.getElementById('btnradio1');
+    const btnradio2 = document.getElementById('btnradio2');
+    const btnradio3 = document.getElementById('btnradio3');
+    const btnradio4 = document.getElementById('btnradio4');
+    const paymentDetails = document.getElementById('paymentDetails');
+    const visaMethod = document.querySelector("#payment__method > div.payment__method--visa.payment__method > p");
+
+    function hideVisaMethod() {
+        visaMethod.style.display = 'none';
+    }
+
+    function showVisaMethod() {
+        visaMethod.style.display = 'block';
+    }
+
+    btnradio1.addEventListener('change', function() {
+        if (this.checked) {
+            paymentDetails.innerHTML = '';
+            showVisaMethod();
+        }
+    });
+
+    btnradio2.addEventListener('change', function() {
+        if (this.checked) {
+            paymentDetails.innerHTML = '';
+            showVisaMethod();
+        }
+    });
+
+    btnradio3.addEventListener('change', function() {
+        if (this.checked) {
+            paymentDetails.innerHTML = `
+                <div class="payment__method--bank payment__method">
+                    <p>1. Ngân hàng TMCP Sài Gòn Thường Tín - Sacombank
+                        <br>
+                        STK: 0935889042
+                        <br>
+                        Chủ Tài Khoản: HUYNH VIEN THONG
+                        <br>
+                        Nội dung: SĐT + HỌ TÊN
+                        <br>
+                        <br>
+                        2. VÍ ĐIỆN TỬ MOMO
+                        <br>
+                        STK: 0935889042
+                        <br>
+                        Chủ Tài Khoản: HUYNH VIEN THONG
+                        <br>
+                        Nội dung: SĐT + HỌ TÊN
+                        <br>
+                        <br>
+                        Thời gian vận chuyển sẽ được nhân viên gọi điện xác nhận!
+                        <br>Thông tin chi tiết đơn hàng sẽ được chúng tôi gửi về email của bạn!
+                        <br>
+                        <span>Lưu ý:</span>
+                        <br>
+                        SAU KHI CHUYỂN KHOẢN XONG, NHÂN VIÊN CỦA PIZZAVIET SẼ GỌI CHO BẠN ĐỂ XÁC NHẬN. NẾU KHÔNG
+                        NHẬN ĐƯỢC CUỘC GỌI QUÁ 15 PHÚT, XIN HÃY GỌI <span>HOTLINE: 0935889042 </span>
+                        <br>
+                    </p>
+                </div>
+            `;
+            hideVisaMethod();
+        }
+    });
+
+    btnradio4.addEventListener('change', function() {
+        if (this.checked) {
+            paymentDetails.innerHTML = `
+                <div class="payment__method--money payment__method">
+                    <p>Quý khách chỉ phải thanh toán khi nhận được hàng - Chi phí vận chuyển và thời gian vận chuyển
+                        sẽ được nhân viên gọi điện xác nhận!
+                        <br> <br>Thông tin chi tiết đơn hàng sẽ được chúng tôi gửi về email của bạn!
+                        <br><br>
+                        Để đảm bảo giải quyết các vấn đề phát sinh về đơn hàng một cách minh bạch, quý khách vui
+                        lòng quay lại video khi mở hàng.
+                        <br> <br>
+                        Trong trường hợp shop gửi thiếu hàng, hỏng hàng, sai hàng quý khách vui lòng phản hồi và
+                        gửi lại video cho shop để kiểm chứng, cửa hàng sẽ tiến hành bù hoàn sau khi đã xác nhận.
+                        <br> <br>
+                        Trường hợp không có video bóc hàng shop xin TỪ CHỐI giải quyết.
+                    </p>
+                </div>
+            `;
+            hideVisaMethod();
+        }
+    });
+});
