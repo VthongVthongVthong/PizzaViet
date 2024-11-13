@@ -30,3 +30,13 @@ main .content-wrapper {
     border-radius: 1rem;
     border:solid 2px;
 }
+.add_users{
+    background-color:green;
+    color:white;
+    height:35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+}
