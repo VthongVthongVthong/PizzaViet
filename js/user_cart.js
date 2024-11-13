@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const noProductDiv = document.querySelector('.noproduct');
-    const pay = document.querySelector('.pay');
+    const payDiv = document.querySelector('.pay');
     const ordersContainer = document.querySelector('.--orders');
-    const checkoutButton = document.querySelector('.pay');
     const details = [];
     const imagePaths = [];
 
@@ -24,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Hiển thị nút thanh toán khi có sản phẩm trong giỏ hàng
-        if (checkoutButton) {
-            checkoutButton.style.visibility = 'visible';
+        if (payDiv) {
+            payDiv.style.visibility = 'visible';
         }
 
         let cart = [];
@@ -35,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function renderCart() {
             ordersContainer.innerHTML = ''; // Xóa tất cả các sản phẩm hiện tại
+            let totalPrice = 0; // Biến để lưu tổng giá tiền
+
             cart.forEach((product, index) => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('orders--items');
@@ -67,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productPrice = document.createElement('div');
                 productPrice.classList.add('items--price');
                 productPrice.innerText = `${(product.price * product.quantity).toLocaleString('vi-VN')} đ`;
+
+                // Cộng giá tiền của sản phẩm vào tổng giá tiền
+                totalPrice += product.price * product.quantity;
 
                 const deleteButton = document.createElement('button');
                 deleteButton.classList.add('delete-button');
@@ -117,8 +121,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     cart[index].quantity = parseInt(quantity);
                     localStorage.setItem(`detail${product.detailIndex}`, JSON.stringify(cart.filter(item => item.detailIndex === product.detailIndex)));
                     productPrice.innerText = `${(cart[index].price * cart[index].quantity).toLocaleString('vi-VN')} đ`;
+                    renderTotalPrice(); // Cập nhật tổng giá tiền sau khi thay đổi số lượng
                 }
             });
+
+            // Hiển thị phí ship
+            const shippingFeeDiv = document.createElement('div');
+            shippingFeeDiv.classList.add('shipping-fee');
+            shippingFeeDiv.innerText = `Phí ship: miễn phí`;
+            ordersContainer.appendChild(shippingFeeDiv);
+
+            // Hiển thị tổng giá tiền
+            const totalPriceDiv = document.createElement('div');
+            totalPriceDiv.classList.add('total-price');
+            totalPriceDiv.innerText = `Tổng cộng: ${totalPrice.toLocaleString('vi-VN')} đ`;
+            ordersContainer.appendChild(totalPriceDiv);
+        }
+
+        function renderTotalPrice() {
+            let totalPrice = 0;
+            cart.forEach(product => {
+                totalPrice += product.price * product.quantity;
+            });
+            const totalPriceDiv = document.querySelector('.total-price');
+            if (totalPriceDiv) {
+                totalPriceDiv.innerText = `Tổng cộng: ${totalPrice.toLocaleString('vi-VN')} đ`;
+            }
         }
 
         renderCart();
@@ -128,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Ẩn nút thanh toán khi không có sản phẩm trong giỏ hàng
-        if (checkoutButton) {
-            checkoutButton.style.visibility = 'hidden';
+        if (payDiv) {
+            payDiv.style.visibility = 'hidden';
         }
     }
 });
