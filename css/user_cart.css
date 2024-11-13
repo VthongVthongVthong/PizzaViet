@@ -573,6 +573,18 @@ section{
 	letter-spacing: 1px;
 }
 
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+}
+.shipping-fee {
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: right;
+}
+
 .qtyminus:hover{
 	color: white !important;
 }
