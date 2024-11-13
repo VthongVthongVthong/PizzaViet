@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/order_manager.css">
+    <title>Detail_products</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <img src="img/logo2.png" alt="">
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                     <a href=""><span><i class="fa-solid fa-users-line"></i></span>
+                    <span> Người dùng</span></a>
+                </li>
+                <li>    
+                    <a href=""><span><i class="fa-solid fa-book-medical"></i></span>
+                        <span> Lịch sử</span></a>
+                </li>
+                <li>
+                    <a href="/PizzaViet/admin.html"><span><i class="fa-solid fa-chart-simple"></i></span>
+                        <span> Phân tích</span></a>
+                </li>
+                <li class="active" onclick="toggleProductOptions()">
+                    <a href="javascript:void(0)"><span><i class="fa-solid fa-list"></i></span>
+                    <span>Sản phẩm</span></a>
+                </li>
+                <ul class="product-options" id="productOptions" style="display: none;">
+                    <li><a href="/PizzaViet/delete_product.html" >Danh sách sản phẩm</a></li>
+                    <li><a href="#" >Thêm sản phẩm</a></li>
+                </ul>
+
+                <li>
+                    <a href="#"><span><i class="nav-icon fa fa-shopping-cart"></i></span>
+                    <span>Quản lí đơn hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><span><i class="fa-solid fa-gear"></i></span>
+                    <span>Cài đặt</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-plus"></span>
+                    <span>Đăng nhập mới</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="fa-solid fa-right-from-bracket"></span>
+                    <span>Đăng xuất</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="account">
+            <h1></h1>
+            <div class="account_user">
+                <div class="text">
+                    <h2>Viet</h2>
+                    <h5>Admin</h5>
+                </div>
+                <a href="#"><img src="/img/avatar_QViet.png" alt=""></a>
+            </div>
+        </div>
+        <div class="table_order">
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>ID</th>
+                        <th>Khách hàng</th>
+                        <th>Ngày</th>
+                        <th>Tình trạng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+    </div>
+    <script src="../js/detail_products.js"></script>
+</body>
+</html>
