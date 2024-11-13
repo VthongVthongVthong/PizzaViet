@@ -80,7 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Lưu giỏ hàng vào localStorage
             localStorage.setItem('detail9', JSON.stringify(cart));
-
+            Swal.fire({
+                title: "Tuyệt!",
+                text: "Bạn đã thêm sẩn phẩm vào giỏ hàng!",
+                icon: "success"
+            });
             // Cập nhật hiển thị giỏ hàng (nếu cần)
             updateDisplay();
         });

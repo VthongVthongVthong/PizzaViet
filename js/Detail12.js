@@ -80,7 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Lưu giỏ hàng vào localStorage
             localStorage.setItem('detail12', JSON.stringify(cart));
-
+            Swal.fire({
+                title: "Tuyệt!",
+                text: "Bạn đã thêm sẩn phẩm vào giỏ hàng!",
+                icon: "success"
+            });
             // Cập nhật hiển thị giỏ hàng (nếu cần)
             updateDisplay();
         });
@@ -91,12 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const noProductDiv = document.querySelector('.noproduct');
     const ordersContainer = document.querySelector('.--orders');
 
-    if (localStorage.getItem('detail122')) {
+    if (localStorage.getItem('detail12')) {
         if (noProductDiv) {
             noProductDiv.style.display = 'none';
         }
 
-        const cart = JSON.parse(localStorage.getItem('detail122'));
+        const cart = JSON.parse(localStorage.getItem('detail12'));
 
         cart.forEach((product, index) => {
             const productDiv = document.createElement('div');
@@ -166,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             function updateProductQuantity(index, quantity) {
                 cart[index].quantity = parseInt(quantity);
-                localStorage.setItem('detail122', JSON.stringify(cart));
+                localStorage.setItem('detail12', JSON.stringify(cart));
                 productPrice.innerText = `${(cart[index].price * cart[index].quantity).toLocaleString('vi-VN')} đ`;
             }
         });
