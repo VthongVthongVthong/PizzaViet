@@ -4,6 +4,38 @@
 
 } */
 
+.delete-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+.orders--items-right {
+    position: relative;
+    padding-bottom: 40px; /* Đảm bảo có đủ không gian cho nút xóa */
+}
+
+.checkout-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #00628f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    display: none; /* Ẩn nút thanh toán mặc định */
+}
+
+.col-9.--orders {
+    position: relative;
+}
+
 .breadcrumb_section .breadcrumb {
     margin-top: 15px;
     padding: 10px 0;
@@ -513,6 +545,42 @@ section{
 .btn:hover{
 	letter-spacing: 1px;
 }
+
+.btn1{
+	display: inline-block;
+	padding: 14px 26px;
+	background: var(--main-color);
+	color: var(--bg-color);
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 5rem;
+	transition: all .38s ease;
+}
+.btn1:hover{
+	letter-spacing: 1px;
+	color: var(--main-color);
+}
+
+
+.pay {
+    position: absolute;
+    right: 32%;
+	bottom: 10%;
+    visibility: hidden; /* Ẩn nút thanh toán mặc định */
+}
+
+.pay:hover{
+	letter-spacing: 1px;
+}
+
+.qtyminus:hover{
+	color: white !important;
+}
+
+.qtyplus:hover{
+	color: white !important;
+}
+
 header.sticky{
 	padding: 10px 15%;
 	background: var(--second-main-color);
