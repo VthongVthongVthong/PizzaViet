@@ -16,7 +16,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                     <a href=""><span><i class="fa-solid fa-users-line"></i></span>
+                     <a href="admin_users.html"><span><i class="fa-solid fa-users-line"></i></span>
                     <span> Người dùng</span></a>
                 </li>
                 <li>    
@@ -32,7 +32,7 @@
                     <span>Sản phẩm</span></a>
                 </li>
                 <ul class="product-options" id="productOptions" style="display: none;">
-                    <li><a href="delete_product.html" >Danh sách sản phẩm</a></li>
+                    <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
                     <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
                 </ul>
                 <li>
@@ -190,7 +190,10 @@
                     </tr>
                 </tbody>
             </table>
-            <button onclick="deleteSelectedFood()" class="detele_all">Xóa các sản phẩm đã chọn (PIZZA)</button>
+                <div class="centerbtn">
+                    <button onclick="deleteSelectedFood()" class="detele_all">Xóa các sản phẩm đã chọn (PIZZA)</button>
+                </div>
+
             </div>
             <div class="Drink">
                 <h1 class="tit">NƯỚC GIẢI KHÁT</h1>
@@ -216,7 +219,7 @@
                             <td>10,000 VND</td>
                             <td>12/6/2022</td>
                             <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
-                                <button class="edit" onclick="openPopup()">Sửa</button>
+                                <button class="edit"onclick="openPopup()">Sửa</button>
                             </td>
                         </tr>
                         <tr>
@@ -235,7 +238,7 @@
                             <td>13</td>
                             <td class="anh1"><img src="../img/n3.jpg" alt=""></td>
                             <td>Nước ngọt chai Sprite</td>
-                            <td>12,000 VND</td>
+                            <td>20,000 VND</td>
                             <td>12/6/2022</td>
                             <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
                                 <button class="edit" onclick="openPopup()">Sửa</button>
@@ -245,17 +248,61 @@
                             <td><input type="checkbox" class="product-checkbox"></td>
                             <td>14</td>
                             <td class="anh1"><img src="../img/n4.jpg" alt=""></td>
-                            <td>Nước ngọt chai Pepsi</td>
-                            <td>11,000 VND</td>
+                            <td>Nước lọc Dasani</td>
+                            <td>25,000 VND</td>
                             <td>12/6/2022</td>
-                            <td><button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
+                            <td>
+                                <button class="delete-btn" onclick="deleteDrinkProduct(this)">Xóa</button>
                                 <button class="edit" onclick="openPopup()">Sửa</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button onclick="deleteSelectedDrink()" class="detele_all">Xóa các sản phẩm đã chọn (NƯỚC GIẢI KHÁT)</button>
+                <div class="centerbtn">
+                    <button onclick="deleteSelectedDrink()" class="detele_all">Xóa các sản phẩm đã chọn (NƯỚC GIẢI KHÁT)</button>
+                </div>
+
+            </div>            
             </div>
-    </div>
+        <!--modal-->
+        <div id="modal_container" >
+            <div class="modal">
+                <div class="modal_header">
+                <p>Chỉnh sửa thông tin sản phẩm</p>
+                <button id="close" onclick="closePopup()"><i><i class='bx bx-x'></i></i></button>
+                </div>
+                <div class="inputt">
+                    <div class="masp">
+                        <p>Mã sản phẩm:</p>
+                        <input type="text" value="1" style="color: grey;">
+                    </div>
+                    <div class="tensp">
+                        <p>Tên sản phẩm:</p>
+                        <input type="text" value="Pizza Hải Sản Xốt Mayonnaise Hảo Hạng" style="color: gray;">
+                    </div>
+                    <div class="danh_muc">
+                            <label for="exampleSelect1" class="control-label">Danh mục</label>
+                            <br>
+                            <select class="form-control" style="color: grey;">
+                              <option>Pizza</option>
+                              <option>Nước uống</option>
+                            </select>
+                    </div>
+                    <div class="giaban">
+                         <p>Giá bán:</p>
+                        <input type="text" value="100,000 VND" style="color:grey;">
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="../img/d1.jpg" alt="">
+                    <div class="button">
+                        <button class="but" ><a style="color: white" href="#">Chỉnh sửa</a></button>
+                        <button style="background-color: red" class="but"><a style="color: white" href="#">Xóa ảnh</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/products.js" ></script>
+
 </body>
 </html>

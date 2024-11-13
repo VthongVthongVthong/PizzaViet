@@ -16,6 +16,7 @@
 	--bg-color: #fffbf6;
 	--big-font: 4.5rem;
 	--h2-font: 2.6rem;
+    --h1-font:
 	--p-font: 1.1rem;
 }
 body{
@@ -34,142 +35,7 @@ header{
 	background: var(--second-main-color);
 	padding: 23px 15%;
 	transition: all .38s ease;
-
 }
-/* Chỉnh cho danh sách các mục */
-.product-categories {
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.org-product-menu {
-    overflow: hidden;
-	
-	margin-top: 100px;
-	
-}
-
-.category-container {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 10px 10%;
-    margin: 20px 0 0 0;
-	
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.nav-item {
-    margin-left: 19%;
-	
-	align-items: center;
-	width: 500px !important;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	font-size: 25px;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-link {
-	margin-top: 1px;
-    color: #000;
-    font-weight: bold;
-    padding: 10px;
-    text-decoration: none;
-    position: relative;
-	
-}
-
-
-.nav-link.active {
-    font-weight: bold;
-}
-
-.nav-link.active::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 2px;
-    background-color: red;
-    margin: 0 auto;
-    position: absolute;
-    bottom: -5px;
-    left: 20%;
-}
-
-/* button bar */
-.button-bar {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    background-color: #f1f1f1;
-}
-
-.button-bar button {
-    margin: 5px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    background-color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-	transition: all .38s ease;
-}
-
-.button-bar button.selected {
-    background-color: red;
-    color: white;
-}
-
-.button-bar button img {
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
-}
-.button-bar  :hover{
-	color: var(--second-color);
-	transform: scale(1.02);
-}
-
-/* button pagination */
-.pagination {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.pagination button {
-    color: black;
-    padding: 8px 16px;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-    background-color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.pagination button.active {
-    background-color: var(--main-color);
-    color: white;
-    border: 1px solid var(--main-color);
-}
-
-.pagination button:hover {
-    background-color: #ddd;
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-    .category-container {
-        justify-content: flex-start;
-        overflow-x: auto;
-    }
-}
-
 .logo{
 	font-size: 30px;
 	font-weight: 700;
@@ -271,12 +137,33 @@ header.sticky{
 	
 }
 .slide-wrapper{
-	/* left: 90px; */
 	position: relative;
-	max-width: 1260px;
+	max-width: 1920px;
 	margin: 0 auto;
 	overflow: hidden;
 	border-radius: 10px;
+}
+
+@media (min-width:1920px) and (max-width:3840px){
+    section{
+		padding: 70px 2%;
+		transition: .20s;
+	}
+	header{
+		padding: 11px 2%;
+		transition: .20s;
+	}
+	header.sticky{
+		padding: 8px 2%;
+		transition: .20s;
+	}
+	.contact{
+		padding: 70px 2%;
+		transition: .20s;
+	}
+    .container{
+        padding: 20px 15%;
+    }
 }
   
 .slider{
@@ -379,10 +266,7 @@ header.sticky{
 }
 .main-text h2{
 	font-size: var(--h2-font);
-	margin-bottom: 5px;
-	text-align: center;
-	margin-top: -25px;
-	
+	margin-bottom: 10px;
 }
 .main-text p{
 	font-size: var(--p-font);
@@ -429,7 +313,7 @@ header.sticky{
 }
 .about-text h2{
 	font-size: var(--h2-font);
-	margin-bottom: 1.5rem;
+	margin-bottom: 2rem;
 	line-height: 1.3;
 }
 .about-text p{
@@ -457,12 +341,8 @@ header.sticky{
 	transition: all .40s ease;
 }
 .menu{
-	padding-top: 95px;
-	background-color: beige;
-	margin-bottom: -60px;
-
+	padding-top: 110px;
 }
-
 .menu-text{
 	display: flex;
 	align-items: center;
@@ -493,7 +373,6 @@ header.sticky{
 .contact{
 	background-color: #00628F;
 	padding: 50px 15% 40px;
-	margin-top: 50px;
 }
 .main-contact{
 	display: grid;
@@ -567,14 +446,8 @@ header.sticky{
 		height: 80vh;
 	}
 	.main-text{
-		text-align: justify;
-	}
-	.main-text-thucdon{
 		text-align: center;
-		margin-bottom: auto;
-
 	}
-	
 }
 @media (max-width: 880px){
 	#menu-icon{
@@ -650,54 +523,76 @@ header.sticky{
 	height: 47px;
 }
 
-.dathang{
-    box-sizing: border-box;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    border-color: 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    position: absolute !important;
-    text-decoration: none !important;
-    border-radius: 64px;
-    z-index: 100;
-    line-height: 28px;
-    color: #0078AE;
-    border: 1px solid #0078AE;
-    background-color: #fff;
-    font-size: 20px;
-    margin-top: 0.5rem;
-    padding: 1rem 1rem 1rem 1.5rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
-	top: 100%;
-	right: 45%;
-	
-}
-
-.orderHidden {
-    opacity: 0; /* Biến mất */
-    transform: translateY(20px); /* Đẩy xuống một chút khi ẩn */
-}
-
-#thucdon {
-    font-family: var(--big-font);
-    font-size: 60px;
-    margin-top: 120px;
-    margin-bottom: -70px;
-    text-align: center;
-    font-weight: 1000;
-}
-
-.line {
-    height: 5px;
+/* body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+  }
+   */
+  .background-image {
+    margin-top: 6em;
+    position: fixed; /* Giữ hình ảnh cố định */
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: var(--main-color);
-    margin-top: 90px;
-    margin-bottom: -20px;
-}
+    height: 100%; /* Đảm bảo hình ảnh bao phủ toàn bộ màn hình */
+    object-fit: cover; /* Cắt hình ảnh sao cho phù hợp */
+    filter: blur(25px); /* Làm mờ hình ảnh */
+    /* filter: brightness(0.9); Giảm độ sáng xuống còn 50% */
+    z-index: -1; /* Đảm bảo hình ảnh ở dưới văn bản */
+  }
+  
+  .text-overlay {
+    border-radius: 10px;
+    position: relative;
+    width: 90em;
+    max-width: 100em;
+    margin: 8.4em auto;
+    margin-bottom: 1.7em;
+    padding: 20px;
+    color:black;
+    background: rgb(255,251,243, 0.6); /* Nền mờ cho đoạn văn */
+    box-sizing: border-box;
+    word-wrap: break-word;
+    word-break: break-word;
+    
+  }
+  
+  .text-overlay h1{
+    margin: 1em;
+    margin-top: 0.3em;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 0.1em;
+  }
+  .text-overlay p {
+    margin: 1em;
+    text-align: justify;
+    font-size: 1.5rem;
+    text-indent: 30px;
+  }
+  
+  @media (max-width: 768px) {
+    .text-overlay {
+      width: 100%;
+      font-size: 16px;
+    }
+  
+    .text-overlay h1 {
+      font-size: 1.5em;
+    }
+  
+    .text-overlay p {
+      font-size: 1em;
+    }
+  }
+  
+  
+  
+ 
+  
+  
+  
 
 
 

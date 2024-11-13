@@ -27,6 +27,60 @@
 
 /* CART  */
 
+.orders--items {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.orders--items-left {
+    flex: 1;
+    max-width: 100px;
+}
+
+.orders--items-left img {
+    width: 100%;
+    border-radius: 2px;
+}
+
+.orders--items-right {
+    flex: 3;
+    padding-left: 10px;
+}
+
+.items--name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product_qty {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product_qty button {
+    background-color: #0078AE;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.product_qty input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.items--price {
+    font-size: 16px;
+    color: #c40505;
+}
+
 . .--orders h2     {
 
     font-weight: 700;
@@ -112,6 +166,7 @@
 .noproduct {
     text-align: center;
     padding: 85px 0 0;
+	visibility: visible;
 }
 
 .noproduct i {
@@ -457,6 +512,41 @@ section{
 }
 .btn:hover{
 	letter-spacing: 1px;
+}
+
+.btn1{
+	display: inline-block;
+	padding: 14px 26px;
+	background: var(--main-color);
+	color: var(--bg-color);
+	font-size: 15px;
+	font-weight: 600;
+	border-radius: 5rem;
+	transition: all .38s ease;
+}
+.btn1:hover{
+	letter-spacing: 1px;
+	color: var(--main-color);
+}
+
+
+.pay {
+    position: absolute;
+    right: 32%;
+	bottom: 10%;
+    visibility: hidden; /* Ẩn nút thanh toán mặc định */
+}
+
+.pay:hover{
+	letter-spacing: 1px;
+}
+
+.qtyminus:hover{
+	color: white !important;
+}
+
+.qtyplus:hover{
+	color: white !important;
 }
 header.sticky{
 	padding: 10px 15%;

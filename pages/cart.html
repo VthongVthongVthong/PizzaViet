@@ -30,16 +30,16 @@
 <body>
     <!-- HEADER  -->
     <header>
-		<a href="../index.html" class="logo"><img src="../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
+		<a href="../index.html" class="logo"><img src="..../../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
 		<ul class="navbar">
 			<li><a href="../index.html">Trang chủ</a></li>
 			<li><a href="#about">About</a></li>
-			<li><a href="#menu">Thực đơn</a></li>
+			<li><a href="../menu/menu.html">Thực đơn</a></li>
 			<li><a href="#contact">Liên Hệ</a></li>
 		</ul>
 
 		<div class="h-icons">
-			<a href="../login.html"><i class='bx bx-user'></i></a>
+			<a href="..../../../login.html"><i class='bx bx-user'></i></a>
 			<a href="#"><i class='bx bx-search' ></i></a>
 			<a href="#"><i class='bx bx-cart' ></i></a>
 			<div class="bx bx-menu" id="menu-icon"></div>
@@ -67,7 +67,7 @@
                 <div class="noproduct">
                     <i class="fas fa-box-open"></i>
                     <p>Bạn chưa chọn sản phẩm nào!</p> 
-                    <button class="btn"> <a href="#">Chọn món ngay</a></button>
+                    <button class="btn"> <a href="../menu/menu.html">Chọn món ngay</a></button>
                 </div>
                 <div class="hr"></div>
 
@@ -140,6 +140,7 @@
     <!-- BACKTOTOP JS  -->
     <script src="../js/main-backToTop.js"></script>
     <!-- HEADER JS  -->
+    <script src="../js/user_cart.js"></script>
     <Script>
         // kiếm thẻ có id là mainNav 
         //kiếm thẻ ul
@@ -214,6 +215,9 @@
                 });
         });
     </script>
+    <div class="pay">
+        <button class="btn1"> <a style="color: white;" href="#">Thanh toán</a></button>
+    </div>
 </body>
 
 </html>

@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="../css/css_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
+    <script src="../js/products.js" ></script>
     <title>Admin</title>
+    <style>
+        @font-face {
+            font-family: 'boxicons';
+            src: url('../css/boxicons/fonts/boxicons.ttf');
+        }
+    </style>
 </head>
 <body>
     
@@ -17,7 +24,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                     <a href=""><span><i class="fa-solid fa-users-line"></i></span>
+                     <a href="admin_users.html"><span><i class="fa-solid fa-users-line"></i></span>
                     <span> Người dùng</span></a>
                 </li>
                 <li>    
@@ -28,10 +35,14 @@
                     <a href=""><span><i class="fa-solid fa-chart-simple"></i></span>
                         <span> Phân tích</span></a>
                 </li>
-                <li>
-                    <a href="admin_products.html"><span><i class="fa-solid fa-list"></i></span>
-                    <span>Sản phẩm</span></a>
+                <li class="active" onclick="toggleProductOptions()">
+                    <a href="javascript:void(0)"><span><i class="fa-solid fa-list"></i></span>
+                        <span>Sản phẩm</span></a>
                 </li>
+                <ul class="product-options" id="productOptions" style="display: none;">
+                    <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
+                    <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
+                </ul>
                 <li>
                     <a href="#"><span><i class="fa-solid fa-gear"></i></span>
                     <span>Cài đặt</span></a>

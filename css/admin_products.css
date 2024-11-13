@@ -15,7 +15,7 @@ body{
     background-color: #00628F;
     border: 1px solid #ccc; 
     padding: 10px;
-    padding-top: 15px;
+    padding-top: 85px;
     position: fixed;
     top: 10px;
     left: 20px;
@@ -54,6 +54,7 @@ body{
 
 .sidebar-menu li a:hover {
     margin-left: 0.4rem;
+    transition: 0.3s ease;
 }
 
 .sidebar-menu li span {
@@ -186,11 +187,13 @@ h1 {
     margin-bottom: 20px;
 }
 .product-options {
-    padding-left: 20px; 
+    position: relative;
+    padding-left: 10px;
+    bottom: 7px;
 }
 
 .product-options li {
-    height: 40px;
+
 }
 
 .product-options li a {
@@ -198,7 +201,6 @@ h1 {
 }
 
 .product-options li a:hover {
-    background-color: #00557a; 
     transition: 0.3s ease;
     border-radius: 8px; 
 }
