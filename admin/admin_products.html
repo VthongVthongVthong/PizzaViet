@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin_products.css">
+    <link rel="stylesheet" href="css/admin_products.css">
+    <link rel="stylesheet" href="css/css_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <title>Sản phẩm</title>
@@ -11,7 +12,7 @@
 <body>
     <div class="sidebar">
         <div class="sidebar-brand">
-            <img src="../img/logo2.png" alt="">
+            <img src="img/logo2.png" alt="">
         </div>
         <div class="sidebar-menu">
             <ul>
@@ -32,7 +33,7 @@
                     <span>Sản phẩm</span></a>
                 </li>
                 <ul class="product-options" id="productOptions" style="display: none;">
-                    <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
+                    <li><a href="delete_product.html" >Danh sách sản phẩm</a></li>
                     <li><a href="#" >Thêm sản phẩm</a></li>
                 </ul>
                 <li>
@@ -44,62 +45,67 @@
                     <span>Đăng nhập mới</span></a>
                 </li>
                 <li>
-                    <a href="#"><span class="fa-solid fa-right-from-bracket"></span>
+                    <a href=""><span class="fa-solid fa-right-from-bracket"></span>
                     <span>Đăng xuất</span></a>
                 </li>
             </ul>
         </div>
     </div>
-    <div class="content">
-        <div class="account">
-            <h1>Sản phẩm</h1>
-            <div class="account_user">
-                <div class="text">
-                    <h2>Viet</h2>
-                    <h5>Admin</h5>
+    <main>
+        <div class="content-wrapper_products">
+            <div class="sec-center_users">
+                <div class="container-account">
+                    <h1>Danh sách sản phẩm</h1>
+                    <div class="account">
+                        <div class="text">
+                            <h2>Long</h2>
+                            <h5>Admin</h5>
+                        </div>
+                        <a href="#"><img src="img/avatar_LongMongGa.png" alt=""></a>
+                    </div>
                 </div>
-                <a href="#"><img src="../img/avatar_QViet.png" alt=""></a>
+                <div class="form-wrapper">
+                    <div class="form_them">
+                        <h1>THÊM SẢN PHẨM</h1>
+                        <div class="horizontal-line"></div>
+                        <div class="group">
+                            <div class="form-group">
+                                <label for="name"><i class='bx bxs-barcode'></i> Mã sản phẩm:</label>
+                                <input type="text" id="masp" class="form-control" placeholder="Nhập mã sản phẩm">
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="fa-solid fa-tag"></i> Tên sản phẩm:</label>
+                                <input type="text" id="name" class="form-control" placeholder="Nhập tên sản phẩm">
+                            </div>
+                            <div class="form-group">
+                                <label for="price"><i class="fa-solid fa-dollar-sign"></i> Giá:</label>
+                                <input type="text" id="price" class="form-control" placeholder="Nhập giá sản phẩm">
+                            </div>
+                            <div class="form-group">
+                                <label for="tinhtrang"><i class="fa-solid fa-info-circle"></i> Tình trạng:</label>
+                                <input type="number" id="tinhtrang" class="form-control" placeholder="Nhập tình trạng sản phẩm">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pic"><i class="fa-solid fa-image"></i> Thêm ảnh sản phẩm:</label>
+                            <input type="file" id="pic" class="file-input" accept="image/*" style="display: none;">
+                            <button type="button" class="btn" onclick="document.getElementById('pic').click()">Chọn ảnh</button>
+                            <p id="fileName" class="file-name"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="longText"><i class="fa-solid fa-pencil-alt"></i> Mô tả sản phẩm:</label>
+                            <textarea id="longText" rows="4" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
+                        </div>
+                        <button class="btn">Thêm sản phẩm</button>
+                        <button class="btn cancel-btn">Hủy</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <main>
-            <div class="form_them">
-                <h1>THÊM SẢN PHẨM</h1>
-                <div class="horizontal-line"></div>
-                <div class="group">
-                    <div class="form-group">
-                        <label for="name"><i class='bx bxs-barcode'></i> Mã sản phẩm:</label>
-                        <input type="text" id="name" class="form-control" placeholder="Nhập mã sản phẩm">
-                    </div>
-                    <div class="form-group">
-                        <label for="name"><i class="fa-solid fa-tag"></i> Tên sản phẩm:</label>
-                        <input type="text" id="name" class="form-control" placeholder="Nhập tên sản phẩm">
-                    </div>
-                    <div class="form-group">
-                        <label for="price"><i class="fa-solid fa-dollar-sign"></i> Giá:</label>
-                        <input type="text" id="price" class="form-control" placeholder="Nhập giá sản phẩm">
-                    </div>
-                    <div class="form-group">
-                        <label for="tinhtrang"><i class="fa-solid fa-info-circle"></i> Tình trạng:</label>
-                        <input type="number" id="tinhtrang" class="form-control" placeholder="Nhập tình trạng sản phẩm">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="pic"><i class="fa-solid fa-image"></i> Thêm ảnh sản phẩm:</label>
-                    <input type="file" id="pic" class="file-input" accept="image/*" style="display: none;">
-                    <button type="button" class="btn" onclick="document.getElementById('pic').click()">Chọn ảnh</button>
-                    <p id="fileName" class="file-name"></p>
-                </div>
-                <div class="form-group">
-                    <label for="longText"><i class="fa-solid fa-pencil-alt"></i> Mô tả sản phẩm:</label>
-                    <textarea id="longText" rows="4" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
-                </div>
-                <button class="btn">Thêm sản phẩm</button>
-                <button class="btn cancel-btn">Hủy</button>
-            </div>
         </main>
     </div>
-       <script src="../js/products.js" ></script>
+       <script src="js/products.js" ></script>
 
 </body>
 </html>
