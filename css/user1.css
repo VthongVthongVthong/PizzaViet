@@ -336,6 +336,25 @@ header.sticky{
 	line-height: 32px;
 	margin-bottom: 2.3rem;
 }
+
+.text-danger{
+    --bs-text-opacity: 1;
+    color: #00628F !important;
+}
+
+#saveImageButton{
+    background-color: #858585;
+}
+
+#saveImageButton:hover{
+    background-color: #00628F;
+}
+
+#saveImageButton:disabled{
+    background-color: #858585;
+    cursor: not-allowed;
+}
+
 .menu-content{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -344,10 +363,31 @@ header.sticky{
 	margin-top: 4rem;
 	cursor: pointer;
 }
+
+.orange-text {
+    color: orange;
+}
+
+.green-text {
+    color: green;
+}
+
+.red-text {
+    color: red;
+}
+
+.blue-text {
+    color: blue;
+}
+
 .row img{
 	position: relative;
 	height: auto;
 	border-radius: 50%;
+    width: 155px;
+    height: 155px;
+    max-width: 155px;
+    max-height: 155px;
 }
 .row{
 	transition: all .40s ease;
