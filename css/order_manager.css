@@ -323,8 +323,110 @@ textarea::placeholder {
 .submit button{
     width: 80px;
     height: 30px;
+    margin-right: 5px;
 }
 .submit{
     margin-top:15px;
     margin-bottom: 15px;
+}
+.img{
+    width: 50px;
+    height: 50px;
+}
+.tong{
+    margin-top: 30px;
+    padding-left: 75%;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Đặt vị trí và kiểu dáng cho phần phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Kiểu dáng cho các nút trang */
+.pagination button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hiển thị hiệu ứng hover khi di chuột vào nút trang */
+.pagination button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Kiểu dáng cho nút trang hiện tại (được active) */
+.pagination .active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+/* Đặt kiểu dáng cho nút "Trang trước" và "Trang sau" */
+.pagination button#prevBtn,
+.pagination button#nextBtn {
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.pagination button#prevBtn:hover,
+.pagination button#nextBtn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.pagination{
+    margin-bottom: 30px;
+}
+
+.pagination a button {
+    text-decoration: none;
+}
+
+.submit button{
+    width: 70px;
+}
+ .new:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+.dowload:hover{
+    background-color: #1116a7;
+    transform: scale(1.05);
+}
+.print:hover{
+    background-color: #c1c2c1;
+    transform: scale(1.05);
+}
+.copy:hover{
+    background-color: #e8f80f;
+    transform: scale(1.05);
+}
+.excel:hover{
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+.delete:hover{
+    background-color: #d21212;
+    transform: scale(1.05);
 }

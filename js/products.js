@@ -91,3 +91,25 @@ function showEditProduct() {
 function showDeleteProduct() {
     alert('Chức năng xóa sản phẩm chưa được thực hiện.');
 }
+
+
+const statusFilter = document.getElementById('statusFilter');
+const orderRows = document.querySelectorAll('tbody tr'); 
+
+function filterOrder() {
+    const filterValue = statusFilter.value;
+
+    orderRows.forEach(row => {
+        const orderStatus = row.dataset.status; 
+
+        if (filterValue === 'all' || orderStatus === filterValue) {
+            row.classList.remove('hidden'); 
+        } else {
+            row.classList.add('hidden'); 
+        }
+    });
+}
+
+statusFilter.addEventListener('change', filterOrder);
+
+filterOrder();
