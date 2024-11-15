@@ -148,13 +148,54 @@ document.addEventListener("DOMContentLoaded", function () {
                         lòng quay lại video khi mở hàng.
                         <br> <br>
                         Trong trường hợp shop gửi thiếu hàng, hỏng hàng, sai hàng quý khách vui lòng phản hồi và
-                        gửi lại video cho shop để kiểm chứng, cửa hàng sẽ tiến hành bù hoàn sau khi đã xác nhận.
+                        gửi lại video cho shop để kiểm chứng, cửa hàng sẽ tiến hành bù hoàn sau khi đã x��c nhận.
                         <br> <br>
                         Trường hợp không có video bóc hàng shop xin TỪ CHỐI giải quyết.
                     </p>
                 </div>
             `;
             hideVisaMethod();
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const paymentDefaultCheckbox = document.querySelector("#payment--defaul");
+    const receiverInput = document.querySelector("#payment--receiver");
+    const phoneInput = document.querySelector("#payment--phone");
+    const addressInput = document.querySelector("#payment--adr");
+    const btnradio3 = document.querySelector("#btnradio3");
+    const btnradio4 = document.querySelector("#btnradio4");
+
+    // Disable checkbox initially
+    paymentDefaultCheckbox.disabled = true;
+
+    // Enable checkbox only when btnradio3 or btnradio4 is selected
+    const radioButtons = document.querySelectorAll('input[name="btnradio"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (btnradio3.checked || btnradio4.checked) {
+                paymentDefaultCheckbox.disabled = false;
+            } else {
+                paymentDefaultCheckbox.disabled = true;
+                paymentDefaultCheckbox.checked = false;
+                receiverInput.value = '';
+                phoneInput.value = '';
+                addressInput.value = '';
+            }
+        });
+    });
+
+    // Fill in default information when checkbox is checked
+    paymentDefaultCheckbox.addEventListener('change', function () {
+        if (paymentDefaultCheckbox.checked) {
+            receiverInput.value = 'Nguyễn Văn A';
+            phoneInput.value = '0935589043';
+            addressInput.value = '273, An Dương Vương, Quận 5, TP HCM';
+        } else {
+            receiverInput.value = '';
+            phoneInput.value = '';
+            addressInput.value = '';
         }
     });
 });
