@@ -6,33 +6,41 @@
     <title>Admin Login</title>
     <link rel="stylesheet" href="../css/adminLogin_style.css">
     <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
+    <script src="../js/outsidesrc/sweetalert2.min.js"></script>
+    <script src="../js/outsidesrc/jquery-3.7.1.js"></script>
+    <link rel="icon" href=
+		"../img/pizza (1).png"
+    type="image"/>
 </head>
 <body>
+    <img class="biglogo" src="../img/pizza2.png" alt="Website Logo">
+    <img class="elementbg" src="../img/elementbg.png" alt="Website Logo">
     <div class="login-container">
         <div class="login-box">
             <div class="logo">
-                <img src="../img/logo3.png" alt="Website Logo">
+                <img src="../img/logoblank.png" alt="Website Logo">
             </div>
-            <h2>Admin Login</h2>
+            <h2 style="color: #00628F;">Admin Login</h2>
             <form action="#">
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" placeholder="Hãy điền tên đăng nhập" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" placeholder="Hãy điền mật khẩu" required>
                 </div>
                 
-                <button type="submit">Login</button>
+                <button class="button" type="submit">Đăng nhập</button>
             </form>
             <div class="footer">
-                <a href="../index.html">Return to Main Website</a>
+                <a href="../index.html">Quay lại trang chủ</a>
             </div>
         </div>
     </div>
 </body>
 </html>
+
 <script>
     let loginAttempts = 0;
     const maxAttempts = 3;
@@ -43,16 +51,41 @@
         const password = document.getElementById('password').value;
 
         if (username === 'admin' && password === 'admin123') {
-            alert('Đăng nhập thành công!');
-            // Redirect to admin dashboard or another page
-            window.location.href = 'admin.html';
+            Swal.fire({
+                title: "Đăng nhập thành công!",
+                text: "Chào mừng quay trở lại!",
+                icon: "success"
+            }).then(() => {
+                window.location.href = 'admin.html';
+            });
         } else {
             loginAttempts++;
             if (loginAttempts >= maxAttempts) {
-                alert('Đã vượt quá giới hạn đăng nhập. Hãy thử lại vào lần khác.');
+                Swal.fire({
+                    title: "<strong>Trang đã bị khoá</strong>",
+                    icon: "info",
+                    html: `
+                        Đã vượt quá <b>giới hạn đăng nhập</b>. Hãy thử lại vào lần khác.
+                    `,
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText: `
+                        <i class="fa fa-thumbs-up"></i>
+                    `,
+                    confirmButtonAriaLabel: "Thumbs up",
+                    cancelButtonText: `
+                        <i class="fa fa-thumbs-down"></i>
+                    `,
+                    cancelButtonAriaLabel: "Thumbs down"
+                });
                 document.querySelector('form button').disabled = true;
             } else {
-                alert(`Đăng nhập thất bại. Bạn còn ${maxAttempts - loginAttempts} lượt đăng nhập.`);
+                Swal.fire({
+                    icon: "error",
+                    title: "Sai mật khẩu!",
+                    text: `Đăng nhập thất bại. Bạn còn ${maxAttempts - loginAttempts} lượt đăng nhập.`,
+                });
             }
         }
     });
