@@ -94,6 +94,8 @@ body{
     padding-left: 30px;
 }
 .form_them {
+
+
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
@@ -222,11 +224,6 @@ h1 {
         display: none;
     }
 
-    /* Giảm kích thước của các button trong form */
-    .form_them {
-        width: 100%;
-        padding: 10px;
-    }
 
     .form_them .form-group {
         width: 100%;
@@ -242,3 +239,8 @@ h1 {
         padding: 8px;
     }
 }
+main .content-wrapper_products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;}
