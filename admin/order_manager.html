@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/order_manager.css">
+    <link rel="stylesheet" href="/css/order_manager.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <title>Document</title>
@@ -16,7 +16,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                     <a href="admin_users.html"><span><i class="fa-solid fa-users-line"></i></span>
+                     <a href=""><span><i class="fa-solid fa-users-line"></i></span>
                     <span> Người dùng</span></a>
                 </li>
                 <li>    
@@ -24,7 +24,7 @@
                         <span> Lịch sử</span></a>
                 </li>
                 <li>
-                    <a href="admin.html"><span><i class="fa-solid fa-chart-simple"></i></span>
+                    <a href="/PizzaViet/admin.html"><span><i class="fa-solid fa-chart-simple"></i></span>
                         <span> Phân tích</span></a>
                 </li>
                 <li class="active" onclick="toggleProductOptions()">
@@ -32,8 +32,8 @@
                     <span>Sản phẩm</span></a>
                 </li>
                 <ul class="product-options" id="productOptions" style="display: none;">
-                    <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
-                    <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
+                    <li><a href="/PizzaViet/delete_product.html" >Danh sách sản phẩm</a></li>
+                    <li><a href="#" >Thêm sản phẩm</a></li>
                 </ul>
 
                 <li>
@@ -50,7 +50,7 @@
                     <span>Đăng nhập mới</span></a>
                 </li>
                 <li>
-                    <a href="admin_index.html"><span class="fa-solid fa-right-from-bracket"></span>
+                    <a href="#"><span class="fa-solid fa-right-from-bracket"></span>
                     <span>Đăng xuất</span></a>
                 </li>
             </ul>
@@ -64,18 +64,18 @@
                     <h2>Viet</h2>
                     <h5>Admin</h5>
                 </div>
-                <a href="#"><img src="../img/avatar_QViet.png" alt=""></a>
+                <a href="#"><img src="/img/avatar_QViet.png" alt=""></a>
             </div>
         </div>
         <div class="infor_order">
             <div class="mid_content">
                 <div class="submit">
-                    <button>Tạo mới</button>
-                    <button>Tải file về </button>
-                    <button>In dữ liệu</button>
-                    <button>Sao chép</button>
-                    <button>Xuất excel</button>
-                    <button>Xóa tất cả</button>
+                    <button class="new ">Tạo mới</button>
+                    <button class="dowload">Tải file về </button>
+                    <button class="print">In dữ liệu</button>
+                    <button class="copy">Sao chép</button>
+                    <button class="excel">Xuất excel</button>
+                    <button class="delete">Xóa tất cả</button>
 
                 </div>
                 <label for="fromDate">Ngày từ:</label>
@@ -85,17 +85,14 @@
                 <input type="date" id="toDate" name="toDate">
             
                 <!-- Lọc theo tên khách hàng hoặc mã đơn hàng -->
-                <label for="search">Tìm kiếm:</label>
-                <input type="text" id="search" name="search" placeholder="Tìm kiếm...">
+               <label for="statusFilter">Lọc đơn hàng:</label>
+               <select id="statusFilter">
+                <option value="all">Tất cả</option>
+                <option value="processing">Đang xử lí</option>
+                <option value="completed">Đã xử lý</option>
+                <option value="pending">chưa xử lí</option>
+               </select>
             
-                <!-- Lọc theo trạng thái đơn hàng -->
-                <label for="status">Trạng thái:</label>
-                <select id="status">
-                    <option value="">Tất cả</option>
-                    <option value="đã xử lí">Đã xử lí</option>
-                    <option value="chưa xử lí">Chưa xử lí</option>
-                    <option value="đang xử lí">Đang xử lí</option>
-                </select>
             
                 <button type="button" id="searchBtn">Tìm</button>  
             </div>
@@ -112,159 +109,103 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr  data-status="completed">
                             <td><input type="checkbox"></td>
                             <td>DCT01</td>
                             <td>Việt kiêng Giang</td>
                             <td>07:50am <br>
                                 9/11/2024</td>
-                            <td>đã xử lí</td>
+                            <td class="order-item">đã xử lí</td>
                             <td> 
-                                  <a href="#">Chi tiết</a>
+                                  <a href="./detail_products.html">Chi tiết</a>
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-status="pending">
                             <td><input type="checkbox"></td>
                             <td>DCT02</td>
                             <td>Thông Quận 6</td>
                             <td>12:30am <br>13/11/2024</td>
-                            <td>chưa xử lí</td>
+                            <td class="order-item">chưa xử lí</td>
                             <td>
-                                <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
 
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-status="pending">
                             <td><input type="checkbox"></td>
                             <td>DCT03</td>
                             <td>Bảo Cầu Xáng</td>
                             <td>9:12am <br>5/11/2024 </td>
-                            <td>chưa xử lí</td>
+                            <td class="order-item">chưa xử lí</td>
                             <td>
-                               <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
                             </td>
 
                         </tr>
-                        <tr>
+                        <tr data-status="processing">
                             <td><input type="checkbox"></td>
                             <td>DCT04</td>
                             <td>Long Bình Lợi</td>
                             <td>9:10am <br>16/11/2024</td>
-                            <td>đang xử lí</td>
+                            <td class="order-item">đang xử lí</td>
                             <td>
-                                <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
 
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-status="completed">
                             <td><input type="checkbox"></td>
                             <td>DCT05</td>
                             <td>Qbao Hùng Vương</td>
                             <td>14:10pm <br> 22/10/2024</td>
-                            <td>đã xử lí</td>
+                            <td class="order-item">đã xử lí</td>
                             <td>
-                                <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-status="completed">
                             <td><input type="checkbox"></td>
                             <td>DCT05</td>
                             <td>Qbao Hùng Vương</td>
                             <td>14:10pm <br> 22/10/2024</td>
-                            <td>đã xử lí</td>
+                            <td class="order-item">đã xử lí</td>
                             <td>
-                                <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-status="completed">
                             <td><input type="checkbox"></td>
                             <td>DCT05</td>
                             <td>Qbao Hùng Vương</td>
                             <td>14:10pm <br> 22/10/2024</td>
-                            <td>đã xử lí</td>
+                            <td class="order-item">đã xử lí</td>
                             <td>
-                                <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
                             </td>
                         </tr>
-                        <tr>
+                        <tr data-status="completed">
                             <td><input type="checkbox"></td>
                             <td>DCT05</td>
                             <td>Qbao Hùng Vương</td>
                             <td>14:10pm <br> 22/10/2024</td>
-                            <td>đã xử lí</td>
+                            <td class="order-item">đã xử lí</td>
                             <td>
-                                <a href="#">Chi tiết</a>
+                                <a href="./detail_products.html">Chi tiết</a>
                             </td>
                         </tr>     
                     </tbody>
                 </table>
             </div>
         </div>
+        <div class="pagination">
+            <button id="prevBtn">&laquo;</button> <!-- Nút trang trước -->
+            <a href="menu1.html"><button class="active">1</button></a>
+            <a href="menu1_1.html"><button>2</button></a>
+            <a href="menu1_2.html"><button>3</button></a>
+            <button id="nextBtn">&raquo;</button> <!-- Nút trang sau -->
         </div>
-       
-    </div>
-    <div id="modal_container">
-        <div class="modal">
-            <div class="modal_header">
-                <p>Chỉnh sửa thông tin sản phẩm</p>
-                <button id="close" onclick="closePopup()"><i>x</i></button>
-            </div>
-            <div class="inputt">
-                <div class="makh">
-                    <p>Mã đơn hàng:</p>
-                    <input type="text" style="color: grey;">
-                </div>
-                <div class="tenkh">
-                    <p>Tên khách hàng:</p>
-                    <input type="text" style="color: gray;">
-                </div>
-                <div class="sdt">
-                    <p>Số điện thoại khách hàng:</p>
-                    <input type="text" style="color: gray;">
-                </div>
-                <div class="adr">
-                    <p>Địa chỉ khách hàng:</p>
-                    <input type="text" style="color: gray;">
-                </div>
-                <div class="date">
-                    <p>Ngày làm đơn:</p>
-                    <input type="date" style="color: gray;">
-                </div>
-                <div class="tensp">
-                    <p>Tên sản phẩm:</p>
-                    <input type="text" style="color: gray;">
-                </div>
-                <div class="sl">
-                    <p>Số lượng sản phẩm:</p>
-                    <input type="number" style="color: gray;">
-                </div>
-                <div class="danh_muc">
-                    <label for="exampleSelect1" class="control-label">Trang thái</label>
-                    <br>
-                    <select class="form-control" style="color: grey;">
-                        <option>Chưa xử lí</option>
-                        <option>Đã xử lí</option>
-                        <option>Đã giao hàng</option>
-                        <option>Chưa giao hàng</option>
-                        <option>Đã hủy</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form">
-                    <label for="orderNotes">Ghi chú đơn hàng:</label>
-                    <textarea id="orderNotes" name="orderNotes" rows="5" placeholder="Nhập ghi chú ở đây..."></textarea>
-                </div>
-            </div>
-            <div class="nut">
-                <div class="modal-footer">
-                    <button class="save-btn">Lưu lại</button>
-                    <button class="cancel-btn" onclick="closePopup()">Hủy</button>
-                </div>
-            </div>
         </div>
-    </div>
-    
-    <script src="../js/products.js" ></script>
+    </div>    
+    <script src="/js/products.js" ></script>
 </body>
 </html>
