@@ -3,11 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    height: max-content;
 }
 
 body {
+    position: relative;
     background-image: url("../img/adminpizzabackground.gif");
-    background-position: center;
+    
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -16,13 +18,15 @@ body {
 }
 
 .elementbg{
-    position: fixed;
+    position:absolute;
     z-index: -1;
     height: 16%;
     bottom: 90px;
 }
 
 .login-container {
+    position: absolute;
+    z-index: 1;
     width: 100%;
     max-width: 400px;
     padding: 20px;
@@ -42,7 +46,8 @@ body {
 }
 
 .biglogo{
-    position: fixed;
+    z-index: 2;
+    position: absolute;
     width: 12%;
     bottom: 65%;
 }
