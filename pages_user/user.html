@@ -1,127 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="../js/user.js"></script>
-    <script src="../js/outsidesrc/sweetalert2.min.js"></script>
-    <script
-  src="../js/outsidesrc/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="icon" href=
-		"../img/pizza (1).png"
-    type="image"/>
-    <link rel="stylesheet" href="../css/Pizza website_user.css">
-    <link rel="stylesheet" href="../css/user.css">
-    <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
+    <title>Hồ sơ</title>
+    <!-- FONT AWESOME  -->
+    
+    <!-- FONT GOOGLE  -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <!-- BOOSTRAP -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/user-file.css">
+    <link rel="stylesheet" href="../css/user1.css">
     <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
-    
+    <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
+    <style>
+        @font-face {
+            font-family: 'boxicons';
+            src: url('css/boxicons/fonts/boxicons.ttf');
+        }
+    </style>
+
 </head>
-<header>
-    <!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
-    <a href="../pages_user/Pizza website_user.html" class="logo"><img src="../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
-    <ul class="navbar">
-        <li><a href="../pages_user/Pizza website_user.html">Trang chủ</a></li>
-        <li><a href="about_user.html">About</a></li>
-        <li><a href="menu/menuuser.html">Thực đơn</a></li>
-        <li><a href="#contact">Liên Hệ</a></li>
-    </ul>
 
-    <div class="h-icons">
-        <a href="user.html"><i class='bx bx-user'></i></a>
-        <a href="#"><i class='bx bx-search' ></i></a>
-        <a href="user_cart.html"><i class='bx bx-cart' ></i></a>
-        <div class="bx bx-menu" id="menu-icon"></div>
-        <a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
-    </div>
-</header>
 <body>
-    <div class="profile-container">
-        <h2 id="h2">Hồ Sơ</h2>
-        <div class="row_file_content">
-            <div class="profileImage">
-                <img class="profileImagePic" src="../img/avatar.jpg">
-                <span id ="profile-username">khachhang</span>
-            </div>
-            <ul class="list_tool" id="list_tool">
-                <li class="tabActive">
-                    <p class="middle">Hồ sơ</p>
-                </li>
-                <li class="tabUnactive">
-                    <p class="middle">Đơn Hàng</p>
-                </li>
-                <li class="tabUnactive">
-                    <p class="middle">Hỗ trợ</p>
-                </li>
-                
-                
-            </ul>
-        </div>
-        <div>
-            <div class="right_item">
-                <div class="box1">
-                    <p class="topPadding leftPadding">Tên tài khoản</p>
-                    <p class="topPadding leftPadding">Họ và tên</p>
-                    <p class="topPadding leftPadding">Email</p>
-                    <p class="topPadding leftPadding">Mật khẩu</p>
-                    <p class="topPadding leftPadding">Số điện thoại</p>
-                    <p class="topPadding leftPadding">Địa chỉ</p>
-                    <p class="topPadding leftPadding">Giới tính</p>
-                    <p class="topPadding leftPadding">Ngày sinh</p>
-                </div>
-                <div class="box2">
-                    <div class="topPadding2 leftPadding">
-                        <label for="username"></label>
-                        <span>khachhang</span>
-                    </div>
-                    <div class="topPadding2 leftPadding" style="color: #00628f;">Nguyễn Văn A</div>
-                    <div class="topPadding2 leftPadding">
-                        <label for="email"></label>
-                        <span>emailkhachhang@gmail.com</span>
-                    </div>
-                    <div class="topPadding2 leftPadding">
-                        <label for="password"></label>
-                        <span>********</span>
-                    </div>
-                </div>
-                <div class="box3">
-                    <img class="profileImagePic1"src="../img/avatar.jpg">
-                    <button class="buttonChange">Thay đổi</button>
-                </div>
-                <button class="buttonApply">Lưu</button>
-            </div>
-        </div>
-        <section class="contact" id="contact">
-			<div class="main-contact">
-				<div class="contact-content">
-					<h4>Dịch vụ</h4>
-					<li><a href="../pages_user/Pizza website_user.html">Trang chủ</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="menu/menuuser.html">Thực đơn</a></li>
-				</div>
+    <!-- HEADER  -->
+    <header>
+		<a href="Pizza website_user.html" class="logo"><img src="..../../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
+		<ul class="navbar">
+			<li><a href="Pizza website_user.html">Trang chủ</a></li>
+			<li><a href="about_user.html">About</a></li>
+			<li><a href="menu/menuuser.html">Thực đơn</a></li>
+			<li><a href="#contact">Liên Hệ</a></li>
+		</ul>
 
-				
-
-				<div class="contact-content">
-					<h4>Contact</h4>
-					<li><a href="#">Liên hệ</a></li>
-					<li><a href="#">Careers</a></li>
-					<li><a href="#">FAQ</a></li>
-				</div>
-
-				
-			</div>
-		</section>
-
-		<div class="last-text">
-			<p></p>
+		<div class="h-icons">
+			<a href="#"><i class='bx bx-user'></i></a>
+			<a href="#"><i class='bx bx-search' ></i></a>
+			<a href="user_cart.html"><i class='bx bx-cart' ></i></a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+            <a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
 		</div>
-
-	<!-- scroll top -->
-	
+	</header>
+    <!-- Modal -->
+    <div class="modal fade" id="notifyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Thông báo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Chức năng đang cập nhật!
+                </div>
+            </div>
+        </div>
     </div>
-    
-    
-  
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb_section container bread">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="Pizza website_user.html">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Hồ sơ</li>
+
+            </ol>
+        </nav>
+    </section>
+    <!-- FILE USER  -->
+    <section class="file container">
+        <h1>Hồ sơ</h1>
+        <div class="row file__content">
+            <div class="file__left col-3">
+                <div class="img__file d-flex align-items-center">
+                    <img src="../img/avatar.jpg" alt="avatar">
+                    <p>Khachhang</p>
+                </div>
+                <ul class="list__tool" id="list__tool">
+                    <li class="active" onclick="file()"><i class="fas fa-user"></i>Hồ sơ</li>
+                    <li class="" onclick="order()"><i class="fas fa-utensils"></i>Đơn hàng</li>
+                    <li class="" onclick="help()"><i class="fas fa-question-circle"></i>Hỗ trợ</li>
+                </ul>
+            </div>
+            <div class="file__right col-9" id="file__right">
+                <div class="tool hoso row justify-content-end" id="file">
+                    <div class="hoso--label col-2">
+                        <p>Tên tài khoản</p>
+                        <p>Họ và tên</p>
+                        <p>Email</p>
+                        <p>Số điện thoại</p>
+                        <p>Địa chỉ</p>
+                        <p>Giới tính</p>
+                        <p>Ngày sinh</p>
+                    </div>
+                    <div class="hoso-info col-6 ">
+                        <p>Khachhang<i class="far fa-edit " data-bs-toggle="modal"
+                                data-bs-target="#notifyModal"></i></p>
+                        <p>Nguyễn Văn A<i class="far fa-edit " data-bs-toggle="modal"
+                                data-bs-target="#notifyModal"></i></p>
+                        <p>khachhang@gmail.com<i class="far fa-edit" data-bs-toggle="modal"
+                                data-bs-target="#notifyModal"></i></p>
+                        <p>********43<i class="far fa-edit" data-bs-toggle="modal" data-bs-target="#notifyModal"></i>
+                        </p>
+                        <p>273, An Dương Vương, Quận 5, TP HCM<i class="far fa-edit" data-bs-toggle="modal"
+                                data-bs-target="#notifyModal"></i></p>
+                        <p>Nam<i class="far fa-edit" data-bs-toggle="modal" data-bs-target="#notifyModal"></i></p>
+                        <p>12/03/2005<i class="far fa-edit" data-bs-toggle="modal" data-bs-target="#notifyModal"></i>
+                        </p>
+                    </div>
+                    <div class="hoso--img col-4">
+                        <img src="../img/avatar.jpg" alt="">
+                        <button data-bs-toggle="modal" data-bs-target="#notifyModal">Thay đổi</button>
+                    </div>
+                    <button>Lưu</button>
+
+                </div>
+                <div class="tool donhang" id="order">
+                    <select class="form-select donhang-select" aria-label="Default select example">
+                        <option selected>Trạng thái</option>
+                        <option value="1">Đã hoàn thành</option>
+                        <option value="2">Đang vận chuyển</option>
+                        <option value="3">Đã huỷ</option>
+                        <option value="4">Đang xử lý</option>
+                        <option value="5">Chưa xử lý</option>
+
+                    </select>
+                    <table class="table">
+                        <thead class="table">
+                            <tr>
+                                <th scope="col">Mã đơn hàng</th>
+                                <th scope="col">Sản phẩm</th>
+                                <th scope="col">Tổng tiền</th>
+                                <th scope="col">Trạng thái</th>
+                                <th scope="col">Chi tiết</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">D01</th>
+                                <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng </td>
+                                <td>185,000₫</td>
+                                <td>
+                                    <div class=" tr tr__xl">Đang xử lý</div>
+                                </td>
+                                <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_1"></i>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">D02</th>
+                                <td>Pizza New York Beefsteak Phô Mai</td>
+                                <td>215,000₫</td>
+                                <td>
+                                    <div class=" tr tr__dag">Đang vận chuyển</div>
+                                </td>
+                                <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_2"></i>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">D03</th>
+                                <td>Pizza Siêu Topping Xúc Xích Ý Truyền Thống</td>
+                                <td>195,000₫</td>
+                                <td>
+                                    <div class=" tr tr__dh">Đã huỷ</div>
+                                </td>
+                                <td><i class="fas fa-eye " data-bs-toggle="modal" data-bs-target="#detail-order_3"></i>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">D04</th>
+                                <td>Pizza Siêu Topping Hải Sản Xốt Mayonnaise</td>
+                                <td>205,000₫</td>
+                                <td>
+                                    <div class=" tr tr__dg">Đã hoàn thành</div>
+                                </td>
+                                <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_4"></i>
+                                </td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <!-- Modal chi tiết đơn hàng-->
+                    <div class="modal fade" id="detail-order_1" tabindex="-1" aria-labelledby="detail-orderModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-0">
+                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
+                                        <strong>DH044</strong>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ">
+                                    <div class="row">
+                                        <table class="table ">
+                                            <thead class="table ">
+                                                <tr>
+                                                    <th scope="col">Ngày đặt</th>
+                                                    <th scope="col">Sản phẩm</th>
+                                                    <th scope="col">Đơn giá</th>
+                                                    <th scope="col">Số lượng</th>
+                                                    <th scope="col">Tổng tiền</th>
+                                                    <th scope="col">Trạng thái</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="fw-normal">
+                                                        <p>17:46</p>
+                                                        <p>9/12/2022</p>
+                                                    </th>
+                                                    <td>
+                                                        <p>Mì lẩu thái bò</p>
+                                                    </td>
+                                                    <td>34,000₫</td>
+                                                    <td>
+                                                        <p>1</p>
+                                                    </td>
+                                                    <td>34,000₫</td>
+                                                    <td>
+                                                        <div class=" tr tr__xl">Đang xử lý</div>
+                                                    </td>
+
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">34,000₫</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="detail-order_2" tabindex="-1" aria-labelledby="detail-orderModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-0">
+                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
+                                        <strong>DH034</strong>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ">
+                                    <div class="row">
+                                        <table class="table ">
+                                            <thead class="table ">
+                                                <tr>
+                                                    <th scope="col">Ngày đặt</th>
+                                                    <th scope="col">Sản phẩm</th>
+                                                    <th scope="col">Đơn giá</th>
+                                                    <th scope="col">Số lượng</th>
+                                                    <th scope="col">Tổng tiền</th>
+                                                    <th scope="col">Trạng thái</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="fw-normal">
+                                                        <p>08:46</p>
+                                                        <p>6/12/2022</p>
+                                                    </th>
+                                                    <td>
+                                                        <p>Mì kim chi bò mỹ </p>
+                                                        <p>Tôm thêm</p>
+
+                                                    </td>
+                                                    <td>
+                                                        <p>49,000₫</p>
+                                                        <p>7,000₫</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>1</p>
+                                                        <p>1</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>49,000₫</p>
+                                                        <p>7,000₫</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class=" tr tr__dag">Đang vận chuyển</div>
+                                                    </td>
+
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">56,000₫</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="detail-order_3" tabindex="-1" aria-labelledby="detail-orderModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-0">
+                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
+                                        <strong>DH022</strong>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ">
+                                    <div class="row">
+                                        <table class="table ">
+                                            <thead class="table ">
+                                                <tr>
+                                                    <th scope="col">Ngày đặt</th>
+                                                    <th scope="col">Sản phẩm</th>
+                                                    <th scope="col">Đơn giá</th>
+                                                    <th scope="col">Số lượng</th>
+                                                    <th scope="col">Tổng tiền</th>
+                                                    <th scope="col">Trạng thái</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="fw-normal">
+                                                        <p>12:46</p>
+                                                        <p>03/12/2022</p>
+                                                    </th>
+                                                    <td>
+                                                        <p>Lẩu kim cho bạch tuộc</p>
+
+                                                    </td>
+                                                    <td>
+                                                        <p>239,000₫</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>1</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>239,000₫</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class=" tr tr__dh">Đã huỷ</div>
+                                                    </td>
+
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">239,000₫</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="detail-order_4" tabindex="-1" aria-labelledby="detail-orderModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-0">
+                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
+                                        <strong>DH017</strong>
+                                    </h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ">
+                                    <div class="row">
+                                        <table class="table ">
+                                            <thead class="table ">
+                                                <tr>
+                                                    <th scope="col">Ngày đặt</th>
+                                                    <th scope="col">Sản phẩm</th>
+                                                    <th scope="col">Đơn giá</th>
+                                                    <th scope="col">Số lượng</th>
+                                                    <th scope="col">Tổng tiền</th>
+                                                    <th scope="col">Trạng thái</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="fw-normal">
+                                                        <p>10:06</p>
+                                                        <p>03/12/2022</p>
+                                                    </th>
+                                                    <td>
+                                                        <p>Lẩu thái hải sản</p>
+
+                                                    </td>
+                                                    <td>
+                                                        <p>210,000₫</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>1</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>210,000₫</p>
+                                                    </td>
+                                                    <td>
+                                                        <div class=" tr tr__dg">Đã hoàn thành</div>
+                                                    </td>
+
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-0">
+                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">210,000₫</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END Modal chi tiết đơn hàng-->
+
+                </div>
+                <div class="tool hotro fs-6" id="help">Chức năng hiện tại chưa khả dụng!</div>
+            </div>
+        </div>
+
+    </section>
+    <!-- FOOTER  -->
+    <section class="contact" id="contact">
+        <div class="main-contact">
+            <div class="contact-content">
+                <h4>Dịch vụ</h4>
+                <li><a href="Pizza website_user.html">Trang chủ</a></li>
+                <li><a href="about_user.html">About</a></li>
+                <li><a href="menu/menuuser.html">Thực đơn</a></li>
+            </div>
+
+            
+
+            <div class="contact-content">
+                <h4>Contact</h4>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">FAQ</a></li>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p></p>
+    </div>
+    <!-- Back to top  -->
+    <a href="#" class="BackToTop cd-top text-replace js-cd-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- JQUERY  -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- BOOSTRAP JS  -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- UTIL JS  -->
+    <script src="../js/util.js"></script>
+    <!-- BACKTOTOP JS  -->
+    <script src="../js/main-backToTop.js"></script>
+    <!-- FILE  -->
+    <script>
+        var tool = document.getElementById("list__tool");
+        var list__tool = tool.getElementsByTagName("li");
+        for (var i = 0; i < list__tool.length; i++) {
+            list__tool[i].addEventListener("click", function () {
+                //tìm thẻ nào đang đc gắn acitve
+                var current = document.querySelector("#list__tool .active");
+                // xóa class active của thẻ đang được gắn
+                current.className = current.className.replace("active", "");
+                // thêm class active vào thẻ li được click 
+                this.className += "active";
+
+
+
+            });
+        }
+        var content = document.getElementById("file__right");
+        var list_content = content.getElementsByClassName("tool");
+
+        for (var i = 1; i < list_content.length; i++) {
+            list_content[i].style.display = "none";
+        }
+        function file() {
+            for (var i = 1; i < list_content.length; i++) {
+                list_content[i].style.display = "none";
+            }
+            var x = document.getElementById("file");
+            x.style.display = "flex";
+        }
+        function order() {
+            for (var i = 0; i < list_content.length; i++) {
+                list_content[i].style.display = "none";
+            }
+            var x = document.getElementById("order");
+            x.style.display = "block";
+        }
+        function help() {
+            for (var i = 0; i < list_content.length; i++) {
+                list_content[i].style.display = "none";
+            }
+            var x = document.getElementById("help");
+            x.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

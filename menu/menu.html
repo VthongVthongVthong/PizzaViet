@@ -30,11 +30,22 @@
 		</ul>
 
 		<div class="h-icons">
-			<a href="../login.html"><i class='bx bx-user'></i></a>
-			<a href="#"><i class='bx bx-search' ></i></a>
-			<a><i class='bx bx-cart' ></i></a>
-		
+			<!-- Hộp thoại tìm kiếm -->
+			<div class="search-container">
+				
+				<input type="text" placeholder="Search..." class="search-input">
+				<i class="bx bx-search search-icon"></i> <!-- Icon tìm kiếm -->
+			</div>
+			<a href="../user.html"><i class='bx bx-user'></i></a>
+			
+			
+			
+			<a href="./pages/cart.html"><i class='bx bx-cart'></i></a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+			
 		</div>
+		
+		
 	</header>
 
 	</div>
@@ -437,6 +448,17 @@
 
 	<script src="../js/outsidesrc/sweetalert2.min.js"></script>
 	<script src="../js/outsidesrc/jquery-3.7.1.js"></script>
+	<script>
+		// Lấy icon và input tìm kiếm
+		const searchIcon = document.querySelector('.search-icon');
+		const searchContainer = document.querySelector('.search-container');
+	
+		// Thêm sự kiện click vào icon
+		searchIcon.addEventListener('click', () => {
+			searchContainer.classList.toggle('active'); // Toggle class active
+		});
+	</script>
+	
 </body>
 </html>
 
