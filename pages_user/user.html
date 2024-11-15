@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồ sơ</title>
     <!-- FONT AWESOME  -->
-    
+
     <!-- FONT GOOGLE  -->
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
     <!-- BOOSTRAP -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+
     <!-- CSS  -->
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/user-file.css">
@@ -30,22 +31,23 @@
 <body>
     <!-- HEADER  -->
     <header>
-		<a href="Pizza website_user.html" class="logo"><img src="..../../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
-		<ul class="navbar">
-			<li><a href="Pizza website_user.html">Trang chủ</a></li>
-			<li><a href="about_user.html">About</a></li>
-			<li><a href="menu/menuuser.html">Thực đơn</a></li>
-			<li><a href="#contact">Liên Hệ</a></li>
-		</ul>
+        <a href="Pizza website_user.html" class="logo"><img src="..../../../img/logo2.png" alt="logo"
+                style="width:320px;height:70px"></a>
+        <ul class="navbar">
+            <li><a href="Pizza website_user.html">Trang chủ</a></li>
+            <li><a href="about_user.html">About</a></li>
+            <li><a href="menu/menuuser.html">Thực đơn</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+        </ul>
 
-		<div class="h-icons">
-			<a href="#"><i class='bx bx-user'></i></a>
-			<a href="#"><i class='bx bx-search' ></i></a>
-			<a href="user_cart.html"><i class='bx bx-cart' ></i></a>
-			<div class="bx bx-menu" id="menu-icon"></div>
-            <a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
-		</div>
-	</header>
+        <div class="h-icons">
+            <a href="#"><i class='bx bx-user'></i></a>
+            <a href="#"><i class='bx bx-search'></i></a>
+            <a href="user_cart.html"><i class='bx bx-cart'></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <a class="userLogout" href="#"><i class='fas fa-right-from-bracket'></i></a>
+        </div>
+    </header>
     <!-- Modal -->
     <div class="modal fade" id="notifyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -81,26 +83,26 @@
                 </div>
                 <ul class="list__tool" id="list__tool">
                     <li class="active" onclick="file()"><i class="fas fa-user"></i>Hồ sơ</li>
-                    <li class="" onclick="order()"><i class="fas fa-utensils"></i>Đơn hàng</li>
-                    <li class="" onclick="help()"><i class="fas fa-question-circle"></i>Hỗ trợ</li>
+                    <li onclick="order()"><i class="fas fa-utensils"></i>Đơn hàng</li>
+                    <li onclick="help()"><i class="fas fa-question-circle"></i>Hỗ trợ</li>
                 </ul>
             </div>
             <div class="file__right col-9" id="file__right">
                 <div class="tool hoso row justify-content-end" id="file">
                     <div class="hoso--label col-2">
-                        <p>Tên tài khoản</p>
-                        <p>Họ và tên</p>
-                        <p>Email</p>
-                        <p>Số điện thoại</p>
-                        <p>Địa chỉ</p>
-                        <p>Giới tính</p>
-                        <p>Ngày sinh</p>
+                        <p style="font-weight: bold; color: black;">Tên tài khoản</p>
+                        <p style="font-weight: bold; color: black;">Họ và tên</p>
+                        <p style="font-weight: bold; color: black;">Email</p>
+                        <p style="font-weight: bold; color: black;">Số điện thoại</p>
+                        <p style="font-weight: bold; color: black;">Địa chỉ</p>
+                        <p style="font-weight: bold; color: black;">Giới tính</p>
+                        <p style="font-weight: bold; color: black;">Ngày sinh</p>
                     </div>
                     <div class="hoso-info col-6 ">
-                        <p>Khachhang<i class="far fa-edit " data-bs-toggle="modal"
-                                data-bs-target="#notifyModal"></i></p>
-                        <p>Nguyễn Văn A<i class="far fa-edit " data-bs-toggle="modal"
-                                data-bs-target="#notifyModal"></i></p>
+                        <p>Khachhang<i class="far fa-edit " data-bs-toggle="modal" data-bs-target="#notifyModal"></i>
+                        </p>
+                        <p>Nguyễn Văn A<i class="far fa-edit " data-bs-toggle="modal" data-bs-target="#notifyModal"></i>
+                        </p>
                         <p>khachhang@gmail.com<i class="far fa-edit" data-bs-toggle="modal"
                                 data-bs-target="#notifyModal"></i></p>
                         <p>********43<i class="far fa-edit" data-bs-toggle="modal" data-bs-target="#notifyModal"></i>
@@ -113,20 +115,19 @@
                     </div>
                     <div class="hoso--img col-4">
                         <img src="../img/avatar.jpg" alt="">
-                        <button data-bs-toggle="modal" data-bs-target="#notifyModal">Thay đổi</button>
+                        <input type="file" id="imageUpload" accept=".jpg, .jpeg, .png" style="display: none;">
+                        <button id="changeImageButton">Thay đổi</button>
                     </div>
-                    <button>Lưu</button>
-
+                    <button id="saveImageButton">Lưu</button>
                 </div>
                 <div class="tool donhang" id="order">
                     <select class="form-select donhang-select" aria-label="Default select example">
                         <option selected>Trạng thái</option>
-                        <option value="1">Đã hoàn thành</option>
-                        <option value="2">Đang vận chuyển</option>
-                        <option value="3">Đã huỷ</option>
-                        <option value="4">Đang xử lý</option>
-                        <option value="5">Chưa xử lý</option>
-
+                        <option value="Đã hoàn thành">Đã hoàn thành</option>
+                        <option value="Đang vận chuyển">Đang vận chuyển</option>
+                        <option value="Đã huỷ">Đã huỷ</option>
+                        <option value="Đang xử lý">Đang xử lý</option>
+                        <option value="Chưa xử lý">Chưa xử lý</option>
                     </select>
                     <table class="table">
                         <thead class="table">
@@ -139,294 +140,93 @@
 
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="orderTableBody">
+                            <tr id="orderRow1">
                                 <th scope="row">D01</th>
-                                <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng </td>
+                                <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
                                 <td>185,000₫</td>
                                 <td>
-                                    <div class=" tr tr__xl">Đang xử lý</div>
+                                    <div class="tr tr__xl">Đang xử lý</div>
                                 </td>
                                 <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_1"></i>
                                 </td>
-
                             </tr>
-                            <tr>
+                            <tr id="orderRow2">
                                 <th scope="row">D02</th>
                                 <td>Pizza New York Beefsteak Phô Mai</td>
                                 <td>215,000₫</td>
                                 <td>
-                                    <div class=" tr tr__dag">Đang vận chuyển</div>
+                                    <div class="tr tr__dag">Đang vận chuyển</div>
                                 </td>
                                 <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_2"></i>
                                 </td>
-
                             </tr>
-                            <tr>
+                            <tr id="orderRow3">
                                 <th scope="row">D03</th>
                                 <td>Pizza Siêu Topping Xúc Xích Ý Truyền Thống</td>
                                 <td>195,000₫</td>
                                 <td>
-                                    <div class=" tr tr__dh">Đã huỷ</div>
+                                    <div class="tr tr__dh">Đã huỷ</div>
                                 </td>
-                                <td><i class="fas fa-eye " data-bs-toggle="modal" data-bs-target="#detail-order_3"></i>
+                                <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_3"></i>
                                 </td>
-
                             </tr>
-                            <tr>
+                            <tr id="orderRow4">
                                 <th scope="row">D04</th>
                                 <td>Pizza Siêu Topping Hải Sản Xốt Mayonnaise</td>
                                 <td>205,000₫</td>
                                 <td>
-                                    <div class=" tr tr__dg">Đã hoàn thành</div>
+                                    <div class="tr tr__dg">Đã hoàn thành</div>
                                 </td>
                                 <td><i class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#detail-order_4"></i>
                                 </td>
-
                             </tr>
                         </tbody>
 
                     </table>
                     <!-- Modal chi tiết đơn hàng-->
-                    <div class="modal fade" id="detail-order_1" tabindex="-1" aria-labelledby="detail-orderModalLabel"
+                    <div class="modal fade" id="orderDetailModal" tabindex="-1" aria-labelledby="orderDetailModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header border-0">
-                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
-                                        <strong>DH044</strong>
+                                    <h1 class="modal-title fs-5 fw-normal" id="orderDetailModalLabel">Chi tiết đơn hàng
                                     </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body ">
+                                <div class="modal-body">
                                     <div class="row">
-                                        <table class="table ">
-                                            <thead class="table ">
-                                                <tr>
-                                                    <th scope="col">Ngày đặt</th>
-                                                    <th scope="col">Sản phẩm</th>
-                                                    <th scope="col">Đơn giá</th>
-                                                    <th scope="col">Số lượng</th>
-                                                    <th scope="col">Tổng tiền</th>
-                                                    <th scope="col">Trạng thái</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row" class="fw-normal">
-                                                        <p>17:46</p>
-                                                        <p>9/12/2022</p>
-                                                    </th>
-                                                    <td>
-                                                        <p>Mì lẩu thái bò</p>
-                                                    </td>
-                                                    <td>34,000₫</td>
-                                                    <td>
-                                                        <p>1</p>
-                                                    </td>
-                                                    <td>34,000₫</td>
-                                                    <td>
-                                                        <div class=" tr tr__xl">Đang xử lý</div>
-                                                    </td>
-
-                                                </tr>
-                                        </table>
+                                        <div class="col-6">
+                                            <p><strong>Mã đơn hàng:</strong> <span id="orderId"></span></p>
+                                            <p><strong>Người đặt hàng:</strong> <span id="orderCustomer"></span></p>
+                                            <p><strong>Tên tài khoản:</strong> <span id="orderAccount"></span></p>
+                                            <p><strong>Số điện thoại:</strong> <span id="orderPhone"></span></p>
+                                            <p><strong>Địa chỉ giao hàng:</strong> <span id="orderAddress"></span></p>
+                                            <p><strong>Sản phẩm:</strong> <span id="orderProduct"></span></p>
+                                            <p><strong>Tổng tiền:</strong> <span id="orderTotal"></span></p>
+                                            <p><strong>Trạng thái:</strong> <span id="orderStatus"></span></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <img id="orderImage" src="" alt="Order Image" class="img-fluid">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">34,000₫</span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" id="detail-order_2" tabindex="-1" aria-labelledby="detail-orderModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header border-0">
-                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
-                                        <strong>DH034</strong>
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body ">
-                                    <div class="row">
-                                        <table class="table ">
-                                            <thead class="table ">
-                                                <tr>
-                                                    <th scope="col">Ngày đặt</th>
-                                                    <th scope="col">Sản phẩm</th>
-                                                    <th scope="col">Đơn giá</th>
-                                                    <th scope="col">Số lượng</th>
-                                                    <th scope="col">Tổng tiền</th>
-                                                    <th scope="col">Trạng thái</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row" class="fw-normal">
-                                                        <p>08:46</p>
-                                                        <p>6/12/2022</p>
-                                                    </th>
-                                                    <td>
-                                                        <p>Mì kim chi bò mỹ </p>
-                                                        <p>Tôm thêm</p>
-
-                                                    </td>
-                                                    <td>
-                                                        <p>49,000₫</p>
-                                                        <p>7,000₫</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>1</p>
-                                                        <p>1</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>49,000₫</p>
-                                                        <p>7,000₫</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class=" tr tr__dag">Đang vận chuyển</div>
-                                                    </td>
-
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">56,000₫</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="detail-order_3" tabindex="-1" aria-labelledby="detail-orderModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header border-0">
-                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
-                                        <strong>DH022</strong>
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body ">
-                                    <div class="row">
-                                        <table class="table ">
-                                            <thead class="table ">
-                                                <tr>
-                                                    <th scope="col">Ngày đặt</th>
-                                                    <th scope="col">Sản phẩm</th>
-                                                    <th scope="col">Đơn giá</th>
-                                                    <th scope="col">Số lượng</th>
-                                                    <th scope="col">Tổng tiền</th>
-                                                    <th scope="col">Trạng thái</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row" class="fw-normal">
-                                                        <p>12:46</p>
-                                                        <p>03/12/2022</p>
-                                                    </th>
-                                                    <td>
-                                                        <p>Lẩu kim cho bạch tuộc</p>
-
-                                                    </td>
-                                                    <td>
-                                                        <p>239,000₫</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>1</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>239,000₫</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class=" tr tr__dh">Đã huỷ</div>
-                                                    </td>
-
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">239,000₫</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="detail-order_4" tabindex="-1" aria-labelledby="detail-orderModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header border-0">
-                                    <h1 class="modal-title fs-5 fw-normal" id="detail-orderModalLabel">Đơn hàng:
-                                        <strong>DH017</strong>
-                                    </h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body ">
-                                    <div class="row">
-                                        <table class="table ">
-                                            <thead class="table ">
-                                                <tr>
-                                                    <th scope="col">Ngày đặt</th>
-                                                    <th scope="col">Sản phẩm</th>
-                                                    <th scope="col">Đơn giá</th>
-                                                    <th scope="col">Số lượng</th>
-                                                    <th scope="col">Tổng tiền</th>
-                                                    <th scope="col">Trạng thái</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row" class="fw-normal">
-                                                        <p>10:06</p>
-                                                        <p>03/12/2022</p>
-                                                    </th>
-                                                    <td>
-                                                        <p>Lẩu thái hải sản</p>
-
-                                                    </td>
-                                                    <td>
-                                                        <p>210,000₫</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>1</p>
-                                                    </td>
-                                                    <td>
-                                                        <p>210,000₫</p>
-                                                    </td>
-                                                    <td>
-                                                        <div class=" tr tr__dg">Đã hoàn thành</div>
-                                                    </td>
-
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <p class="fs-5">Thành tiền: <span class="fw-bold text-danger">210,000₫</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- END Modal chi tiết đơn hàng-->
-
                 </div>
-                <div class="tool hotro fs-6" id="help">Chức năng hiện tại chưa khả dụng!</div>
+                <div class="tool hotro" id="help">
+                    <div class="hotro__content">
+                        <h2>Trung tâm trợ giúp</h2>
+                        <p>Chúng tôi luôn sẵn lòng hỗ trợ bạn 24/7.</p>
+                        <p>Nếu có thắc mắc, xin vui lòng đến tại địa chỉ  273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh.</p>
+                        <div class="hotro__content--item">
+                            <h3>Liên hệ</h3>
+                            <p>Nếu bạn cần hỗ trợ, hãy liên hệ trực tiếp Zalo hoặc Sđt: <a href="tel:0935889042" style="color: #00628F;">0935889042</a> để có thể giải quyết nhanh nhất. PizzaViet xin chân thành cảm ơn!</p>
+                        </div>
+                    </div>
             </div>
-        </div>
-
     </section>
     <!-- FOOTER  -->
     <section class="contact" id="contact">
@@ -438,7 +238,7 @@
                 <li><a href="menu/menuuser.html">Thực đơn</a></li>
             </div>
 
-            
+
 
             <div class="contact-content">
                 <h4>Contact</h4>
@@ -447,7 +247,7 @@
                 <li><a href="#">FAQ</a></li>
             </div>
 
-            
+
         </div>
     </section>
 
@@ -461,7 +261,8 @@
     <!-- JQUERY  -->
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <!-- BOOSTRAP JS  -->
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/outsidesrc/bootstrap.bundle.min.js"></script>
+
     <!-- UTIL JS  -->
     <script src="../js/util.js"></script>
     <!-- BACKTOTOP JS  -->
@@ -511,6 +312,46 @@
             x.style.display = "block";
         }
     </script>
+
+    <script src="../js/outsidesrc/jquery-3.7.1.js"></script>
+    <script src="../js/outsidesrc/sweetalert2.min.js"></script>
+    <script src="../js/user_profile.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userLogout = document.querySelectorAll(".userLogout"); // Chọn tất cả các phần tử có class userLogout
+            userLogout.forEach(function (item) {
+                item.addEventListener("click", function () {
+                    Swal.fire({
+                        title: "Bạn sẽ đăng xuất.",
+                        text: "Bạn chắc chứ?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Có",
+                        cancelButtonText: "Huỷ"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: "Đăng xuất thành công!",
+                                text: "Bạn đã đăng xuất.",
+                                icon: "success"
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    // Chuyển hướng tới trang login.html sau khi nhấn OK
+                                    window.location.href = "../index.html";
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>
+    <script>
+    </script>
+
 </body>
 
 </html>
