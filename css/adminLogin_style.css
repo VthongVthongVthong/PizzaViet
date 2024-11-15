@@ -6,19 +6,45 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-image: url("../img/adminpizzabackground.gif");
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+.elementbg{
+    position: fixed;
+    z-index: -1;
+    height: 16%;
+    bottom: 90px;
+}
+
 .login-container {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
+    background-color: #ff7a43;
+}
+
+.button{
+    background-color: #00628F;
+}
+
+.button:hover{
+    background-color: #009ee8;
+    color: white;
+
+}
+
+.biglogo{
+    position: fixed;
+    width: 12%;
+    bottom: 65%;
 }
 
 .login-box {
