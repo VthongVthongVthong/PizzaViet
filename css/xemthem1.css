@@ -450,6 +450,12 @@ header.sticky{
 	margin-top: 4rem;
 	cursor: pointer;
 }
+.menu-content a:link,
+.menu-content a:visited,
+.menu-content a:hover,
+.menu-content a:active {
+    color: var(--text-color); 
+} 
 
 .row img{
 	position: relative;
