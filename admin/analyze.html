@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/css_admin.css">
+  <link rel="stylesheet" href="../css/admin_users.css">
+  <link rel="stylesheet" href="../css/delete_product.css">
+  <link rel="stylesheet" href="css/analyze.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
+  <script src="../js/products.js" ></script>
+  <script src="../js/admin_users.js"></script>
+  <title>Admin</title>
+  <style>
+    @font-face {
+      font-family: 'boxicons';
+      src: url('../css/boxicons/fonts/boxicons.ttf');
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <a href="admin.html"><img src="../img/logo2.png" alt=""></a>
+  </div>
+  <div class="sidebar-menu">
+    <ul>
+      <li>
+        <a href="admin_users.html"><span><i class="fa-solid fa-users-line"></i></span>
+          <span> Người dùng</span></a>
+      </li>
+      <li>
+        <a href="order_manager.html"><span><i class="nav-icon fa fa-shopping-cart"></i></span>
+          <span>Quản lí đơn hàng</span>
+        </a>
+      </li>
+      <li>
+        <a href="admin.html"><span><i class="fa-solid fa-chart-simple"></i></span>
+          <span> Thống kê </span></a>
+      </li>
+      <li class="active" onclick="toggleProductOptions()">
+        <a href="javascript:void(0)"><span><i class="fa-solid fa-list"></i></span>
+          <span>Sản phẩm</span></a>
+      </li>
+      <ul class="product-options" id="productOptions" style="display: none;">
+        <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
+        <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
+      </ul>
+      <li>
+        <a href="#"><span><i class="fa-solid fa-gear"></i></span>
+          <span>Cài đặt</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="fa-solid fa-plus"></span>
+          <span>Đăng nhập mới</span></a>
+      </li>
+      <li>
+        <a href="admin_index.html"><span class="fa-solid fa-right-from-bracket"></span>
+          <span>Đăng xuất</span></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<main>
+  <div class="content-wrapper">
+    <div class="sec-center_users">
+      <div class="container-account">
+        <h1>THỐNG KÊ</h1>
+        <div class="account">
+          <div class="text">
+            <h2>Long</h2>
+            <h5>Admin</h5>
+          </div>
+          <a href="#"><img src="../img/avatar_LongMongGa.png" alt=""></a>
+        </div>
+      </div>
+      <table id="Analyze_Table">
+        <h2>Mặt hàng</h2>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Ảnh</th>
+          <th>Tên sản phẩm</th>
+          <th>Số lượng bán ra</th>
+          <th>Tổng tiền thu được</th>
+          <th>Các hóa đơn</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+             <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>2</td>
+          <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+             <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>4</td>
+          <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>5</td>
+          <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>6</td>
+          <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>7</td>
+          
+        <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>8</td>
+          
+        <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>9</td>
+          
+        <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        <tr>
+          
+          <td>10</td>
+          
+        <td class="anh"><img src="../img/d1.jpg" alt=""></td>
+          <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
+          <td>55</td>
+            <td> 5,500,000 </td>
+          <td><a href="">Xem</a></td>
+        </tr>
+        </tbody>
+      </table>
+      <!--
+      <div class="centerbtn">
+        <button onclick="deleteSelectedUsers()" class="detele_all">Xóa các người dùng đã chọn</button>
+        <button onclick="addUsers()" class="add_users">Thêm người dùng</button>
+      </div> -->
+<div class="table2" >
+  <table id="Analyze_Table_Customer">
+    <h2>Khách Hàng</h2>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên người dùng</th>
+      <th>Họ tên</th>
+      <th>Số đơn</th>
+      <th>Tổng chi</th>
+      <th>Các hóa đơn</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>2</td>
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>4</td>
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>5</td>
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>6</td>
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>7</td>
+
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>8</td>
+
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>9</td>
+
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    <tr>
+
+      <td>10</td>
+
+      <td>AnhLongMongGa1234</td>
+      <td>Nguyễn Hoàng Long</td>
+      <td>12</td>
+      <td> 2,500,000 </td>
+      <td><a href="">Xem</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <!--
+  <div class="centerbtn">
+    <button onclick="deleteSelectedUsers()" class="detele_all">Xóa các người dùng đã chọn</button>
+    <button onclick="addUsers()" class="add_users">Thêm người dùng</button>
+  </div> -->
+
+</div>
+
+    </div>
+    <div id="modal_container">
+      <div class="modal">
+        <div class="modal_header">
+          <p>Chỉnh sửa thông tin Người dùng</p>
+          <button id="close" onclick="closePopup()">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <div class="inputt">
+          <div class="masp">
+            <p>Mã người dùng:</p>
+            <input id="userId" type="text" value="1" readonly style="color: grey;">
+          </div>
+          <div class="tensp">
+            <p>Tên người dùng:</p>
+            <input id="username" type="text" value="AnhLongMongGa1234" style="color: grey;">
+          </div>
+          <div class="danh_muc">
+            <label class="control-label">Vai trò:</label>
+            <select id="role" class="form-control" style="color: grey;">
+              <option value="Khách hàng">Khách hàng</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+          <div class="giaban">
+            <p>Họ tên:</p>
+            <input id="fullName" type="text" value="Nguyễn Hoàng Long" style="color: grey;">
+          </div>
+          <div class="email">
+            <p>Email:</p>
+            <input id="email" type="text" value="@gmail.com" style="color: grey;">
+          </div>
+          <div class="address">
+            <p>Địa chỉ:</p>
+            <input id="address" type="text" value="273, An Dương Vương, Quận 5, Tp HCM" style="color: grey;">
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="cancel-button" id="cancelEdit">Hủy</button>
+          <button type="submit" class="save-button" id="saveEdit">Lưu</button>
+        </div>
+      </div>
+    </div>
+    <div class="chart-section">
+      <div id="chart" class="chart"></div>
+    </div>
+  </div>
+
+</main>
+<script src="js/apexcharts.min.js"></script>
+<script src="js/analyze.js"></script>
+</body>
+</html>
