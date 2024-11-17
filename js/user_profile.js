@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const changeImageButton = document.getElementById('changeImageButton');
     const saveImageButton = document.getElementById('saveImageButton');
     const profileImage = document.querySelector("#file > div.hoso--img.col-4 > img");
-    const leftProfileImage = document.querySelector("body > section.file.container > div > div.file__left.col-3 > div > img");
+    const leftProfileImage = document.querySelector("body > section.file.container1 > div > div.file__left.col-3 > div > img");
 
     let originalImageSrc = profileImage.src;
 
