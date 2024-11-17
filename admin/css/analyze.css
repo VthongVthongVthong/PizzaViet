@@ -1,4 +1,24 @@
+
 .table2{
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.sort-section{
+    display: flex;
+    gap: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.statistical__filter{
+    display: flex;
+    padding: 20px 0 20px 10%;
+}
+.top5,
+.sortHOT,
+.sortID{
+    display: flex;
+    padding: 5px;
+
 }
