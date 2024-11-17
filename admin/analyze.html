@@ -77,8 +77,59 @@
           <a href="#"><img src="../img/avatar_LongMongGa.png" alt=""></a>
         </div>
       </div>
-      <table id="Analyze_Table">
+      <div class="statistical__filter p-3">
+        <form action="">
+          <label for="filter__select">Thống kê: </label>
+          <select name="filter__select" id="filter__select" class="mr-3">
+            <option value="">Tất cả</option>
+            <option value="">Mặt hàng</option>
+            <option value="">Khách Hàng</option>
+            <option value="">Biểu đồ</option>
+          </select>
+          <label for="product">Loại sản phẩm: </label>
+          <select name="" id="product" class="mr-3">
+            <option value="">Tất cả</option>
+            <option value="">Pizza Hải sản</option>
+            <option value="">Pizza Phô mai</option>
+            <option value="">Pizza Thập cẩm</option>
+            <option value="">Nước Uống</option>
+          </select>
+          <label for="filter__date">Từ</label>
+          <input type="date" id="filter__date">
+          <label for="filter__dateout ">đến</label>
+          <input type="date" id="filter__dateout ">
+          <label for="date__or">hoặc</label>
+          <select name="" id="date__or">
+            <option value="">-- Chọn khoảng thời gian --</option>
+            <option value="">Tuần nay</option>
+            <option value="">Tháng nay</option>
+            <option value="">3 tháng nay</option>
+            <option value="">6 tháng nay</option>
+            <option value="">Năm nay</option>
+          </select>
+          <button type="submit" class="btn btn-success mx-auto mt-3 d-block">Thống kê</button>
+        </form>
+      </div>
+      <table class="table1" id="Analyze_Table">
         <h2>Mặt hàng</h2>
+        <div class="sort-section">
+          <div class="sortID">
+            <label for="sortOrder">Sắp xếp theo ID:</label>
+            <select id="sortID" onchange="sortTableID()">
+              <option value="asc">Tăng dần</option>
+              <option value="desc">Giảm dần</option>
+            </select>
+          </div>
+
+          <div class="sortHOT"><label for="sortOrder">BÁN CHẠY:</label>
+            <select id="sortOrder" onchange="sortTable()">
+              <option value="asc">Tăng dần</option>
+              <option value="desc">Giảm dần</option>
+            </select>
+          </div>
+
+        </div>
+
         <thead>
         <tr>
           <th>ID</th>
@@ -95,7 +146,7 @@
           <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
           <td>55</td>
-             <td> 5,500,000₫ </td>
+             <td> 5.500.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -103,16 +154,16 @@
           <td>2</td>
           <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-             <td> 5,500,000₫ </td>
+          <td>40</td>
+             <td> 4.500.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
           <td>3</td>
           <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>23</td>
+            <td> 2.500.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -120,8 +171,8 @@
           <td>4</td>
           <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>35</td>
+            <td> 3.500.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -129,8 +180,8 @@
           <td>5</td>
           <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>75</td>
+            <td> 7.900.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -138,8 +189,8 @@
           <td>6</td>
           <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>52</td>
+            <td> 6.500.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -148,8 +199,8 @@
           
         <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>15</td>
+            <td> 1.200.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -158,8 +209,8 @@
           
         <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>26</td>
+            <td> 2.200.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -168,8 +219,8 @@
           
         <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>36</td>
+            <td> 3.000.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
         <tr>
@@ -178,11 +229,11 @@
           
         <td class="anh"><img src="../img/d1.jpg" alt=""></td>
           <td>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</td>
-          <td>55</td>
-            <td> 5,500,000₫ </td>
+          <td>43</td>
+            <td> 46.200.000₫ </td>
           <td><a href="">Xem</a></td>
         </tr>
-        <tr>
+        <tr class="total-row">
           <td style="font-size: 30px; text-align: right" colspan="4">Tổng tiền thu được:</td>
           <td style="font-size: 30px" colspan="2"><span id="totalRevenue">0</span>₫</td>
         </tr>
@@ -196,6 +247,30 @@
 <div class="table2" >
   <table id="Analyze_Table_Customer">
     <h2>Khách Hàng</h2>
+    <div class="sort-section">
+      <div class="sortID">
+        <label for="sortOrder">Sắp xếp theo ID:</label>
+        <select id="sortIDKH" onchange="sortTableIDKH()">
+          <option value="asc">Tăng dần</option>
+          <option value="desc">Giảm dần</option>
+        </select>
+      </div>
+
+      <div class="sortHOT"><label for="sortOrder">Sắp xếp theo số đơn:</label>
+        <select id="sortOrderKH" onchange="sortTableKH()">
+          <option value="asc">Tăng dần</option>
+          <option value="desc">Giảm dần</option>
+        </select>
+      </div>
+<div class="top5">
+  <label for="sortOrder">Top 5:</label>
+  <select id="sortOrderKHTop5" onchange="sortTableKHDesc()">
+    <option value="asc">Tăng dần</option>
+    <option value="desc">Giảm dần</option>
+  </select>
+  <button id="top5Button" onclick="showTop5()">Hiển thị Top 5</button>
+</div>
+    </div>
     <thead>
     <tr>
       <th>ID</th>
@@ -212,7 +287,7 @@
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
       <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td> 2.250.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -220,16 +295,16 @@
       <td>2</td>
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>5</td>
+      <td> 500.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
       <td>3</td>
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>9</td>
+      <td> 800.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -237,8 +312,8 @@
       <td>4</td>
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>7</td>
+      <td> 1.200.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -246,8 +321,8 @@
       <td>5</td>
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>10</td>
+      <td> 2.500.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -255,8 +330,8 @@
       <td>6</td>
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>2</td>
+      <td> 200.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -265,8 +340,8 @@
 
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>5</td>
+      <td> 700.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -275,8 +350,8 @@
 
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>22</td>
+      <td> 3.600.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -285,8 +360,8 @@
 
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>3</td>
+      <td> 220.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
     <tr>
@@ -295,11 +370,11 @@
 
       <td>AnhLongMongGa1234</td>
       <td>Nguyễn Hoàng Long</td>
-      <td>12</td>
-      <td> 2,500,000₫ </td>
+      <td>2</td>
+      <td> 170.000₫ </td>
       <td><a href="">Xem</a></td>
     </tr>
-    <tr>
+    <tr class="total-row">
       <td style="font-size: 30px; text-align: right" colspan="4">Tổng tiền thu được:</td>
       <td style="font-size: 30px" colspan="2"><span id="totalExpense">0</span>₫</td>
     </tr>
