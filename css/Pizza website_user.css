@@ -368,7 +368,6 @@ header.sticky{
 	margin-bottom: 15px;
 }
 .star i{
-	visibility: hidden;
 	color: var(--main-color);
 	font-size: 17px;
 	margin-right: 4px;
