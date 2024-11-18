@@ -76,60 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 deleteButton.classList.add('delete-button');
                 deleteButton.innerHTML = '🗑️'; // Biểu tượng thùng rác
                 deleteButton.addEventListener('click', () => {
-                    const img = productDiv.querySelector("div.orders--items-left > img");
-                    if (img && img.getAttribute("src")) {
-                        const src = img.getAttribute("src");
-                        const match = src.match(/\/([dn])(\d+)\.jpg$/i); // Regex cập nhật
-                        if (match) {
-                            const type = match[1]; // 'd' hoặc 'n'
-                            const detailIndex = parseInt(match[2], 10); // Lấy số từ regex
-                            let key;
-                
-                            if (type === 'd' && detailIndex >= 1 && detailIndex <= 12) {
-                                key = `detail${detailIndex}`;
-                            } else if (type === 'n' && detailIndex >= 1 && detailIndex <= 4) {
-                                key = `detail${detailIndex + 12}`;
-                            }
-                
-                            if (key) {
-                                console.log(`Xóa localStorage key: ${key}`); // Debug key
-                
-                                // Xóa key trong localStorage
-                                if (localStorage.getItem(key)) {
-                                    localStorage.removeItem(key);
-                                    console.log(`Đã xóa ${key} khỏi localStorage`);
-                                } else {
-                                    console.error(`${key} không tồn tại trong localStorage`);
-                                }
-                
-                                // Xóa div hiện tại
-                                const productDiv = deleteButton.closest(".orders--items"); // Tìm div cha gần nhất
-                                if (productDiv) {
-                                    console.log("Xóa productDiv:", productDiv);
-                                    productDiv.remove();
-                                    console.log("Đã xóa productDiv thành công.");
-                                } else {
-                                    console.error("Không tìm thấy productDiv để xóa.");
-                                }
-                
-                                // Cập nhật lại giỏ hàng
-                                cart = cart.filter(item => item.detailIndex !== (type === 'd' ? detailIndex : detailIndex + 12));
-                                renderCart(); // Render lại giao diện
-                            } else {
-                                console.error("detailIndex không nằm trong phạm vi hợp lệ");
-                            }
-                        } else {
-                            console.error("Không xác định được detailIndex từ src ảnh");
-                        }
-                    } else {
-                        console.error("Không tìm thấy ảnh hoặc src không hợp lệ");
-                    }
-                    console.log("Trước khi xóa: localStorage:", localStorage);
-                    console.log("Trước khi xóa: cart:", cart);
-
+                    // Xóa tất cả sản phẩm liên quan đến detailIndex
+                    const detailIndex = product.detailIndex;
+                    cart = cart.filter(item => item.detailIndex !== detailIndex);
+                    localStorage.removeItem(`detail${detailIndex}`);
+                    renderCart(); // Render lại giỏ hàng sau khi xóa
                 });
-                
-                                
 
                 productInfoDiv.appendChild(productName);
                 productInfoDiv.appendChild(productQuantity);
