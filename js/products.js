@@ -113,3 +113,52 @@ function filterOrder() {
 statusFilter.addEventListener('change', filterOrder);
 
 filterOrder();
+document.addEventListener("DOMContentLoaded", function () {
+    const ordersTable = document.querySelector(".table_order tbody");
+    const rows = Array.from(ordersTable.rows); // Lấy tất cả các dòng của bảng
+    const sortSelect = document.getElementById("sort");
+
+    // Lưu trữ các dòng ban đầu của bảng
+    const initialRows = [...rows];
+
+    // Hàm lấy quận từ địa chỉ
+    function getDistrict(address) {
+        const districts = ["Quận 1", "Quận 2", "Quận 3", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 10", "Quận Thủ Đức"];
+        for (let district of districts) {
+            if (address.includes(district)) {
+                return district;
+            }
+        }
+        return "";
+    }
+
+    function sortOrders(order = "asc") {
+        const sortedRows = rows.sort((rowA, rowB) => {
+            const addressA = rowA.cells[4].innerText;
+            const addressB = rowB.cells[4].innerText;
+
+            const districtA = getDistrict(addressA);
+            const districtB = getDistrict(addressB);
+
+            if (districtA === "Quận Thủ Đức") return 1;
+            if (districtB === "Quận Thủ Đức") return -1;
+
+            const districtOrder = ["Quận 1", "Quận 2", "Quận 3", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 10"];
+            const result = districtOrder.indexOf(districtA) - districtOrder.indexOf(districtB);
+
+            return order === "asc" ? result : -result;
+        });
+
+        sortedRows.forEach(row => ordersTable.appendChild(row));
+    }
+
+    sortSelect.addEventListener("change", function () {
+        const order = this.value;
+
+        if (order === "default") {
+            initialRows.forEach(row => ordersTable.appendChild(row));
+        } else {
+            sortOrders(order);
+        }
+    });
+});
