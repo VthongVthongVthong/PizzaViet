@@ -162,3 +162,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//phân trang của order_manager
+// Bắt sự kiện click vào nút "Trang trước"
+document.getElementById("prevBtn").addEventListener("click", function () {
+    const currentPage = window.location.pathname;
+    if (currentPage.includes("order_manager_page3.html")) {
+        window.location.href = "order__manager_page2.html";
+    } else if (currentPage.includes("order__manager_page2.html")) {
+        window.location.href = "order_manager.html";
+    }
+});
+
+ // Bắt sự kiện click vào nút "Trang sau"
+ document.getElementById("nextBtn").addEventListener("click", function () {
+    const currentPage = window.location.pathname;
+    if (currentPage.includes("order_manager.html")) {
+        window.location.href = "order__manager_page2.html";
+    } else if (currentPage.includes("order__manager_page2.html")) {
+        window.location.href = "order_manager_page3.html";
+    }
+});
