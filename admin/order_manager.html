@@ -207,14 +207,25 @@
             </div>
         </div>
         <div class="pagination">
-            <button id="prevBtn">&laquo;</button> <!-- Nút trang trước -->
-            <a href="menu1.html"><button class="active">1</button></a>
-            <a href="menu1_1.html"><button>2</button></a>
-            <a href="menu1_2.html"><button>3</button></a>
+            <a href="order_manager.html"><button class="active">1</button></a>
+            <a href="order__manager_page2.html"><button>2</button></a>
+            <a href="order_manager_page3.html"><button>3</button></a>
             <button id="nextBtn">&raquo;</button> <!-- Nút trang sau -->
         </div>
         </div>
     </div>    
     <script src="../js/products.js" ></script>
+    <script>
+        document.getElementById("nextBtn").addEventListener("click", function () {
+            const currentPage = window.location.pathname;
+    
+            if (currentPage.includes("order_manager.html")) {
+                window.location.href = "order__manager_page2.html";
+            } else if (currentPage.includes("order__manager_page2.html")) {
+                window.location.href = "order_manager_page3.html";
+            }
+        });
+    </script>
+    
 </body>
 </html>
