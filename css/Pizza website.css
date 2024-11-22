@@ -583,3 +583,42 @@ header.sticky{
 .view-more-btn:hover {
     background-color: var(--main-color1);
 }
+/* Căn chỉnh h-icons */
+.h-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Định dạng container của thanh tìm kiếm */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Icon tìm kiếm */
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Thanh tìm kiếm ẩn mặc định */
+.search-input {
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+/* Khi kích hoạt class active, thanh tìm kiếm sẽ mở rộng */
+.search-container.active .search-input {
+    width: 200px; /*	 Độ rộng bạn muốn hiển thị khi mở rộng */
+    opacity: 1;
+}
+
