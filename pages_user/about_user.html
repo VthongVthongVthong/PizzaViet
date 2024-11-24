@@ -20,6 +20,32 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Lấy icon và input tìm kiếm
+			const searchIcon = document.querySelector('.search-icon');
+			const searchContainer = document.querySelector('.search-container');
+		
+			// Thêm sự kiện click vào icon
+			searchIcon.addEventListener('click', () => {
+				searchContainer.classList.toggle('active'); // Toggle class active
+			});
+		});
+	</script>
+	<style>
+		.navbar a{
+			display: flex;
+			text-align: center;
+			min-width: 110px !important;
+			color: var(--bg-color);
+			font-size: var(--p-font);
+			font-weight: 600;
+			padding: 5px 10px;
+			margin: 2px 25px;
+			border-bottom: 2px solid transparent;
+			transition: all .38s ease;
+		}
+	</style>
 </head>
 <body>
 
@@ -36,11 +62,18 @@
 		</ul>
 
 		<div class="h-icons">
+
+			<!-- Hộp thoại tìm kiếm -->
+			<div class="search-container">
+				
+				<input type="text" placeholder="Tìm kiếm..." class="search-input">
+				<i class="bx bx-search search-icon"></i> <!-- Icon tìm kiếm -->
+			</div>
 			<a href="user.html"><i class='bx bx-user'></i></a>
-			<a href="#"><i class='bx bx-search' ></i></a>
-			<a href="../pages/cart.html"><i class='bx bx-cart' ></i></a>
-			<div class="bx bx-menu" id="menu-icon"></div>
-			<a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
+			
+			<a href="user_cart.html"><i class='bx bx-cart'></i></a>
+					
+            <a class="userLogout" href="#"><i class='fas fa-right-from-bracket'></i></a>
 		</div>
 	</header>
 	
