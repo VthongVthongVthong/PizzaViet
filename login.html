@@ -7,11 +7,6 @@
     <link rel="icon" href=
 		"img/pizza (1).png"
     type="image"/>
-    <script src="js/outsidesrc/sweetalert2.min.js"></script>
-    <script
-  src="js/outsidesrc/jquery-3.7.1.js"
-  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-  crossorigin="anonymous"></script>
   <script src="js/outsidesrc/scrollreveal.js"></script>
   <script type="text/javascript" src="js/login_request.js"></script>
 
@@ -28,31 +23,53 @@
           background-size: 100% 100%;
         }
     </style>
+    <link rel="stylesheet" href="../../css/xemthem.css">
+    <script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Lấy icon và input tìm kiếm
+			const searchIcon = document.querySelector('.search-icon');
+			const searchContainer = document.querySelector('.search-container');
+		
+			// Thêm sự kiện click vào icon
+			searchIcon.addEventListener('click', () => {
+				searchContainer.classList.toggle('active'); // Toggle class active
+			});
+		});
+	</script>
 </head>
 <header>
     <!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
     <a href="index.html" class="logo"><img src="img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
     <ul class="navbar">
         <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">Giới thiệu</a></li>
         <li><a href="menu/menu.html">Thực đơn</a></li>
         <li><a href="#contact">Liên Hệ</a></li>
     </ul>
 
     <div class="h-icons">
-        <a href="#"><i class='bx bx-user'></i></a>
-        <a href="#"><i class='bx bx-search' ></i></a>
-        <a><i class='bx bx-cart' ></i></a>
+        <!-- Hộp thoại tìm kiếm -->
+        <div class="search-container">
+            
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <i class="bx bx-search search-icon"></i> <!-- Icon tìm kiếm -->
+        </div>
+        <a href="login.html"><i class='bx bx-user'></i></a>
+        
+        
+        
+        <a href="#"><i class='bx bx-cart'></i></a>
         <div class="bx bx-menu" id="menu-icon"></div>
+        
     </div>
 </header>
 <body>
     <div class="login">
         <h1>Đăng nhập</h1>
     <form onsubmit="login(event)">
-        <input id="username" type="text" placeholder="Tên đăng nhập">
+        <input class="inputlogin" id="username" type="text" placeholder="Tên đăng nhập">
         <div>
-            <input id="password" type="password" placeholder="Mật khẩu">
+            <input class="inputlogin" id="password" type="password" placeholder="Mật khẩu">
             <svg class = "eye eye-open "xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
