@@ -355,6 +355,7 @@ header.sticky{
 	padding: 15px 0;
 }
 .menu-left h4{
+	color: black;
 	font-size: 20px;
 }
 .menu-right h5{
@@ -368,6 +369,7 @@ header.sticky{
 	margin-bottom: 15px;
 }
 .star i{
+	visibility: hidden;
 	color: var(--main-color);
 	font-size: 17px;
 	margin-right: 4px;
