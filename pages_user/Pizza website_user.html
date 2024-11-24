@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Pizza Việt</title>
 	<script src="..../../../js/outsidesrc/sweetalert2.min.js"></script>
-	
+	<script src="../js/search.js"></script>
     <script
   src="..../../../js/outsidesrc/jquery-3.7.1.js"
   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -15,7 +15,7 @@
 		"../img/pizza (1).png"
     type="image"/>
 	<link rel="stylesheet" href="../css/Pizza website_user.css">
-
+	<link rel="stylesheet" href="../../css/xemthem.css">
 	<link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
 	<link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,22 +27,28 @@
 
 	<!-- header section -->
 	<header>
-		<a href="#menu" class="dathang" id="orderButton"><span>Đặt Hàng</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22L11.2929 22.7071C11.4804 22.8946 11.7348 23 12 23C12.2652 23 12.5196 22.8946 12.7071 22.7071L12 22ZM13 2C13 1.44772 12.5523 1 12 1C11.4477 1 11 1.44772 11 2L13 2ZM8.70711 17.2929C8.31658 16.9024 7.68342 16.9024 7.29289 17.2929C6.90237 17.6834 6.90237 18.3166 7.29289 18.7071L8.70711 17.2929ZM16.7071 18.7071C17.0976 18.3166 17.0976 17.6834 16.7071 17.2929C16.3166 16.9024 15.6834 16.9024 15.2929 17.2929L16.7071 18.7071ZM13 22L13 2L11 2L11 22H13ZM7.29289 18.7071L11.2929 22.7071L12.7071 21.2929L8.70711 17.2929L7.29289 18.7071ZM12.7071 22.7071L16.7071 18.7071L15.2929 17.2929L11.2929 21.2929L12.7071 22.7071Z" fill="#0078AE"></path></svg></a>
 		<!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
-		<a href="#" class="logo"><img src="..../../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
+		<a href="#" class="logo"><img src="../../img/logo2.png" alt="logo"style= "width:320px;height:70px"></a>
 		<ul class="navbar">
-			<li><a href="#home">Trang chủ</a></li>
+			<li><a href="#">Trang chủ</a></li>
 			<li><a href="about_user.html">Giới thiệu</a></li>
 			<li><a href="menu/menuuser.html">Thực đơn</a></li>
 			<li><a href="lienhe_user.html">Liên Hệ</a></li>
 		</ul>
 
 		<div class="h-icons">
+
+			<!-- Hộp thoại tìm kiếm -->
+			<div class="search-container">
+				
+				<input type="text" placeholder="Tìm kiếm..." class="search-input">
+				<i class="bx bx-search search-icon"></i> <!-- Icon tìm kiếm -->
+			</div>
 			<a href="user.html"><i class='bx bx-user'></i></a>
-			<a href="#"><i class='bx bx-search' ></i></a>
-			<a href="user_cart.html"><i class='bx bx-cart' ></i></a>
-			<div class="bx bx-menu" id="menu-icon"></div>
-			<a class="userLogout" href="#"><i class='fas fa-right-from-bracket' ></i></a>
+			
+			<a href="user_cart.html"><i class='bx bx-cart'></i></a>
+					
+            <a class="userLogout" href="#"><i class='fas fa-right-from-bracket'></i></a>
 		</div>
 	</header>
 
@@ -291,9 +297,17 @@
 	<!-- custom js link -->
 	<script type="text/javascript" src="..../../../js/logout_rq.js"></script>
 	<script type="text/javascript" src="..../../../js/Pizza website_user.js"></script>
-	
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Lấy icon và input tìm kiếm
+			const searchIcon = document.querySelector('.search-icon');
+			const searchContainer = document.querySelector('.search-container');
+		
+			// Thêm sự kiện click vào icon
+			searchIcon.addEventListener('click', () => {
+				searchContainer.classList.toggle('active'); // Toggle class active
+			});
+		});
+	</script>
 </body>
 </html>
-
-
-
