@@ -47,6 +47,9 @@ span{
 	display: flex;
 }
 .navbar a{
+	display: flex;
+	text-align: center;
+	min-width: 110px;
 	color: var(--bg-color);
 	font-size: var(--p-font);
 	font-weight: 600;
