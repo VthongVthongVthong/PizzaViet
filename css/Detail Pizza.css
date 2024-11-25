@@ -617,13 +617,6 @@ header.sticky{
 	margin-top: 0.3em;
 }
 
-/* Đặt toàn bộ form vào giữa màn hình và điều chỉnh khoảng cách */
-form { 
-    margin-top: 55px; 
-    font-size: 20px;
-	border-top: solid;
-}
-
 /* Căn chỉnh từng mục form */
 .form-group {
     margin-bottom: 18px;
