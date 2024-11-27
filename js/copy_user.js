@@ -6,10 +6,10 @@ document.querySelector('.search-input').addEventListener('keypress', function (e
 	}
 });
 
-// Lắng nghe sự kiện nhấn vào biểu tượng tìm kiếm
-document.querySelector('.search-icon').addEventListener('click', function () {
-	searchFunction();
-});
+// // Lắng nghe sự kiện nhấn vào biểu tượng tìm kiếm
+// document.querySelector('.search-icon').addEventListener('click', function () {
+// 	searchFunction();
+// });
 
 function searchFunction() {
 	// Lấy giá trị từ thanh tìm kiếm
@@ -43,10 +43,10 @@ document.querySelector('.search-input').addEventListener('keypress', function (e
 	}
 });
 
-// Lắng nghe sự kiện nhấn vào biểu tượng tìm kiếm
-document.querySelector('.search-icon').addEventListener('click', function () {
-	searchFunction();
-});
+// // Lắng nghe sự kiện nhấn vào biểu tượng tìm kiếm
+// document.querySelector('.search-icon').addEventListener('click', function () {
+// 	searchFunction();
+// });
 
 function searchFunction() {
 	// Lấy giá trị từ thanh tìm kiếm
