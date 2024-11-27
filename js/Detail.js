@@ -54,7 +54,7 @@ const quantityInput = document.getElementById('soluong'); // Số lượng nhậ
             }).then((result) => {
                 if (result.isConfirmed) {
                     // Chuyển hướng tới trang login.html sau khi nhấn OK
-                    window.location.href = "../../../login.html";
+                    window.location.href = "../../login.html";
                 }
             });
         });
