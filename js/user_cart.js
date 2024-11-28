@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const details = [];
     const imagePaths = [];
 
+    console.log("Khởi tạo script user_cart.js...");
+
     for (let i = 1; i <= 16; i++) {
         const detail = localStorage.getItem(`detail${i}`);
         if (detail) {
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function renderCart() {
+            console.log("Bắt đầu render giỏ hàng...");
             ordersContainer.innerHTML = ''; // Xóa tất cả các sản phẩm hiện tại
             let totalPrice = 0; // Biến để lưu tổng giá tiền
 
@@ -125,17 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Hiển thị phí ship
-            const shippingFeeDiv = document.createElement('div');
-            shippingFeeDiv.classList.add('shipping-fee');
-            shippingFeeDiv.innerText = `Phí ship: miễn phí`;
-            ordersContainer.appendChild(shippingFeeDiv);
-
             // Hiển thị tổng giá tiền
-            const totalPriceDiv = document.createElement('div');
-            totalPriceDiv.classList.add('total-price');
-            totalPriceDiv.innerText = `Tổng cộng: ${totalPrice.toLocaleString('vi-VN')} đ`;
-            ordersContainer.appendChild(totalPriceDiv);
+            renderTotalPrice();
+
+            console.log("Kết thúc render giỏ hàng.");
         }
 
         function renderTotalPrice() {
@@ -143,9 +139,23 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.forEach(product => {
                 totalPrice += product.price * product.quantity;
             });
+
             const totalPriceDiv = document.querySelector('.total-price');
             if (totalPriceDiv) {
                 totalPriceDiv.innerText = `Tổng cộng: ${totalPrice.toLocaleString('vi-VN')} đ`;
+            }
+
+            console.log("Tổng giá trị giỏ hàng:", totalPrice);
+
+            // Ẩn hoặc hiện nút thanh toán dựa vào tổng giá trị giỏ hàng
+            if (payDiv) {
+                if (totalPrice === 0) {
+                    console.log("Tổng giá trị bằng 0, ẩn nút thanh toán.");
+                    payDiv.style.visibility = 'hidden';
+                } else {
+                    console.log("Tổng giá trị khác 0, hiển thị nút thanh toán.");
+                    payDiv.style.visibility = 'visible';
+                }
             }
         }
 
@@ -157,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ẩn nút thanh toán khi không có sản phẩm trong giỏ hàng
         if (payDiv) {
+            console.log("Không có sản phẩm trong giỏ hàng, ẩn nút thanh toán.");
             payDiv.style.visibility = 'hidden';
         }
     }
