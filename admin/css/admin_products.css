@@ -94,8 +94,6 @@ body{
     padding-left: 30px;
 }
 .form_them {
-
-
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
@@ -113,7 +111,6 @@ body{
     margin: 20px;
 }
 h1 {
-    color: #00628F;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -244,3 +241,20 @@ main .content-wrapper_products {
     flex-direction: column;
     gap: 20px;
     width: 100%;}
+#tinhtrang{
+    width: 183.33px;
+    height: 36.67px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+#tinhtrang:focus{
+    border-color: #00628F;
+    outline: none;
+}
+#tinhtrang {
+    color: #808080;
+}
+#tinhtrang.changed {
+    color: #000; 
+}
