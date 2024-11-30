@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
     <script src="js/products.js" ></script>
-    <script src="js/admin_users.js"></script>
     <title>Admin</title>
     <link rel="icon" href=
 		"../img/pizza (2).png"
@@ -243,41 +242,39 @@
                 <div class="inputt">
                     <div class="masp">
                         <p>Mã người dùng:</p>
-                        <input type="text" value="1" style="color: grey;">
+                        <input type="text" id="userId" value="1" style="color: grey; background-color: lightgrey;" readonly>
                     </div>
                     <div class="tensp">
                         <p>Tên người dùng:</p>
-                        <input type="text" value="AnhLongMongGa1234" style="color: gray;">
+                        <input type="text" id="username" value="AnhLongMongGa1234" style="color: gray;">
                     </div>
                     <div class="danh_muc">
                         <label class="control-label">Vai trò</label>
                         <br>
-                        <select class="form-control" style="color: grey;">
+                        <select class="form-control" id="role" style="color: grey;">
                             <option>Khách hàng</option>
                             <option>Admin</option>
                         </select>
                     </div>
                     <div class="giaban">
                         <p>Họ tên:</p>
-                        <input type="text" value="Nguyễn Hoàng Long" style="color:grey;">
+                        <input type="text" id="fullName" value="Nguyễn Hoàng Long" style="color:grey;">
                     </div>
                     <div class="email">
                         <p>Email:</p>
-                        <input type="text" value="@gmail.com" style="color:grey;">
+                        <input type="text" id="email" value="@gmail.com" style="color:grey;">
                     </div>
                     <div class="address">
                         <p>Địa chỉ</p>
-                        <input type="text" value="273, An Dương Vương, Quận 5, Tp HCM" style="color:grey;">
+                        <input type="text" id="address" value="273, An Dương Vương, Quận 5, Tp HCM" style="color:grey;">
                     </div>
                 </div>
-                <!--
-                <div class="picture">
-                    <img src="../img/d1.jpg" alt="">
+                <div class="picture" style="position: relative; left: 20px">
                     <div class="button">
-                        <button class="but" ><a style="color: white" href="#">Chỉnh sửa</a></button>
-                        <button style="background-color: red" class="but"><a style="color: white" href="#">Xóa ảnh</a></button>
+                        <button style="background-color: red" class="but"><a style="color: white" href="#">Hủy</a></button>
+                        <button id="updateUserBtn" class="but"><a style="color: white" href="#">Chỉnh sửa</a></button>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
 
@@ -286,5 +283,8 @@
     </div>
 
 </main>
+<script src="js/admin_users.js"></script>
+<script src="../js/outsidesrc/sweetalert2.min.js"></script>
+<script src="js/admin_logout.js"></script>
 </body>
 </html>
