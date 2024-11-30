@@ -124,4 +124,54 @@ function deleteSelectedUsers() {
 }
 
 
+function openAddUserModal() {
+    document.getElementById('addUserModal').style.display = 'block';
+}
+
+function closeAddUserModal() {
+    document.getElementById('addUserModal').style.display = 'none';
+}
+
+function addUser() {
+    const username = document.getElementById('newUsername').value;
+    const fullName = document.getElementById('newFullName').value;
+    const address = document.getElementById('newAddress').value;
+    const email = document.getElementById('newEmail').value;
+    const role = document.getElementById('newRole').value;
+
+    if (!username || !fullName || !address || !email || !role) {
+        alert("Vui lòng điền đầy đủ thông tin.");
+        return;
+    }
+
+    const table = document.getElementById('Users_Table').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+    const newId = table.rows.length;
+
+    newRow.innerHTML = `
+        <td><input type="checkbox" class="product-checkbox"></td>
+        <td>${newId}</td>
+        <td>${username}</td>
+        <td>${fullName}</td>
+        <td>${address}</td>
+        <td>${email}</td>
+        <td>${role}</td>
+        <td>
+            <button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
+            <button class="edit" onclick="openPopupUser(this)">Sửa</button>
+            <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt'></i></button>
+        </td>
+    `;
+
+    closeAddUserModal();
+    document.getElementById('newUsername').value = '';
+    document.getElementById('newFullName').value = '';
+    document.getElementById('newAddress').value = '';
+    document.getElementById('newEmail').value = '';
+    document.getElementById('newRole').value = 'Khách hàng';
+}
+
+document.querySelector('.add_users').addEventListener('click', openAddUserModal);
+
+
 
