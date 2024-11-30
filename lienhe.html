@@ -127,9 +127,9 @@
 	
     <script src="js/outsidesrc/sweetalert2.min.js"></script>
 	 <script src="js/outsidesrc/jquery-3.7.1.js"></script>  
-	 <script src="js/search.js"></script> 
+	 <!-- <script src="js/search.js"></script> 
 	 <script src="https://unpkg.com/scrollreveal"></script> 
-	 <script type="text/javascript" src="js/Pizza website.js"></script> 
+	 <script type="text/javascript" src="js/Pizza website.js"></script>  -->
 	
 	
 	<script type="text/javascript" src="js/login_request.js"></script>
@@ -155,6 +155,33 @@
 				});
 			});
 		</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+	
+		const searchIcon = document.querySelector('.search-icon');
+		const searchContainer = document.querySelector('.search-container');
+	
+		
+		searchIcon.addEventListener('click', () => {
+			searchContainer.classList.toggle('active'); 
+		});
+	});
+</script>
+<style>
+	.navbar a{
+		display: flex;
+		text-align: center;
+		min-width: 110px !important;
+		color: var(--bg-color);
+		font-size: var(--p-font);
+		font-weight: 600;
+		padding: 5px 10px;
+		margin: 2px 25px;
+		border-bottom: 2px solid transparent;
+		transition: all .38s ease;
+	}
+</style>
 	
 </body>
 </html>
