@@ -86,9 +86,13 @@
                                 <input type="text" id="price" class="form-control" placeholder="Nhập giá sản phẩm">
                             </div>
                             <div class="form-group">
-                                <label for="tinhtrang"><i class="fa-solid fa-info-circle"></i> Tình trạng:</label>
-                                <input type="number" id="tinhtrang" class="form-control" placeholder="Nhập tình trạng sản phẩm">
-                            </div>
+                              <label for="tinhtrang"><i class="fa-solid fa-info-circle"></i> Tình trạng:</label>
+                              <select id="tinhtrang" class="form-control">
+                                  <option value="" selected hidden>-- Chọn tình trạng --</option>
+                                  <option value="con_hang">Còn hàng</option>
+                                  <option value="het_hang">Hết hàng</option>
+                              </select>
+                          </div>
                         </div>
 
                         <div class="form-group">
@@ -113,6 +117,15 @@
    <script src="js/products.js" ></script>
    <script src="../js/outsidesrc/sweetalert2.min.js"></script>
    <script src="js/admin_logout.js"></script>
-
+   <script>
+    const tinhtrang = document.getElementById('tinhtrang');
+    tinhtrang.addEventListener('change', function () {
+        if (this.value) {
+            this.classList.add('changed');
+        } else {
+            this.classList.remove('changed');
+        }
+    });
+</script>
 </body>
 </html>
