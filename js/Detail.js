@@ -38,6 +38,16 @@ const quantityInput = document.getElementById('soluong'); // Số lượng nhậ
             alert("SỐ LƯỢNG PHẢI LỚN HƠN 0 VÀ KHÔNG ĐỂ TRỐNG.  XIN NHẬP LẠI."); // Thông báo lỗi
         }
     });
+    form.addEventListener('submit', function(event) {
+        const quantity = parseInt(quantityInput.value);
+
+        // Kiểm tra số lượng phải nhỏ hơn hoặc bằng 100
+        if (isNaN(quantity) || quantity > 100) {
+            event.preventDefault(); // Ngừng gửi form
+            alert("SỐ LƯỢNG PHẢI NHỎ HƠN HOẶC BẰNG 100. XIN NHẬP LẠI."); // Thông báo lỗi
+        }
+    });
+
 
     // Khởi tạo giá trị ban đầu
     updateDisplay();

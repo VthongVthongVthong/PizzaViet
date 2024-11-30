@@ -40,7 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("SỐ LƯỢNG PHẢI LỚN HƠN 0 VÀ KHÔNG ĐỂ TRỐNG.  XIN NHẬP LẠI."); // Thông báo lỗi
         }
     });
+  form.addEventListener('submit', function(event) {
+        const quantity = parseInt(quantityInput.value);
 
+        // Kiểm tra số lượng phải nhỏ hơn hoặc bằng 100
+        if (isNaN(quantity) || quantity > 100) {
+            event.preventDefault(); // Ngừng gửi form
+            alert("SỐ LƯỢNG PHẢI NHỎ HƠN HOẶC BẰNG 100. XIN NHẬP LẠI."); // Thông báo lỗi
+        }
+    });
     // Khởi tạo giá trị ban đầu
     updateDisplay();
 
@@ -56,7 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("SỐ LƯỢNG PHẢI LỚN HƠN 0 VÀ KHÔNG ĐỂ TRỐNG. XIN NHẬP LẠI.");
                 return;
             }
-
+            else if (quantity > 100) {
+                alert("SỐ LƯỢNG PHẢI NHỎ HƠN 100. XIN NHẬP LẠI.");
+                return;
+            }
             // Tạo đối tượng sản phẩm
             const product = {
                 name: "Pizza Gà Phô Mai Thịt Heo Xông Khói",
