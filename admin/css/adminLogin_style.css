@@ -9,7 +9,7 @@
 
 body {
     position: relative;
-    background-image: url("../img/adminpizzabackground.gif");
+    background-image: url("../../img/adminpizzabackground.gif");
     
     background-size: cover;
     display: flex;
