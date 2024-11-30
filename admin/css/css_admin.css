@@ -54,6 +54,7 @@ body{
 
 .sidebar-menu li a:hover {
     margin-left: 0.4rem;
+    transition: 0.3s ease;
 }
 
 .sidebar-menu li span {
@@ -338,4 +339,24 @@ main .content-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+
+.product-options {
+    position: relative;
+    padding-left: 10px;
+    bottom: 7px;
+}
+
+.product-options li {
+
+}
+
+.product-options li a {
+    color: white;
+}
+
+.product-options li a:hover {
+    transition: 0.3s ease;
+    border-radius: 8px;
 }
