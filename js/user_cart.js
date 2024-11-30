@@ -139,14 +139,39 @@ document.addEventListener('DOMContentLoaded', () => {
             cart.forEach(product => {
                 totalPrice += product.price * product.quantity;
             });
-
-            const totalPriceDiv = document.querySelector('.total-price');
-            if (totalPriceDiv) {
+        
+            // Xử lý phần tử "Tổng cộng"
+            let totalPriceDiv = document.querySelector('.total-price');
+            if (totalPrice === 0) {
+                if (totalPriceDiv) {
+                    totalPriceDiv.remove(); // Xóa phần tử nếu tổng giá trị bằng 0
+                }
+            } else {
+                if (!totalPriceDiv) {
+                    totalPriceDiv = document.createElement('div');
+                    totalPriceDiv.classList.add('total-price');
+                    ordersContainer.appendChild(totalPriceDiv); // Thêm vào container
+                }
                 totalPriceDiv.innerText = `Tổng cộng: ${totalPrice.toLocaleString('vi-VN')} đ`;
             }
-
+        
+            // Xử lý phần tử "Phí ship"
+            let shippingFeeDiv = document.querySelector('.shipping-fee');
+            if (totalPrice === 0) {
+                if (shippingFeeDiv) {
+                    shippingFeeDiv.remove(); // Xóa phần tử nếu tổng giá trị bằng 0
+                }
+            } else {
+                if (!shippingFeeDiv) {
+                    shippingFeeDiv = document.createElement('div');
+                    shippingFeeDiv.classList.add('shipping-fee');
+                    ordersContainer.appendChild(shippingFeeDiv);
+                }
+                shippingFeeDiv.innerText = `Phí ship: miễn phí`;
+            }
+        
             console.log("Tổng giá trị giỏ hàng:", totalPrice);
-
+        
             // Ẩn hoặc hiện nút thanh toán dựa vào tổng giá trị giỏ hàng
             if (payDiv) {
                 if (totalPrice === 0) {
@@ -157,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     payDiv.style.visibility = 'visible';
                 }
             }
-        }
+        }        
 
         renderCart();
     } else {
