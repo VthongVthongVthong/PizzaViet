@@ -68,7 +68,31 @@
         <div class="infor_order">
             <div class="mid_content">
                 <div class="submit">
-                    <button class="new ">Tạo mới</button>
+                    <!-- Nút Tạo Mới -->
+                    <button class="new">Tạo mới</button>
+
+                    <!-- Form tạo mới đơn hàng (Ẩn ban đầu) -->
+                    <div class="create-order-form" style="display: none;">
+                        <h2>Tạo đơn hàng mới</h2>
+                        <label for="customerName">Khách hàng:</label>
+                        <input type="text" id="customerName" placeholder="Tên khách hàng" required>
+
+                        <label for="orderDate">Ngày:</label>
+                        <input type="date" id="orderDate" required>
+
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" placeholder="Địa chỉ giao hàng" required>
+
+                        <label for="status">Tình trạng:</label>
+                        <select id="status">
+                            <option value="pending">Chưa xử lí</option>
+                            <option value="processing">Đang xử lí</option>
+                            <option value="completed">Đã xử lí</option>
+                        </select>
+
+                        <button id="saveOrder">Lưu</button>
+                        <button id="cancelOrder">Hủy</button>
+                    </div>
                     <button class="dowload">Tải file về </button>
                     <button class="print">In dữ liệu</button>
                     <button class="copy">Sao chép</button>
@@ -219,6 +243,8 @@
         </div>
         </div>
     </div>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="../js/excel.js" ></script>
     <script src="../js/products.js" ></script>
 </body>
 </html>
