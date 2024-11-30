@@ -30,7 +30,7 @@ function searchFunction() {
 	// Kiểm tra nếu người dùng nhập từ khóa
 	if (query) {
 		// Chuyển hướng sang trang timkiem.html và truyền từ khóa tìm kiếm qua tham số query
-		window.location.href = `../../timkiem_user.html?query=${encodeURIComponent(query)}`;
+		window.location.href = `../../timkiem.html?query=${encodeURIComponent(query)}`;
 	} else {
 		// Hiển thị cảnh báo nếu thanh tìm kiếm rỗng
 		alert("Vui lòng nhập từ khóa để tìm kiếm!");
