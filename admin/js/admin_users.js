@@ -8,11 +8,15 @@ function lockUser(button) {
         if (confirm("Bạn có chắc muốn mở khóa người dùng này không?")) {
             button.innerHTML = "<i class='bx bxs-lock-open-alt'></i>";
             button.setAttribute("data-locked", "false");
+            button.style.backgroundColor = "white";
+            button.style.color = "darkgray";
         }
     } else {
         if (confirm("Bạn có chắc muốn khóa người dùng này không?")) {
             button.innerHTML = "<i class='bx bxs-lock-alt'></i>";
             button.setAttribute("data-locked", "true");
+            button.style.backgroundColor = "black";
+            button.style.color = "white";
 
         }
     }
@@ -41,9 +45,61 @@ function openPopupUser(button) {
         return;
     }
 
+    const userId = row.cells[1]?.innerText || 'N/A';
+    const username = row.cells[2]?.innerText || 'N/A';
+    const fullName = row.cells[3]?.innerText || 'N/A';
+    const address = row.cells[4]?.innerText || 'N/A';
+    const email = row.cells[5]?.innerText || 'N/A';
+    const role = row.cells[6]?.innerText || 'N/A';
+
+    console.log(userId, username, fullName, address, email, role);
+
+    if (!userId || !username) {
+        alert("Dữ liệu người dùng không hợp lệ.");
+        return;
+    }
+
+    document.getElementById('userId').value = userId;
+    document.getElementById('username').value = username;
+    document.getElementById('fullName').value = fullName;
+    document.getElementById('address').value = address;
+    document.getElementById('email').value = email;
+    document.getElementById('role').value = role;
+
     document.getElementById('modal_container').style.display = 'block';
 }
 
+
+function updateUser() {
+    const userId = document.getElementById('userId').value;
+    const username = document.getElementById('username').value;
+    const fullName = document.getElementById('fullName').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
+    const role = document.getElementById('role').value;
+
+    if (!userId || !username) {
+        alert("Dữ liệu người dùng không hợp lệ.");
+        return;
+    }
+
+    const rows = document.querySelectorAll('#Users_Table tbody tr');
+    rows.forEach(row => {
+        if (row.cells[1].innerText === userId) {
+            row.cells[2].innerText = username;
+            row.cells[3].innerText = fullName;
+            row.cells[4].innerText = address;
+            row.cells[5].innerText = email;
+            row.cells[6].innerText = role;
+        }
+    });
+
+    document.getElementById('modal_container').style.display = 'none';
+}
+
+document.getElementById('updateUserBtn').addEventListener('click', function(event) {
+    updateUser();
+});
 
 
 
