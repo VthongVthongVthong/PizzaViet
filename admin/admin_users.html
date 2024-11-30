@@ -227,7 +227,7 @@
             </table>
             <div class="centerbtn">
                 <button onclick="deleteSelectedUsers()" class="detele_all">Xóa các người dùng đã chọn</button>
-                <button onclick="addUsers()" class="add_users">Thêm người dùng</button>
+                <button onclick="openAddUserModal()" class="add_users">Thêm người dùng</button>
             </div>
 
 
@@ -277,6 +277,48 @@
                 </div>
             </div>
         </div>
+
+        <div id="addUserModal">
+        <div class="modal">
+            <div class="modal_header">
+                <p>Thêm người dùng mới</p>
+                <button id="closeAddUser" onclick="closeAddUserModal()"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="inputt">
+                <div class="tensp">
+                    <p>Tên người dùng:</p>
+                    <input type="text" id="newUsername" style="color: gray;">
+                </div>
+                <div class="danh_muc">
+                    <label class="control-label">Vai trò</label>
+                    <br>
+                    <select class="form-control" id="newRole" style="color: grey;">
+                        <option>Khách hàng</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <div class="address">
+                    <p>Họ tên:</p>
+                    <input type="text" id="newFullName" style="color:grey;">
+                </div>
+                <div class="email">
+                    <p>Email:</p>
+                    <input type="text" id="newEmail" style="color:grey;">
+                </div>
+                <div class="address">
+                    <p>Địa chỉ</p>
+                    <input type="text" id="newAddress" style="color:grey;">
+                </div>
+            </div>
+            <div class="picture" style="position: relative; left: 20px">
+                <div class="button">
+                    <button id="cancelAddUser" onclick="closeAddUserModal()" style="background-color: red" class="but"><a style="color: white">Hủy</a></button>
+                    <button id="addUserBtn" class="but" onclick="addUser()"><a style="color: white">Thêm</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
         <div class="sec-right"></div>
 
