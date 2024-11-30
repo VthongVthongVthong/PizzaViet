@@ -180,6 +180,9 @@ main .new-user .user-list{
 main .new-user .user-list:hover{
     box-shadow: none !important;
 }
+.user{
+    text-align: center;
+}
 main .container-account img{
    width: 60px;
    height: 60px;
