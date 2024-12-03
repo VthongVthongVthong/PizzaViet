@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css_admin.css">
+    <link rel="stylesheet" href="css/admin_users.css">
+    <link rel="stylesheet" href="css/delete_product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/boxicons/boxicons.min.css">
+    <title>Quản lý Sản phẩm</title>
+    <link rel="icon" href=
+		"../img/pizza (2).png"
+    type="image"/>
+    <script src="js/products.js" ></script>
+    <script src="js/admin_users.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-brand">
+          <a href="admin.html"><img src="../img/logo2.png" alt=""></a>
+        </div>
+        <div class="sidebar-menu">
+          <ul>
+            <li>
+              <a href="admin_users.html"><span><i class="fa-solid fa-users-line"></i></span>
+                <span> Người dùng</span></a>
+            </li>
+            <li>
+              <a href="order_manager.html"><span><i class="nav-icon fa fa-shopping-cart"></i></span>
+                <span>Quản lí đơn hàng</span>
+              </a>
+            </li>
+            <li>
+              <a href="analyze.html"><span><i class="fa-solid fa-chart-simple"></i></span>
+                <span> Thống kê </span></a>
+            </li>
+            <li class="active" onclick="toggleProductOptions()">
+              <a href="javascript:void(0)"><span><i class="fa-solid fa-list"></i></span>
+                <span>Sản phẩm</span></a>
+            </li>
+            <ul class="product-options" id="productOptions" style="display: none;">
+              <li><a href="delete_products.html" >Danh sách sản phẩm</a></li>
+              <li><a href="admin_products.html" >Thêm sản phẩm</a></li>
+            </ul>
+            <li>
+              <a href="#"><span><i class="fa-solid fa-gear"></i></span>
+                <span>Cài đặt</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="fa-solid fa-plus"></span>
+                <span>Đăng nhập mới</span></a>
+            </li>
+            <li>
+              <a href="admin_index.html"><span class="fa-solid fa-right-from-bracket"></span>
+                <span>Đăng xuất</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <main>
+        <div class="content-wrapper">
+            <div class="sec-center_users">
+                <div class="container-account">
+                    <h1>Pizza Hải Sản Xốt Mayonnaise Hảo Hạng</h1>
+                    <div class="account">
+                        <div class="text">
+                            <h2>Long</h2>
+                            <h5>Admin</h5>
+                        </div>
+                        <a href="#"><img src="../img/avatar_LongMongGa.png" alt="Avatar Admin"></a>
+                    </div>
+                </div>
+
+                <!-- Bảng hóa đơn -->
+                <table class="table1" id="Analyze_Table">
+                    <thead>
+                        <tr>
+                            <th>Mã hóa đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày mua</th>
+                            <th>Số lượng</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Demo dữ liệu -->
+                        <tr>
+                            <td>HD001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>2024-11-15</td>
+                            <td>5</td>
+                            <td>1.500.000₫</td>
+                        </tr>
+                        <tr>
+                            <td>HD002</td>
+                            <td>Nguyễn Thị B</td>
+                            <td>2024-11-16</td>
+                            <td>3</td>
+                            <td>900.000₫</td>
+                        </tr>
+                        <tr>
+                            <td>HD003</td>
+                            <td>Trần Văn C</td>
+                            <td>2024-11-17</td>
+                            <td>7</td>
+                            <td>2.100.000₫</td>
+                        </tr>
+                        <tr>
+                            <td>HD004</td>
+                            <td>Trần Văn D</td>
+                            <td>2024-11-27</td>
+                            <td>4</td>
+                            <td>1.000.000₫</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="quayve">
+                <a href="analyze.html" class="back-button">Quay lại</a>
+            </div>
+        </div>
+    </main>
+    <script src="js/developing_content.js"></script>
+    <script src="../js/outsidesrc/sweetalert2.min.js"></script>
+    <script src="js/admin_logout.js"></script>
+</body>
+</html>
