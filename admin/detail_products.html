@@ -102,7 +102,17 @@
             
     </div>
         <script src="js/developing_content.js"></script>
-    <script src="../js/detail_products.js"></script>
+        <script>
+            function toggleProductOptions() {
+                var productOptions = document.getElementById('productOptions');
+                if (productOptions.style.display === 'none') {
+                    productOptions.style.display = 'block';
+                } else {
+                    productOptions.style.display = 'none';
+                }
+            }
+        </script>
+        <script src="../js/detail_products.js"></script>
         <script src="../js/outsidesrc/sweetalert2.min.js"></script>
         <script src="js/admin_logout.js"></script>
     </div>
