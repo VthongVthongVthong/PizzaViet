@@ -6,6 +6,24 @@
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
 }
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00628F;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 35%;
+    left: 15.2%;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.back-button:hover {
+    background-color: #0084c2;
+}
 body{
     background-color: #f4f7fc;
     height: 100%;
