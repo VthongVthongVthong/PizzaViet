@@ -1,59 +1,100 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thực Đơn</title>
-        
-        <link rel="icon" href="../img/pizza (1).png" type="image"/>
-        <link rel="stylesheet" href="css/timkiem.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Đơn</title>
     
-        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/fontawesome-free/css/all.min.css">
-        <link rel="icon" href="../img/pizza (1).png" type="image"/>
-    </head>
+    <link rel="icon" href="img/pizza (1).png" type="image"/>
+    <link rel="stylesheet" href="css/timkiem.css">
+    <link rel="stylesheet" href="css/xemthem.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome-free/css/all.min.css">
+</head>
 <body>
     <!-- header section -->
     <header>
-		<!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
-		<a href="index.html" class="logo"><img src="img/logo2.png" alt="logo" style="width:320px;height:70px"></a>
-		<ul class="navbar">
-			<li><a href="index.html">Trang chủ</a></li>
-			<li><a href="about.html">Giới thiệu</a></li>
-			<li><a href="menu/menu.html">Thực đơn</a></li>
-			<li><a href="lienhe.html">Liên Hệ</a></li>
-		</ul>
+        <a href="index.html" class="logo"><img src="img/logo2.png" alt="logo" style="width:320px;height:70px"></a>
+        <ul class="navbar">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="menu/menu.html">Thực đơn</a></li>
+            <li><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
 
-		<div class="h-icons">
-			<!-- Hộp thoại tìm kiếm -->
-			<div class="search-container">
-				<input type="text" placeholder="Tìm kiếm..." class="search-input">
-				<i class="bx bx-search search-icon"></i> <!-- Icon tìm kiếm -->
-			</div>
-			<a href="login.html"><i class='bx bx-user'></i></a>
-			<a href="#"><i class='bx bx-cart'></i></a>
-			<div class="bx bx-menu" id="menu-icon"></div>
-		</div>
-	</header>
+        <div class="h-icons">
+            <!-- Hộp thoại tìm kiếm -->
+            <div class="search-container">
+                <input type="text" placeholder="Tìm kiếm..." class="search-input">
+                <i class="bx bx-search search-icon"></i> <!-- Icon tìm kiếm -->
+            </div>
+            <a href="login.html"><i class='bx bx-user'></i></a>
+            <a href="#"><i class='bx bx-cart'></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
 
     <section class="timkiem">
         <div class="timkiem-h1">
-            <!-- Thêm ID cho thẻ h1 để dễ dàng thay đổi nội dung -->
-            <h1 id="search-title">Rất tiếc chúng tôi không tìm thấy sản phẩm: </h1>
-        </div>
-        <div class="image-container">
-            <img src="img/no-data.png" class="center-image">
+            <h1 id="search-title">Sản phẩm bạn cần tìm: </h1>
         </div>
     </section>
+    <div id="result" class="menu-content"></div>
     <script src="js/outsidesrc/sweetalert2.min.js"></script>
     <script src="js/logout_rq.js"></script>
-    <script src="js/search.js"></script>
-
+    <script >
+        
+		// Lấy icon và input tìm kiếm
+		const searchIcon = document.querySelector('.search-icon');
+		const searchContainer = document.querySelector('.search-container');
+	
+		// Thêm sự kiện click vào icon
+		searchIcon.addEventListener('click', () => {
+			searchContainer.classList.toggle('active'); // Toggle class active
+		});
+    </script>
     <script src="js/copy.js"></script>
+    <script src="../PizzaViet-main/js/timkiemnangcao.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            if (query) {
+                document.querySelector('.search-input').value = query;
+                searchProducts(query);
+            }
+
+            // Lắng nghe sự kiện nhấn phím Enter trong thanh tìm kiếm
+            document.querySelector('.search-input').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Ngăn không cho form tự động submit
+                    searchFunction();
+                }
+            });
+
+            // Lắng nghe sự kiện nhấn vào biểu tượng tìm kiếm
+            document.querySelector('.search-icon').addEventListener('click', function() {
+                searchFunction();
+            });
+
+            // function searchFunction() {
+            //     // Lấy giá trị từ thanh tìm kiếm
+            //     const query = document.querySelector('.search-input').value.trim();
+
+        //         // Kiểm tra nếu người dùng nhập từ khóa
+        //         if (query) {
+        //             // Chuyển hướng sang trang timkiem.html và truyền từ khóa tìm kiếm qua tham số query
+        //             window.location.href = `../timkiem.html?query=${encodeURIComponent(query)}`;
+        //         } else {
+        //             // Hiển thị cảnh báo nếu thanh tìm kiếm rỗng
+        //             alert("Vui lòng nhập từ khóa để tìm kiếm!");
+        //         }
+        //     }
+        });
+    </script>
 </body>
 </html>

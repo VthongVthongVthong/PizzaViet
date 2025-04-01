@@ -15,6 +15,7 @@
     type="image"/>
 	
 	<link rel="stylesheet" href="css/Pizza website.css">
+	<link rel="stylesheet" href="css/xemthem.css">
 
 	<link rel="stylesheet" href="css/boxicons/boxicons.min.css">
 	
@@ -304,5 +305,33 @@
 	<script type="text/javascript" src="js/Pizza website.js"></script>
 	<script src="js/search.js"></script>
 	<script src="js/copy.js"></script>
+	<script src="../timkiemnangcao.js"></script>
+	<!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lắng nghe sự kiện nhấn phím Enter trong thanh tìm kiếm
+            document.querySelector('.search-input').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Ngăn không cho form tự động submit
+                    searchFunction();
+                }
+            });
+
+            // // // Lắng nghe sự kiện nhấn vào biểu tượng tìm kiếm
+            // document.querySelector('.search-icon').addEventListener('click', function() {
+            //     searchFunction();
+            // });
+
+            function searchFunction() {
+                // Lấy giá trị từ thanh tìm kiếm
+                const query = document.querySelector('.search-input').value.trim();
+
+                // Kiểm tra nếu người dùng nhập từ khóa
+                if (query) {
+                    // Chuyển hướng sang trang timkiem.html và truyền từ khóa tìm kiếm qua tham số query
+                    window.location.href = `timkiem.html?query=${encodeURIComponent(query)}`;
+                } 
+            }
+        });
+    </script> -->
 </body>
 </html>
