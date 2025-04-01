@@ -412,7 +412,7 @@ header.sticky{
 }
 .contact-content li a:hover{
 	transform: translateX(10px);
-	color: var(--bg-color);
+	color: var (--bg-color);
 	opacity: 50%;
 }
 .scroll-top{

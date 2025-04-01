@@ -380,9 +380,10 @@ header.sticky{
 	margin-bottom: 2.3rem;
 }
 .menu-content{
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-	gap: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px; /* Khoảng cách giữa các sản phẩm */
+	justify-content: flex-start; /* Căn trái các sản phẩm */
 	align-items: center;
 	margin-top: 4rem;
 	cursor: pointer;
@@ -709,6 +710,75 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+ /* Định dạng các sản phẩm nhỏ */
+.small-product img {
+    width: 1px; /* Điều chỉnh kích thước hình ảnh */
+    height: 1px;
+}
+
+.small-product .menu-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-product .menu-left h4 {
+    font-size: 20px; /* Điều chỉnh kích thước chữ */
+}
+
+.small-product .menu-right h5 {
+    font-size: 20px; /* Điều chỉnh kích thước chữ */
+}
+
+.small-product .contentDescribe {
+    font-size: 20px; /* Điều chỉnh kích thước chữ */
+}
+
+.small-product .star i {
+    font-size: 12px; /* Điều chỉnh kích thước biểu tượng sao */
+}
+.menu-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    justify-content: flex-start; /* Căn trái các sản phẩm */
+    align-items: center;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+.product-item {
+    flex: 1 1 calc(33.33% - 20px); /* Điều chỉnh kích thước sản phẩm */
+    box-sizing: border-box;
+    max-width: 300px; /* Đặt kích thước tối đa cho sản phẩm */
+}
+
+.product-item img {
+    width: 100%; /* Điều chỉnh kích thước hình ảnh */
+    height: auto;
+}
+
+.product-item .menu-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-item .menu-left h4 {
+    font-size: 16px; /* Điều chỉnh kích thước chữ */
+}
+
+.product-item .menu-right h5 {
+    font-size: 14px; /* Điều chỉnh kích thước chữ */
+}
+
+.product-item .contentDescribe {
+    font-size: 14px; /* Điều chỉnh kích thước chữ */
+}
+
+.product-item .star i {
+    font-size: 14px; /* Điều chỉnh kích thước biểu tượng sao */
 }
 
 
