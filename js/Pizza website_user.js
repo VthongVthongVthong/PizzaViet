@@ -39,7 +39,9 @@ const dots = document.querySelectorAll('.dots');
 let current = 0;
 
 const slideChanger = () => {
-	
+	    if (searchContainer.classList.contains('active')) {
+        return;
+    }
 	if(current == length - 1){
 		current = 0;
 		let width = slideWrapper.offsetWidth 
