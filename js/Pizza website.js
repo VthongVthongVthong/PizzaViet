@@ -27,51 +27,70 @@ sr.reveal('.home-text',{delay:200, origin:'left'});
 sr.reveal('.home-img,.slide-wrapper',{delay:200, origin:'right'});
 sr.reveal('.container, .about, .menu, .contact',{delay:200, origin:'bottom'});
 
-
-const list = document.querySelector('.slider');
-console.log(list);
-const imgs = document.getElementsByTagName('img');
-const length = 3;
-const slideWrapper = document.querySelector('.slide-wrapper');
-const prev = document.querySelector('.btn-left');
-const next = document.querySelector('.btn-right');
-const dots = document.querySelectorAll('.dots');
-let current = 0;
-
-const slideChanger = () => {
-	    if (searchContainer.classList.contains('active')) {
+document.addEventListener('DOMContentLoaded', () => {
+    const searchContainer = document.querySelector('.search-container');
+    if (!searchContainer) {
+        console.error("Lỗi: searchContainer không tồn tại trong DOM.");
         return;
     }
-	if(current == length - 1){
-		current = 0;
-		let width = slideWrapper.offsetWidth 
-	console.log(width)
-	list.style.transform = `translateX(0px)`
 
-	document.querySelector('.active').classList.remove('active');
-	document.querySelector('.dots-'+current).classList.add('active');
-	}
+    const list = document.querySelector('.slider');
+    const slideWrapper = document.querySelector('.slide-wrapper');
+    const prev = document.querySelector('.btn-left');
+    const next = document.querySelector('.btn-right');
+    const dots = document.querySelectorAll('.dots');
+    let current = 0;
+    const length = 3;
 
-	else {
-	current++;
-	let width = slideWrapper.offsetWidth 
-	console.log(width)
-	list.style.transform = `translateX(${width * -1 *current}px)`
+    const slideChanger = () => {
+        if (searchContainer.classList.contains('active')) {
+            return;
+        }
+        if (current == length - 1) {
+            current = 0;
+        } else {
+            current++;
+        }
+        let width = slideWrapper.offsetWidth;
+        list.style.transform = `translateX(${width * -1 * current}px)`;
+        document.querySelector('.active').classList.remove('active');
+        document.querySelector('.dots-' + current).classList.add('active');
+    };
 
-	document.querySelector('.active').classList.remove('active');
-	document.querySelector('.dots-'+current).classList.add('active');
-}
-}
+    let AutoSlide = setInterval(slideChanger, 5000);
 
-//auto
-let AutoSlide = setInterval(slideChanger,5000)
+    next.addEventListener('click', () => {
+        clearInterval(AutoSlide);
+        slideChanger();
+        AutoSlide = setInterval(slideChanger, 5000);
+    });
 
-next.addEventListener('click',() => {
-	clearInterval(AutoSlide)
-	slideChanger();
-	AutoSlide = setInterval(slideChanger,5000)
-}
-)
+    prev.addEventListener('click', () => {
+        clearInterval(AutoSlide);
+        if (current == 0) {
+            current = length - 1;
+        } else {
+            current--;
+        }
+        let width = slideWrapper.offsetWidth;
+        list.style.transform = `translateX(${width * -1 * current}px)`;
+        document.querySelector('.active').classList.remove('active');
+        document.querySelector('.dots-' + current).classList.add('active');
+        AutoSlide = setInterval(slideChanger, 5000);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(AutoSlide);
+            current = index;
+            let width = slideWrapper.offsetWidth;
+            list.style.transform = `translateX(${width * -1 * current}px)`;
+            document.querySelector('.active').classList.remove('active');
+            document.querySelector('.dots-' + current).classList.add('active');
+            AutoSlide = setInterval(slideChanger, 5000);
+        });
+    });
+});
 
 prev.addEventListener('click',()=>{
 	clearInterval(AutoSlide)
