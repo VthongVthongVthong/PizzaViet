@@ -44,6 +44,37 @@
             <h1 id="search-title">Sản phẩm bạn cần tìm: </h1>
         </div>
     </section>
+    <section class="filter-section">
+        <h3>Bộ lọc sản phẩm</h3>
+        <div class="filter-container">
+            <label for="price-filter">Lọc theo giá:</label>
+            <select id="price-filter">
+                <option value="all">Tất cả</option>
+                <option value="low">Dưới 100,000₫</option>
+                <option value="medium">100,000₫ - 200,000₫</option>
+                <option value="high">Trên 200,000₫</option>
+            </select>
+
+            <label for="type-filter">Lọc theo loại:</label>
+            <select id="type-filter">
+                <option value="all">Tất cả</option>
+                <option value="pizza">Pizza</option>
+                <option value="drink">Nước uống</option>
+            </select>
+
+            <label for="category-filter">Lọc theo danh mục:</label>
+            <select id="category-filter">
+                <option value="all">Tất cả</option>
+                <option value="seafood">Hải sản</option>
+                <option value="beef">Bò</option>
+                <option value="pork">Heo</option>
+                <option value="vegetarian">Ăn chay</option>
+            </select>
+
+            <button id="apply-filters">Áp dụng bộ lọc</button>
+            <button id="reset-filters">Reset Bộ Lọc</button>
+        </div>
+    </section>
     <div id="result" class="menu-content"></div>
     <script src="js/outsidesrc/sweetalert2.min.js"></script>
     <script src="js/logout_rq.js"></script>

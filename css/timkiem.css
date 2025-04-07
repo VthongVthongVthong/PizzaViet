@@ -780,11 +780,52 @@ h1 {
 .product-item .star i {
     font-size: 14px; /* Điều chỉnh kích thước biểu tượng sao */
 }
+.filter-section {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
+.filter-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử xuống hàng nếu cần */
+    gap: 15px; /* Khoảng cách giữa các phần tử */
+    align-items: center;
+}
 
+.filter-container label {
+    font-weight: bold;
+}
 
+.filter-container select, .filter-container button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
 
+/* Chỉ định riêng cho phần "Lọc theo danh mục" */
+#category-filter {
+    flex-basis: 100%; /* Chiếm toàn bộ chiều rộng container */
+}
 
+.filter-container label[for="category-filter"] {
+    flex-basis: 100%; /* Nhãn của "Lọc theo danh mục" cũng xuống hàng */
+}
 
+/* Chỉ định riêng cho phần "Lọc theo danh mục" */
+#category-filter {
+    width: 150px; /* Đặt chiều rộng ngắn hơn */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
 
-
+.filter-container label[for="category-filter"] {
+    margin-right: 10px; /* Khoảng cách giữa nhãn và select */
+}

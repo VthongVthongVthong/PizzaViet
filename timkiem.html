@@ -43,6 +43,37 @@
             <h1 id="search-title">Sản phẩm bạn cần tìm: </h1>
         </div>
     </section>
+    <section class="filter-section">
+        <h3>Bộ lọc sản phẩm</h3>
+        <div class="filter-container">
+            <label for="price-filter">Lọc theo giá:</label>
+            <select id="price-filter">
+                <option value="all">Tất cả</option>
+                <option value="low">Dưới 100,000₫</option>
+                <option value="medium">100,000₫ - 200,000₫</option>
+                <option value="high">Trên 200,000₫</option>
+            </select>
+
+            <label for="type-filter">Lọc theo loại:</label>
+            <select id="type-filter">
+                <option value="all">Tất cả</option>
+                <option value="pizza">Pizza</option>
+                <option value="drink">Nước uống</option>
+            </select>
+
+            <label for="category-filter">Lọc theo danh mục:</label>
+            <select id="category-filter">
+                <option value="all">Tất cả</option>
+                <option value="seafood">Hải sản</option>
+                <option value="beef">Bò</option>
+                <option value="pork">Heo</option>
+                <option value="vegetarian">Ăn chay</option>
+            </select>
+
+            <button id="apply-filters">Áp dụng bộ lọc</button>
+            <button id="reset-filters">Reset Bộ Lọc</button>
+        </div>
+    </section>
     <div id="result" class="menu-content"></div>
     <script src="js/outsidesrc/sweetalert2.min.js"></script>
     <script src="js/logout_rq.js"></script>
@@ -96,5 +127,47 @@
         //     }
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const priceFilter = document.getElementById('price-filter');
+        const typeFilter = document.getElementById('type-filter');
+        const categoryFilter = document.getElementById('category-filter');
+        const applyFiltersButton = document.getElementById('apply-filters');
+        const resetFiltersButton = document.getElementById('reset-filters');
+
+        function applyFilters() {
+            const priceValue = priceFilter.value;
+            const typeValue = typeFilter.value;
+            const categoryValue = categoryFilter.value;
+
+            const filteredProducts = object.filter(product => {
+                let matchesPrice = true;
+                let matchesType = true;
+                let matchesCategory = true;
+
+                if (priceValue === 'low') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) < 100000;
+                if (priceValue === 'medium') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) >= 100000 && parseInt(product.price.replace(/[^0-9]/g, '')) <= 200000;
+                if (priceValue === 'high') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) > 200000;
+
+                if (typeValue !== 'all') matchesType = product.type === typeValue;
+                if (categoryValue !== 'all') matchesCategory = product.category === categoryValue;
+
+                return matchesPrice && matchesType && matchesCategory;
+            });
+
+            displayResults(filteredProducts);
+        }
+
+        function resetFilters() {
+            priceFilter.value = 'all';
+            typeFilter.value = 'all';
+            categoryFilter.value = 'all';
+            displayResults(object);
+        }
+
+        applyFiltersButton.addEventListener('click', applyFilters);
+        resetFiltersButton.addEventListener('click', resetFilters);
+    });
+</script>
 </body>
 </html>
