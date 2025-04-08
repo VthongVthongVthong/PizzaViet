@@ -159,7 +159,7 @@ h1{
 .tit{
     margin-top: 50px;
 }
-.detele_all {
+/* .detele_all {
   background-color:#e74c3c; 
   color:white;
   height:35px;
@@ -171,7 +171,10 @@ h1{
 }
 .detele_all:hover{
     background-color: #c0392b;  
-}
+} */
+
+/* Phần nút xoá người dùng gốc */
+
 .centerbtn{
     padding-top: 10px;
 }
