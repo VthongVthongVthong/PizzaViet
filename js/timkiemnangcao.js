@@ -216,20 +216,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceValue = priceFilter.value;
         const typeValue = typeFilter.value;
         const categoryValue = categoryFilter.value;
+        const searchQuery = document.querySelector('.search-input').value.trim().toLowerCase();
 
         const filteredProducts = object.filter(product => {
             let matchesPrice = true;
             let matchesType = true;
             let matchesCategory = true;
+            let matchesSearch = true;
 
+            // Lọc theo giá
             if (priceValue === 'low') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) < 100000;
             if (priceValue === 'medium') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) >= 100000 && parseInt(product.price.replace(/[^0-9]/g, '')) <= 200000;
             if (priceValue === 'high') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) > 200000;
 
+            // Lọc theo loại
             if (typeValue !== 'all') matchesType = product.type === typeValue;
+
+            // Lọc theo danh mục
             if (categoryValue !== 'all') matchesCategory = product.category === categoryValue;
 
-            return matchesPrice && matchesType && matchesCategory;
+            // Lọc theo từ khóa tìm kiếm
+            if (searchQuery) matchesSearch = product.name.toLowerCase().includes(searchQuery);
+
+            // Kết hợp tất cả các điều kiện
+            return matchesPrice && matchesType && matchesCategory && matchesSearch;
         });
 
         displayResults(filteredProducts);
@@ -239,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
         priceFilter.value = 'all';
         typeFilter.value = 'all';
         categoryFilter.value = 'all';
+        document.querySelector('.search-input').value = ''; // Xóa nội dung tìm kiếm
         displayResults(object);
     }
 
