@@ -31,7 +31,7 @@ main .content-wrapper {
     border:solid 2px;
 }
 .add_users{
-    background-color:green;
+    background-color:#2ecc71;
     color:white;
     height:35px;
     border: none;
@@ -39,6 +39,36 @@ main .content-wrapper {
     border-radius: 4px;
     font-size: 16px;
     padding: 10px;
+}
+.add_users:hover{
+    background-color: #27ae60;  
+}
+
+.lock_all{
+    background-color:#7f8c8d; 
+    color:white;
+    height:35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+}
+.lock_all:hover{
+    background-color: #626e70;  
+}
+.unlock_all{
+    background-color:#3498db; 
+    color:white;
+    height:35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+}
+.unlock_all:hover{
+    background-color: #2980b9;  
 }
 
 #addUserModal {

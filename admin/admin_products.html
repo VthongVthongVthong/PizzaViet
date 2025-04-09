@@ -71,42 +71,96 @@
                 <div class="form-wrapper">
                     <div class="form_them">
                         <h1>THÊM SẢN PHẨM</h1>
-                        <div class="horizontal-line"></div>
-                        <div class="group">
-                            <div class="form-group">
-                                <label for="name"><i class='bx bxs-barcode'></i> Mã sản phẩm:</label>
-                                <input type="text" id="masp" class="form-control" placeholder="Nhập mã sản phẩm">
-                            </div>
-                            <div class="form-group">
-                                <label for="name"><i class="fa-solid fa-tag"></i> Tên sản phẩm:</label>
-                                <input type="text" id="name" class="form-control" placeholder="Nhập tên sản phẩm">
-                            </div>
-                            <div class="form-group">
-                                <label for="price"><i class="fa-solid fa-dollar-sign"></i> Giá:</label>
-                                <input type="text" id="price" class="form-control" placeholder="Nhập giá sản phẩm">
-                            </div>
-                            <div class="form-group">
-                              <label for="tinhtrang"><i class="fa-solid fa-info-circle"></i> Tình trạng:</label>
-                              <select id="tinhtrang" class="form-control">
+                        <form 
+                            action="process_add_product.php" 
+                            method="POST" 
+                            enctype="multipart/form-data"
+                        >
+                          <div class="horizontal-line"></div>
+                          <div class="group">
+                              <div class="form-group">
+                                  <label for="name"><i class='bx bxs-barcode'></i> Mã sản phẩm:</label>
+                                  <!-- Mã sản phẩm -->
+                                  <input type="text" id="masp" name="masp" class="form-control" placeholder="Nhập mã sản phẩm">
+                              </div>
+                              <div class="form-group">
+                                  <label for="name"><i class="fa-solid fa-tag"></i> Tên sản phẩm:</label>
+                                  <!-- Tên sản phẩm -->
+                                  <input type="text" id="name" name="name" class="form-control" placeholder="Nhập tên sản phẩm">
+                              </div>
+                              <div class="form-group">
+                                  <label for="price"><i class="fa-solid fa-dollar-sign"></i> Giá:</label>
+                                  <!-- Giá sản phẩm -->
+                                  <input type="text" id="price" name="price" class="form-control" placeholder="Nhập giá sản phẩm">
+                              </div>
+                              <div class="form-group">
+                                <label for="tinhtrang"><i class="fa-solid fa-info-circle"></i> Tình trạng:</label>
+                                <!-- Tình trạng -->
+                                <select id="tinhtrang" name="tinhtrang" class="form-control">
                                   <option value="" selected hidden>-- Chọn tình trạng --</option>
                                   <option value="con_hang">Còn hàng</option>
                                   <option value="het_hang">Hết hàng</option>
-                              </select>
+                                </select>
+                            </div>
                           </div>
-                        </div>
-
-                        <div class="form-group">
+                          <div class="form-group">
                             <label for="pic"><i class="fa-solid fa-image"></i> Thêm ảnh sản phẩm:</label>
-                            <input type="file" id="pic" class="file-input" accept="image/*" style="display: none;">
+                          
+                            <!-- INPUT ẨN nhưng CÓ NAME để gửi file -->
+                            <input 
+                                type="file" 
+                                id="pic" 
+                                name="product_image" 
+                                class="file-input" 
+                                accept="image/*" 
+                                style="display: none;"
+                            >
+                          
+                            <!-- Nút chọn ảnh -->
                             <button type="button" class="btn" onclick="document.getElementById('pic').click()">Chọn ảnh</button>
-                            <p id="fileName" class="file-name"></p>
-                        </div>
-                        <div class="form-group">
-                            <label for="longText"><i class="fa-solid fa-pencil-alt"></i> Mô tả sản phẩm:</label>
-                            <textarea id="longText" rows="4" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
-                        </div>
-                        <button class="btn">Thêm sản phẩm</button>
-                        <button class="btn cancel-btn">Hủy</button>
+                          
+                            <!-- Hiển thị tên file -->
+                            <p id="fileName" class="file-name">Chưa chọn ảnh</p>
+                          
+                            <!-- Ảnh xem trước căn giữa -->
+                            <div style="text-align: center; margin-top: 10px;">
+                              <img id="preview" style="max-width: 200px; display: block; margin:auto; border-radius: 10px;" />
+                            </div>
+                            
+                          </div>     
+                        
+                          <div class="form-group">
+                              <label for="longText"><i class="fa-solid fa-pencil-alt"></i> Mô tả sản phẩm:</label>
+                              <!-- Mô tả sản phẩm -->
+                              <textarea id="longText" name="description" rows="4" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
+
+                          </div>
+                          <button type="submit" class="btn">Thêm sản phẩm</button>
+                          <button type="button" class="btn cancel-btn" onclick="window.location.href='admin.html'">Hủy</button>
+                        </form>
+                        <script>
+                            const fileInput = document.getElementById('pic');
+                            const fileName = document.getElementById('fileName');
+                            const preview = document.getElementById('preview');
+
+                            fileInput.addEventListener('change', function() {
+                                const file = this.files[0];
+                                if (file) {
+                                    fileName.textContent = "Hình ảnh đã được chọn";
+                                    fileName.style.textAlign = "center";
+                                    const reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        preview.src = e.target.result;
+                                        preview.style.display = 'block';
+                                    }
+                                    reader.readAsDataURL(file);
+                                } else {
+                                    fileName.textContent = 'Chưa chọn ảnh';
+                                    fileName.style.textAlign = "center";
+                                    preview.style.display = 'none';
+                                }
+                            });
+                        </script>     
                     </div>
                 </div>
             </div>

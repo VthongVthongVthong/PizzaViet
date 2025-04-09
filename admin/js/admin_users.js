@@ -109,7 +109,7 @@ function toggleAllUsers(source) {
 }
 
 // Xoa selected nguoi dung
-function deleteSelectedUsers() {
+/* function deleteSelectedUsers() {
     const checkboxes = document.querySelectorAll('#Users_Table .product-checkbox:checked');
     if (checkboxes.length === 0) {
         alert("Vui lòng chọn ít nhất một người để xóa.");
@@ -122,6 +122,47 @@ function deleteSelectedUsers() {
         });
     }
 }
+*/
+function lockSelectedUsers() {
+    const checkboxes = document.querySelectorAll('#Users_Table .product-checkbox:checked');
+    if (checkboxes.length === 0) {
+        alert("Vui lòng chọn ít nhất một người để khóa.");
+        return;
+    }
+    if (confirm("Bạn có chắc chắn muốn khóa các người dùng đã chọn?")) {
+        checkboxes.forEach(checkbox => {
+            const row = checkbox.closest('tr');
+            const lockButton = row.querySelector('.lock');
+            if (lockButton.getAttribute("data-locked") === "false") {
+                lockButton.innerHTML = "<i class='bx bxs-lock-alt'></i>";
+                lockButton.setAttribute("data-locked", "true");
+                lockButton.style.backgroundColor = "black";
+                lockButton.style.color = "white";
+            }
+        });
+    }
+}
+
+function unlockSelectedUsers() {
+    const checkboxes = document.querySelectorAll('#Users_Table .product-checkbox:checked');
+    if (checkboxes.length === 0) {
+        alert("Vui lòng chọn ít nhất một người để mở khóa.");
+        return;
+    }
+    if (confirm("Bạn có chắc chắn muốn mở khóa các người dùng đã chọn?")) {
+        checkboxes.forEach(checkbox => {
+            const row = checkbox.closest('tr');
+            const lockButton = row.querySelector('.lock');
+            if (lockButton.getAttribute("data-locked") === "true") {
+                lockButton.innerHTML = "<i class='bx bxs-lock-open-alt'></i>";
+                lockButton.setAttribute("data-locked", "false");
+                lockButton.style.backgroundColor = "white";
+                lockButton.style.color = "darkgray";
+            }
+        });
+    }
+}
+
 
 
 function openAddUserModal() {
@@ -157,7 +198,7 @@ function addUser() {
         <td>${email}</td>
         <td>${role}</td>
         <td>
-            <button class="delete-btn" onclick="deleteUser(this)">Xóa</button>
+            
             <button class="edit" onclick="openPopupUser(this)">Sửa</button>
             <button class="lock" onclick="lockUser(this)" data-locked="false"><i class='bx bxs-lock-open-alt'></i></button>
         </td>
