@@ -3,21 +3,23 @@ function lockUser(button) {
     const row = button.closest('tr');
     const deleteButton = row.querySelector('.delete-btn');
     const editButton = row.querySelector('.edit');
+    const lockTextCell = row.querySelector('.lock_text');
 
     if (isLocked) {
         if (confirm("Bạn có chắc muốn mở khóa người dùng này không?")) {
-            button.innerHTML = "<i class='bx bxs-lock-open-alt'></i>";
+            button.innerHTML = "<i class='bx bxs-lock-alt'></i> Khóa";
             button.setAttribute("data-locked", "false");
-            button.style.backgroundColor = "white";
-            button.style.color = "darkgray";
+            lockTextCell.textContent = "Bình thường";
+            button.classList.remove('locked');
+            lockTextCell.classList.remove('locked');
         }
     } else {
         if (confirm("Bạn có chắc muốn khóa người dùng này không?")) {
-            button.innerHTML = "<i class='bx bxs-lock-alt'></i>";
+            button.innerHTML = "<i class='bx bxs-lock-open-alt'> Mở khóa</i>";
             button.setAttribute("data-locked", "true");
-            button.style.backgroundColor = "black";
-            button.style.color = "white";
-
+            button.classList.add('locked');
+            lockTextCell.textContent = "Đã bị khóa";
+            lockTextCell.classList.add('locked');
         }
     }
 }
@@ -133,11 +135,13 @@ function lockSelectedUsers() {
         checkboxes.forEach(checkbox => {
             const row = checkbox.closest('tr');
             const lockButton = row.querySelector('.lock');
+            const lockTextCell = row.querySelector('.lock_text');
             if (lockButton.getAttribute("data-locked") === "false") {
-                lockButton.innerHTML = "<i class='bx bxs-lock-alt'></i>";
+                lockButton.innerHTML = "<i class='bx bxs-lock-open-alt'> Mở khóa</i>";
                 lockButton.setAttribute("data-locked", "true");
-                lockButton.style.backgroundColor = "black";
-                lockButton.style.color = "white";
+                lockButton.classList.add('locked');
+                lockTextCell.textContent = "Đã bị khóa";
+                lockTextCell.classList.add('locked');
             }
         });
     }
@@ -153,11 +157,13 @@ function unlockSelectedUsers() {
         checkboxes.forEach(checkbox => {
             const row = checkbox.closest('tr');
             const lockButton = row.querySelector('.lock');
+            const lockTextCell = row.querySelector('.lock_text');
             if (lockButton.getAttribute("data-locked") === "true") {
-                lockButton.innerHTML = "<i class='bx bxs-lock-open-alt'></i>";
+                lockButton.innerHTML = "<i class='bx bxs-lock-alt'></i> Khóa";
                 lockButton.setAttribute("data-locked", "false");
-                lockButton.style.backgroundColor = "white";
-                lockButton.style.color = "darkgray";
+                lockTextCell.textContent = "Bình thường";
+                lockButton.classList.remove('locked');
+                lockTextCell.classList.remove('locked');
             }
         });
     }
