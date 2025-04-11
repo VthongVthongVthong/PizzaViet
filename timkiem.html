@@ -127,47 +127,6 @@
         //     }
         });
     </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const priceFilter = document.getElementById('price-filter');
-        const typeFilter = document.getElementById('type-filter');
-        const categoryFilter = document.getElementById('category-filter');
-        const applyFiltersButton = document.getElementById('apply-filters');
-        const resetFiltersButton = document.getElementById('reset-filters');
-
-        function applyFilters() {
-            const priceValue = priceFilter.value;
-            const typeValue = typeFilter.value;
-            const categoryValue = categoryFilter.value;
-
-            const filteredProducts = object.filter(product => {
-                let matchesPrice = true;
-                let matchesType = true;
-                let matchesCategory = true;
-
-                if (priceValue === 'low') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) < 100000;
-                if (priceValue === 'medium') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) >= 100000 && parseInt(product.price.replace(/[^0-9]/g, '')) <= 200000;
-                if (priceValue === 'high') matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) > 200000;
-
-                if (typeValue !== 'all') matchesType = product.type === typeValue;
-                if (categoryValue !== 'all') matchesCategory = product.category === categoryValue;
-
-                return matchesPrice && matchesType && matchesCategory;
-            });
-
-            displayResults(filteredProducts);
-        }
-
-        function resetFilters() {
-            priceFilter.value = 'all';
-            typeFilter.value = 'all';
-            categoryFilter.value = 'all';
-            displayResults(object);
-        }
-
-        applyFiltersButton.addEventListener('click', applyFilters);
-        resetFiltersButton.addEventListener('click', resetFilters);
-    });
-</script>
+ 
 </body>
 </html>

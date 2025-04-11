@@ -158,8 +158,13 @@ function searchProducts(query) {
         let matchesPrice = true;
         let matchesType = true;
         let matchesCategory = true;
-        let matchesSearch = product.name.toLowerCase().includes(query.toLowerCase()) || 
+        let matchesSearch = true;
+        
+        // Chỉ áp dụng tìm kiếm nếu có query
+        if (query) {
+            matchesSearch = product.name.toLowerCase().includes(query.toLowerCase()) || 
                             product.description.toLowerCase().includes(query.toLowerCase());
+        }
 
         // Lọc theo giá
         if (priceValue === 'low') {
@@ -185,10 +190,10 @@ function searchProducts(query) {
         return matchesSearch && matchesPrice && matchesType && matchesCategory;
     });
     
-    displayResults(filteredProducts);
+    displayResults(filteredProducts, query);
 }
 
-function displayResults(products) {
+function displayResults(products, query) {
     result.innerHTML = "";
     if (products.length === 0) {
         result.innerHTML = `<h2>Không tìm thấy sản phẩm phù hợp.</h2>`;
@@ -223,50 +228,11 @@ function displayResults(products) {
     });
 }
 
-// Chỉ áp dụng bộ lọc (không cần từ khóa tìm kiếm)
+// Áp dụng bộ lọc và luôn xem xét từ khóa đang có trong thanh tìm kiếm
 function applyFilters() {
     const searchQuery = document.querySelector('.search-input').value.trim();
-    
-    if (searchQuery) {
-        // Nếu có từ khóa tìm kiếm, sử dụng hàm searchProducts
-        searchProducts(searchQuery);
-    } else {
-        // Nếu không có từ khóa, chỉ áp dụng bộ lọc
-        const priceValue = document.getElementById('price-filter').value;
-        const typeValue = document.getElementById('type-filter').value;
-        const categoryValue = document.getElementById('category-filter').value;
-        
-        let filteredProducts = object.filter(product => {
-            let matchesPrice = true;
-            let matchesType = true;
-            let matchesCategory = true;
-
-            // Lọc theo giá
-            if (priceValue === 'low') {
-                matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) < 100000;
-            } else if (priceValue === 'medium') {
-                matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) >= 100000 && 
-                              parseInt(product.price.replace(/[^0-9]/g, '')) <= 200000;
-            } else if (priceValue === 'high') {
-                matchesPrice = parseInt(product.price.replace(/[^0-9]/g, '')) > 200000;
-            }
-
-            // Lọc theo loại
-            if (typeValue !== 'all') {
-                matchesType = product.type === typeValue;
-            }
-
-            // Lọc theo danh mục
-            if (categoryValue !== 'all') {
-                matchesCategory = product.category === categoryValue;
-            }
-
-            // Kết hợp tất cả các điều kiện
-            return matchesPrice && matchesType && matchesCategory;
-        });
-        
-        displayResults(filteredProducts);
-    }
+    // Luôn gọi searchProducts, và truyền searchQuery vào
+    searchProducts(searchQuery);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
